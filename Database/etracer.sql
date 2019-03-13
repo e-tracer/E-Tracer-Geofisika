@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2019 at 01:57 PM
+-- Generation Time: Mar 13, 2019 at 02:37 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -81,6 +81,7 @@ CREATE TABLE `kuis_pendahuluan` (
 
 CREATE TABLE `pekerjaan` (
   `id_data` varchar(6) NOT NULL,
+  `id_user` varchar(6) NOT NULL,
   `nama_kantor` varchar(30) NOT NULL,
   `bidang_usaha` varchar(30) NOT NULL,
   `jabatan` varchar(30) NOT NULL,
@@ -99,6 +100,7 @@ CREATE TABLE `pekerjaan` (
 
 CREATE TABLE `penilaian1` (
   `id_penilaian` varchar(6) NOT NULL,
+  `id_user` varchar(6) NOT NULL,
   `pert1` varchar(30) NOT NULL,
   `pert2` varchar(30) NOT NULL,
   `pert3` varchar(30) NOT NULL,
@@ -118,6 +120,7 @@ CREATE TABLE `penilaian1` (
 
 CREATE TABLE `penilaian2` (
   `id_penilaian` varchar(6) NOT NULL,
+  `id_user` varchar(6) NOT NULL,
   `pert1` varchar(30) NOT NULL,
   `pert2` varchar(30) NOT NULL,
   `pert3` varchar(30) NOT NULL,
@@ -191,13 +194,17 @@ CREATE TABLE `wiraswasta` (
 -- Indexes for table `kerja`
 --
 ALTER TABLE `kerja`
-  ADD PRIMARY KEY (`id_kerja`);
+  ADD PRIMARY KEY (`id_kerja`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_kuisioner` (`id_kuisioner`);
 
 --
 -- Indexes for table `kerja_wiraswasta`
 --
 ALTER TABLE `kerja_wiraswasta`
-  ADD PRIMARY KEY (`id_kerjawiraswasta`);
+  ADD PRIMARY KEY (`id_kerjawiraswasta`),
+  ADD KEY `id_kuisioner` (`id_kuisioner`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `kuis_pendahuluan`
@@ -209,31 +216,38 @@ ALTER TABLE `kuis_pendahuluan`
 -- Indexes for table `pekerjaan`
 --
 ALTER TABLE `pekerjaan`
-  ADD PRIMARY KEY (`id_data`);
+  ADD PRIMARY KEY (`id_data`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `penilaian1`
 --
 ALTER TABLE `penilaian1`
-  ADD PRIMARY KEY (`id_penilaian`);
+  ADD PRIMARY KEY (`id_penilaian`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `penilaian2`
 --
 ALTER TABLE `penilaian2`
-  ADD PRIMARY KEY (`id_penilaian`);
+  ADD PRIMARY KEY (`id_penilaian`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `pertanyaan`
 --
 ALTER TABLE `pertanyaan`
-  ADD PRIMARY KEY (`id_data`);
+  ADD PRIMARY KEY (`id_data`),
+  ADD KEY `id_bekerja` (`id_bekerja`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `sekolah`
 --
 ALTER TABLE `sekolah`
-  ADD PRIMARY KEY (`id_sekolah`);
+  ADD PRIMARY KEY (`id_sekolah`),
+  ADD KEY `id_kuisioner` (`id_kuisioner`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `user`
@@ -245,7 +259,66 @@ ALTER TABLE `user`
 -- Indexes for table `wiraswasta`
 --
 ALTER TABLE `wiraswasta`
-  ADD PRIMARY KEY (`id_wiraswasta`);
+  ADD PRIMARY KEY (`id_wiraswasta`),
+  ADD KEY `id_kuisioner` (`id_kuisioner`),
+  ADD KEY `id_user` (`id_user`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `kerja`
+--
+ALTER TABLE `kerja`
+  ADD CONSTRAINT `kerja_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kerja_ibfk_2` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuis_pendahuluan` (`id_kuisioner`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `kerja_wiraswasta`
+--
+ALTER TABLE `kerja_wiraswasta`
+  ADD CONSTRAINT `kerja_wiraswasta_ibfk_2` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuis_pendahuluan` (`id_kuisioner`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kerja_wiraswasta_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pekerjaan`
+--
+ALTER TABLE `pekerjaan`
+  ADD CONSTRAINT `pekerjaan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `penilaian1`
+--
+ALTER TABLE `penilaian1`
+  ADD CONSTRAINT `penilaian1_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `penilaian2`
+--
+ALTER TABLE `penilaian2`
+  ADD CONSTRAINT `penilaian2_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pertanyaan`
+--
+ALTER TABLE `pertanyaan`
+  ADD CONSTRAINT `pertanyaan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pertanyaan_ibfk_2` FOREIGN KEY (`id_bekerja`) REFERENCES `kerja` (`id_kerja`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `sekolah`
+--
+ALTER TABLE `sekolah`
+  ADD CONSTRAINT `sekolah_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `sekolah_ibfk_2` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuis_pendahuluan` (`id_kuisioner`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `wiraswasta`
+--
+ALTER TABLE `wiraswasta`
+  ADD CONSTRAINT `wiraswasta_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `wiraswasta_ibfk_2` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuis_pendahuluan` (`id_kuisioner`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
