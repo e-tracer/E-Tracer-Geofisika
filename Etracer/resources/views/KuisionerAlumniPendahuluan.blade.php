@@ -5,10 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="{{asset('https://use.fontawesome.com/releases/v5.8.1/css/all.css')}}" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700')}}"> 
-    <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
+   
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
@@ -19,12 +18,8 @@
 
     <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/refo/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/refo/main1.css')}}">
     <link rel="stylesheet" href="{{asset('css/refo/util.css')}}">
-
-    <link rel="stylesheet" type="{{asset('text/css" href="fonts/refo/fonts/font-awesome-4.7.0/css/font-awesome.css')}}">
-
-    <link rel="stylesheet" type="{{asset('text/css" href="fonts/refo/fonts/iconic/css/material-design-iconic-font.css')}}">
 
     <link rel="icon" type="image/png" href="{{asset('images/icons/favicon.ico')}}"/>
 
@@ -63,12 +58,15 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="{{ url('beranda')}}">BERANDA</a></li>
+                <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li><a href="{{ url('berita')}}">BERITA</a></li>
                 <li><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>
                 <li class="active"><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
+                <li><a href="{{ url('profile')}}">PROFIL</a></li>
                 <li><a href=" ">KONTAK</a></li>
                 <li><a href=" ">TENTANG</a></li>
+                <li><a href="{{ url('berandaLogin')}}">KELUAR</a></li>
+
               </ul>
             </nav>
           </div>

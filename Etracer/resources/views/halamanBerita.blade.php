@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="{{asset('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700')}}"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"  rel="stylesheet">
     <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -48,12 +48,14 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="{{ url('beranda')}}">BERANDA</a></li>
+                <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
                 <li><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>
                 <li><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
+                <li><a href="{{ url('profile')}}">PROFIL</a></li>
                 <li><a href="blog.html">KONTAK</a></li>
                 <li><a href="contact.html">TENTANG</a></li>
+                <li><a href="{{ url('beranda')}}">KELUAR</a></li>
               </ul>
             </nav>
           </div>
