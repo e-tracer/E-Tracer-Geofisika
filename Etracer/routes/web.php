@@ -40,6 +40,27 @@ Route::get('/halamanBerita', function () {
     return view('halamanBerita');
 });
 
+//profile
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+//beranda_login
+Route::get('/berandaLogin', function () {
+    return view('beranda_login');
+});
+
+//berita_unlogin
+Route::get('/beritaUnlogin', function () {
+    return view('berita_unlogin');
+});
+
+//halamanBerita_unlogin
+Route::get('/halamanBeritaUnlogin', function () {
+    return view('halamanBerita_unlogin');
+});
+
+
 
 
 

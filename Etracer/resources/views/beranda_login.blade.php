@@ -46,10 +46,14 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active"><a href="{{ url('beranda')}}">BERANDA</a></li>
-                <li><a href="{{ url('beritaUnlogin')}}">BERITA</a></li>
+                <li class="active"><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
+                <li><a href="{{ url('berita')}}">BERITA</a></li>
+                <li><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>                
+                <li><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
+                <li><a href="{{ url('profile')}}">PROFIL</a></li>
                 <li><a href="">KONTAK</a></li>
                 <li><a href="">TENTANG</a></li>
+                <li><a href="{{ url('beranda')}}">KELUAR</a></li>
               </ul>
             </nav>
           </div>
@@ -65,59 +69,27 @@
 
   
 
-    <div class="site-blocks-cover overlay" style="background-image: url(images/tangan.png);" data-aos="fade" data-stellar-background-ratio="0.5">
+     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/tangan.png);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-            
-
-            <h1 class="text-white font-weight-light mb-5 text-uppercase font-weight-bold">E-TRACER</h1>
-            <h1 class="text-white font-weight-light mb-5 text-uppercase font-weight-bold">TEKNIK GEOFISIKA</h1>
-            <h3 class="text-white font-weight-light mb-5 text-uppercase font-weight-bold">INSTITUT TEKNOLOGI SUMATERA</h3>
-
-          </div>
+            <div class="testimonial">
+              <figure class="mb-4">
+                <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-3">
+                <p class="text-white">Letfi Wahyu</p>
+                <div class="meta mb-4 text-white font-weight-light">Angkatan 2016 <span class="mx-2">&bullet;</span> Tahun lulus 2020</div>
+                </figure>
+              </div>
+  
+           </div>
         </div>
       </div>
-    </div>  
+    </div> 
 
-    <div class="container">
-      <div class="row row-centered no-gutters align-items-stretch overlap-section">
-
-        <div class="col-md-8 col-centered">
-          <div class="free-quote bg-dark h-100">
-            <h2 class="my-4 heading  text-center">SIGN IN</h2>
-            <form method="post">
-              <div class="form-group">
-                <label for="fq_name">EMAIL</label>
-                <input type="text" class="form-control btn-block" id="fq_name" name="fq_name" placeholder="Masukkan Email">
-              </div>
-              <div class="form-group mb-4">
-                <label for="fq_email">NIM</label>
-                <input type="text" class="form-control btn-block" id="fq_email" name="fq_email" placeholder="Masukkan NIM">
-              </div>
-              <div class="form-group">
-                <a href="{{ url('berandaLogin')}}" class="btn btn-primary btn-lg text-white py-2 px-4 btn-block" role="button" aria-pressed="true">LOGIN</a>
-              </div>
-            </form>
-          </div>
-        </div>
-
-       	
-        <div class="col-md-4">
-          <div class="feature-3 pricing h-100 text-center">
-            <div class="icon">
-              <span class="fas fa-phone"></span>
-            </div>
-            <h2 class="my-4 heading">Servis</h2>
-            <p>(021) 123456 Teknik Geofisika</p>
-          </div>
-        </div>
-      </div>
-  </div>
 
   <div class="site-section">
-    <div class="container border border-warning ">
+    <div class="container border border-warning">
       <div class="text-center">
           <h1>Visi</h1>
           <p>“Menjadi penyelenggara pendidikan, pengembangan serta penerapan Teknik Geofisika yang unggul pada tingkat nasional, berdaya saing global, berwawasan lingkungan dan memberdayakan potensi kebumian di wilayah Sumatera dan sekitarnya.”</p>
@@ -129,7 +101,7 @@
           <p>Turut andil dalam pemberdayaan potensi kebumian secara optimal melalui keunggulan dalam pendidikan, penelitian, dan pengabdian kepada masyarakat.</p>
           <p>Menjalin kerja sama dengan pihak pemerintah, perguruan tinggi dalam dan luar negeri, industri, organisasi profesi, serta masyarakat dalam rangka mendukung penyelenggaraan Tridharma Perguruan Tinggi.</p>
       </div>
-   </div>
+          </div>
   </div>
 
   <div class="site-section">
@@ -159,7 +131,7 @@
                 <p>John Smith</p>
               </figure>
               <blockquote>
-                <p>&ldquo;Cinta sejati, dari siapapun itu baik keluarga, kekasih, teman, atau orang-orang penting lainnya, seharusnya tidak membuat Anda menjadi terhambat untuk mengejar takdir Anda, mengejar mimpi-mimpi Anda.rdquo;</p>
+                <p>&ldquo;Cinta sejati, dari siapapun itu baik keluarga, kekasih, teman, atau orang-orang penting lainnya, seharusnya tidak membuat Anda menjadi terhambat untuk mengejar takdir Anda, mengejar mimpi-mimpi Anda.&rdquo;</p>
               </blockquote>
             </div>
           </div>
@@ -170,7 +142,7 @@
                 <p>Christine Aguilar</p>
               </figure>
               <blockquote>
-                <p>&ldquo;Rasa takut dalam kenyataannya lebih banyak menghambat kita dalam hidup. Rasa takut akan kegagalan, penolakan, hingga terjatuh dan terjatuh lagi hanya akan menjadi bentuk kegagalan yang bahkan tidak pernah kita coba untuk memulai perjuangan itu sendiri.&rdquo;</p>
+                <p>&ldquo;LRasa takut dalam kenyataannya lebih banyak menghambat kita dalam hidup. Rasa takut akan kegagalan, penolakan, hingga terjatuh dan terjatuh lagi hanya akan menjadi bentuk kegagalan yang bahkan tidak pernah kita coba untuk memulai perjuangan itu sendiri.&rdquo;</p>
               </blockquote>
             </div>
           </div>

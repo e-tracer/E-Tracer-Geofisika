@@ -49,14 +49,10 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
-                <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
-                <li><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>                
-                <li><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
-                <li><a href="{{ url('profile')}}">PROFIL</a></li>
+                <li><a href="{{ url('beranda')}}">BERANDA</a></li>
+                <li class="active"><a href="{{ url('beritaUnlogin')}}">BERITA</a></li>
                 <li><a href="">KONTAK</a></li>
                 <li><a href="">TENTANG</a></li>
-                <li><a href="{{ url('beranda')}}">KELUAR</a></li>
               </ul>
             </nav>
           </div>
@@ -92,7 +88,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
               <img src="images/BG1.png" alt="Image" height="200" width="350">
-              <h2 class="font-size-regular"><a href="{{ url('halamanBerita')}}">PPLK ITERA 2018</a></h2>
+              <h2 class="font-size-regular"><a href="{{ url('halamanBeritaUnlogin')}}">PPLK ITERA 2018</a></h2>
               <div class="meta mb-4">Nursano Gandung P <span class="mx-2">&bullet;</span> Agustus 17, 2018<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
               <p>PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan.</p>
             </div> 

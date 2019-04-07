@@ -43,21 +43,13 @@
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
+	font-family: Poppins, sans-serif;
 }
 
-/*---------------------------------------------*/
 a {
-	font-family: Poppins-Regular;
 	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
 }
+
 
 a:focus {
 	outline: none !important;
@@ -73,7 +65,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Poppins-Regular;
+	font-family: Poppins;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -151,6 +143,7 @@ iframe {
 /*---------------------------------------------*/
 .container {
 	max-width: 1200px;
+  font-size: 20px;
 }
 
 
@@ -559,7 +552,7 @@ textarea.input100 {
 .select2-search--dropdown .select2-search__field {
   border: 1px solid #aaa;
   outline: none;
-  font-family: Poppins-Regular;
+  font-family: Poppins;
   font-size: 15px;
   color: #333333;
   line-height: 1.2;
