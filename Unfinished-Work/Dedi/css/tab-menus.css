@@ -5,7 +5,7 @@
 	color:#fff;
 }
 .nav-tabs.custom-menu-wrap li.active a{
-	color:#303030;
+	color:#FF8C00;
 }
 .nav-tabs.custom-menu-wrap li a, .nav-tabs.custom-menu-wrap li.active a{
 	border:1px solid transparent;
@@ -13,7 +13,7 @@
 	font-size:15px;
 }
 .nav-tabs.custom-menu-wrap li a:hover{
-	background:#303030;
+	background:#FF8C00;
 	color:#fff;
 }
 .custom-menu-content ul.main-menu-dropdown{
@@ -26,11 +26,11 @@
 .custom-menu-content ul.main-menu-dropdown li a{
 	padding:20px 20px;
 	display:block;
-	color:#303030;
+	color:#FF8C00;
 	font-size:14px;
 }
 .custom-menu-content ul.main-menu-dropdown li a:hover{
-	color:#353535;
+	color:#FF8C00;
 }
 .tab-custon-menu-bg{
 	position:relative;
@@ -50,20 +50,20 @@
 	top:0px;
 	left:0px;
 	width:100%;
-	background:#03a9f4;
+	background:#FF8C00;
 	content:"";
 	z-index:9;
 	height:100%;
 }
 .menu-list-wrap .nav-tabs>li.active>a, .menu-list-wrap .nav-tabs>li.active>a:focus, .menu-list-wrap .nav-tabs>li.active>a:hover{
-	background:#03a9f4;
+	background:#FF8C00;
 }
 .menu-list-wrap {
     background: #fff;
     padding: 20px;
 }
 .nav-tabs.custom-menu-wrap-st li a{
-	color:#303030;
+	color:#FF8C00;
 }
 .tab-custon-menu-bg-style ul.main-menu-dropdown li a:hover{
 	color:#fff;

@@ -24,8 +24,8 @@
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
-html, body {font-family: 'Open Sans', sans-serif;font-weight:400;background: #03a9f0}
-html, body.materialdesign {background: #ebebeb}
+html, body {font-family: 'Open Sans', sans-serif;font-weight:400;background: #FF8C00}
+html, body.materialdesign {background: #A9A9A9}
 .floatleft {float:left}
 .floatright {float:right}
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
@@ -116,7 +116,7 @@ padding: 0
 .notification-list, .button-ad-wrap, .tinymce-single, .x-editable-list {
     background: #fff;
     padding: 20px;
-    border-top: 2px solid #303030;
+    border-top: 2px solid #FF8C00;
     border-radius: 4px;
 }
 .shadow-reset{
@@ -142,12 +142,12 @@ padding: 0
 	color: #fff;
 }
 .header-top-menu .navbar-nav>li .dropdown-menu a:hover{
-	background:#2b2a2a;
+	background:#FF8C00;
 }
 .header-top-menu .navbar-nav>li .dropdown-menu{
 	border: 0px solid #ccc; 
     border: 0px solid rgba(0,0,0,.15);
-	background-color: #303030;	
+	background-color: #FF8C00;	
 }
 .header-right-info .navbar-nav>li .dropdown-menu{
 	border: 0px solid #ccc; 
@@ -165,7 +165,7 @@ padding: 0
     background-color: transparent;
 }
 .header-right-info .nav.custon-set-tab>li>a:focus, .header-right-info .nav.custon-set-tab>li>a:hover, .header-right-info .nav.custon-set-tab>li>a:active {
-	color:#03a9f4;
+	color:#FF8C00;
 }
 .header-right-info .nav.custon-set-tab>li>a {
 	color:#fff;
@@ -184,7 +184,7 @@ padding: 0
 	padding:10px 0px;
 }
 .header-top-area{
-	background:#303030;
+	background:#FF8C00;
 }
 .header-top-menu ul.header-top-nav li{
 	display:inline-block;
@@ -195,7 +195,7 @@ padding: 0
 	top:130%;
 	left:-10px;
 	width:200px;
-	background:#303030;
+	background:#FF8C00;
 	opacity:0;
 	transition: all 0.5s ease 0s;
 	z-index:999;
@@ -220,7 +220,7 @@ padding: 0
 	padding:15px 20px;
 }
 .header-top-menu ul.header-top-nav li .dropdown-header-top li a:hover{
-	background:#03a9f4;
+	background:#FF8C00;
 }
 .header-top-menu ul.header-top-nav li a{
 	font-size:14px;
@@ -241,7 +241,7 @@ padding: 0
    top:160%;
    left:-70px;
    width:330px;
-   background:#343434;
+   background:#FF8C00;
    text-align:left;
    opacity:0;
    transition: all 0.5s ease 0s;
@@ -265,7 +265,7 @@ padding: 0
    margin-right:10px;
 }
 .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:hover, .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:focus{
-   background:#2b2a2a;
+   background:#FF8C00;
 }
 .header-right-info ul.header-right-menu li .author-message-top{
    left:-133px;
@@ -292,7 +292,7 @@ padding: 0
 	display:block;
 	color: #ccc;
 	font-size: 14px;
-	border-top:1px solid #383838;
+	border-top:1px solid #FF8C00;
 	padding: 15px 0px;
 	text-align:center;
 	text-decoration:none;
@@ -318,7 +318,7 @@ padding: 0
 	position:absolute;
 	height:5px;
 	width:5px;
-	background:#03a9f4;
+	background:#FF8C00;
 	border-radius:50%;
 	top: -5px;
     right: -7px;
@@ -346,7 +346,7 @@ padding: 0
 	position: absolute;
     content: "";
     display: inline-block;
-    border-bottom: 10px solid #343434;
+    border-bottom: 10px solid #FF8C00;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 0;
@@ -365,7 +365,7 @@ padding: 0
     text-align: center;
     padding: 15px 0px;
     margin: 0px;
-	border-bottom:1px solid #383838;
+	border-bottom:1px solid #FF8C00;
 }
 ul.message-menu, ul.notification-menu {
     height: 230px;
@@ -380,7 +380,7 @@ ul.notification-menu li .notification-icon{
 	float: left;
     width: 50px;
     height: 50px;
-    background: #303030;
+    background: #FF8C00;
     line-height: 50px;
     text-align: center;
     font-size: 16px;
@@ -610,7 +610,7 @@ ul.setting-panel-list li{
 	color:#303030;
 }
 .nav-tabs.custom-menu-wrap li.open a{
-	color:#303030;
+	color:#FF8C00;
 }
 .nav-tabs.custom-menu-wrap li a, .nav-tabs.custom-menu-wrap li.open a{
 	border:1px solid transparent;
@@ -689,7 +689,7 @@ ul.setting-panel-list li{
 	padding:10px 0px;
 }
 .header-top-area{
-	background:#303030;
+	background:#FF8C00;
 	
 }
 .header-top-menu ul.header-top-nav{

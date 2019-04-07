@@ -7,7 +7,7 @@
 }
 .custon-tab-style1 p{
 	font-size:14px;
-	color:#303030;
+	color:#FF8C00;
 	line-height:24px;
 }
 .custon-tab-menu-style1 .tab-custon-ic{
@@ -30,22 +30,22 @@
 }
 .tab-content-details h2{
 	font-size:20px;
-	color:#303030;
+	color:#FF8C00;
 }
 .tab-content-details p{
 	font-size:14px;
-	color:#303030;
+	color:#FF8C00;
 	line-height:24px;
 }
 .nav-tabs.custom-menu-wrap li a:hover{
-	background:#303030;
-	color:#fff;
+	background:#FF8C00;
+	color:#FF8C00;
 }
 .nav-tabs.custom-menu-wrap li a{
 	color:#fff;
 }
 .nav-tabs.custom-menu-wrap li.active a{
-	color:#303030;
+	color:#FF8C00;
 }
 .nav-tabs.custom-menu-wrap li.active a:hover{
 	color:#fff;
