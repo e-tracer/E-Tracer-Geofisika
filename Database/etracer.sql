@@ -56,7 +56,7 @@ CREATE TABLE `kerja_wiraswasta` (
 --
 
 CREATE TABLE `kuis_pendahuluan` (
-  `id_kuisioner` varchar(20) NOT NULL,
+  `id_kuisioner` varchar(6) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `jenis_kel` varchar(20) NOT NULL,
   `angkatan` varchar(10) NOT NULL,
