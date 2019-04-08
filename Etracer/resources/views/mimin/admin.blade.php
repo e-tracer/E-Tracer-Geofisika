@@ -60,7 +60,8 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img src="img/message/1.jpg" alt="" />
+                    <a href="#">
+                        <img src="deded/img/bi_taifa.jpg" alt="logo" />
                     </a>
                     <h3>Dediepow</h3>
                     <p>Developer</p>
@@ -104,7 +105,7 @@
                                     <i class="fa fa-bars"></i>
                                 </button>
                                 <div class="admin-logo logo-wrap-pro">
-                                    <a href="#"><img src="img/logo/log.png" alt="" />
+                                    <a href="#"><img src="deded/img/sandiUno.jpg" alt="" />
                                     </a>
                                 </div>
                             </div>

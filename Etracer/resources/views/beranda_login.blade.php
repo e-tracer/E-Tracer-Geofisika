@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-
+    <link rel="stylesheet" href="{{asset('demo-files/demo.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
 
     <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
@@ -31,7 +31,7 @@
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
-          <span class="fas fa-bars js-menu-toggle"></span>
+          <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
       <div class="site-mobile-menu-body"></div>
@@ -41,10 +41,9 @@
 
       <div class="container">
         <div class="row align-items-center">          
-          <img src="images/logo.png" alt="Image" class="img-fluid" width="100" height="100">
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
-
+              <img src="images/logo.png" alt="Image" class="img-fluid float-left " width="100" height="100">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li><a href="{{ url('berita')}}">BERITA</a></li>
@@ -58,7 +57,7 @@
             </nav>
           </div>
 
-          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="fas fa-bars"></span></a></div>
 
           </div>
 
@@ -174,15 +173,14 @@
         </div>
       </div>
     </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <p>
-             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by Kelompok kame                        
-         	</p>
-          </div>
-          
-        </div>
       </div>
+    <div class="row pt-5 mt-5 text-center ">
+      <div class="col-md-12">
+        <p>
+           Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by Kelompok kame                        
+        </p>
+       </div>
+    </div>
   </div>
 
   <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>

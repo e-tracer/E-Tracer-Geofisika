@@ -90,6 +90,12 @@ Route::get('/studyTable', function () {
     return view('mimin/studyTable');
 });
 
+//kuisionerPerusahaan
+Route::get('/kuisionerPerusahaan', function () {
+    return view('kuisionerPerusahaan');
+});
+
+
 
 
 

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
-
+    <link rel="stylesheet" href="{{asset('demo-files/demo.css')}}">
     <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -44,10 +44,9 @@
 
       <div class="container">
         <div class="row align-items-center">          
-          <img src="images/logo.png" alt="Image" class="img-fluid" width="100" height="100">
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
-
+              <img src="images/logo.png" alt="Image" class="img-fluid float-left " width="100" height="100">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
@@ -62,7 +61,7 @@
           </div>
 
 
-          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="fas fa-bars"></span></a></div>
 
           </div>
 
@@ -152,20 +151,14 @@
         </div>
       </div>
     </div>
-
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by Kame</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            </div>
-          </div>
-          
-        </div>
-      </div>
+    </div>
+    <div class="row pt-5 mt-5 text-center ">
+      <div class="col-md-12">
+        <p>
+           Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made by Kelompok kame                        
+        </p>
+       </div>
+    </div>    
   </div>
 
   <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
