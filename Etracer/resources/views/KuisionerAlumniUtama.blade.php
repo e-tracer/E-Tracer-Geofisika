@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700')}}"> 
     <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
 
@@ -65,7 +66,7 @@
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
-                <li><a href="{{ url('berita')}}">BERITA</a></li>
+                <li><a href="{{ url('berita')}}"><BERITA</a></li>
                 <li><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>                
                 <li class="active"><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
                 <li><a href="{{ url('profile')}}">PROFIL</a></li>
@@ -104,7 +105,7 @@
 
   <div class="container">
     <div class="wrap-contact100">
-      <form class="contact100-form validate-form">
+      <form class=" contact100-form validate-form">
       <h2>Kuesioner Utama</h2> 
         <div class="wrap-input100 ">
           <span class="label-input300">1. Seberapa besar alasan-alasan di bawah ini menyebabkan ketidaktepatan masa studi anda?</span>
@@ -1775,13 +1776,14 @@
         </div>
 
         <div class="container-contact100-form-btn">
-          <button class="contact100-form-btn">
+          <a href="{{ url('KuisionerUtama')}}" class="btn btn-secondary btn-lg contact100-form" >
             <span>
               Submit
               <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
             </span>
-          </button>
+          </a>
         </div>
+
       </form>
     </div>
   </div>

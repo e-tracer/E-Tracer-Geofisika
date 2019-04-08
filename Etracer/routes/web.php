@@ -60,6 +60,39 @@ Route::get('/halamanBeritaUnlogin', function () {
     return view('halamanBerita_unlogin');
 });
 
+//admin
+Route::get('/admin', function () {
+    return view('mimin/admin');
+});
+
+//homeAdmin
+Route::get('/homeAdmin', function () {
+    return view('mimin/homeAdmin');
+});
+
+//barCharts
+Route::get('/barCharts', function () {
+    return view('mimin/barCharts');
+});
+
+//formElement
+Route::get('/formElement', function () {
+    return view('mimin/formElement');
+});
+
+//formTable
+Route::get('/formTable', function () {
+    return view('mimin/formTable');
+});
+
+//studyTable
+Route::get('/studyTable', function () {
+    return view('mimin/studyTable');
+});
+
+
+
+
 
 
 
