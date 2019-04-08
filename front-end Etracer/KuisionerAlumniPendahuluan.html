@@ -125,7 +125,7 @@
         <div class="wrap-input100 input100-select ">
           <span class="label-input300"><b>Program Studi / Jurusan *</b></span>
           <div>
-            <select class="js-select2" name="Prodi">
+            <select class="js-select1" name="Prodi">
               <option>Teknik Geofisika</option>
             </select>
             <div class="dropDownSelect2"></div>
@@ -168,22 +168,24 @@
           <input class="input100" type="number" name="nomer" placeholder="Nomor telpon/HP">
         </div>
 
-
-      <div class="wrap-input100 ">
-          <span class="label-input300"><b>Status saat ini</b></span>
+        <div class="wrap-input100 input100-select ">
+          <span class="label-input300"><b>Status saat ini*</b></span>
           <div>
-          <br>
+            <select class="js-select2" name="Prodi">
+              <option>Wiraswasta</option>
+              <option>Bekerja dan wiraswasta</option>
+              <option>Bekerja</option>
+              <option>Tidak Bekerja/Melanjutkan Kuliah</option>
 
-            <tr>
-              <td><input type="radio" name="Status" value="1"></td> Wiraswasta<br>
-              <td><input type="radio" name="Status" value="2"></td> Bekerja dan wiraswasta<br>
-              <td><input type="radio" name="Status" value="3"></td> Bekerja<br>
-              <td><input type="radio" name="Status" value="4"></td> Tidak Bekerja/Melanjutkan Kuliah<br>
+            </select>
+            <div class="dropDownSelect2"></div>
+          </div>
+        </div>
+  
 
 
-            </tr>
-        </div>  
-      </div>
+
+      <div class="w-full dis-none js-show-wiraswasta">
       <h5>Wiraswasta</h5>
       <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Apakah anda pernah bekerja sebelumnya? </span>
@@ -215,7 +217,8 @@
           <span class="label-input300">Berapa omset rata-rata perbulan? </span>
           <input class="input100" type="text" name="omset" placeholder="Answer Here....">
         </div>
-
+</div>
+<div class="w-full dis-none js-show-WiraKerja">
       <h5>Bekerja dan wiraswasta</h5>
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Jenis usaha apa yang Anda kembangkan saat ini? </span>
@@ -231,6 +234,8 @@
           <span class="label-input300">Berapa omset rata-rata perbulan? </span>
           <input class="input100" type="text" name="omset" placeholder="Answer Here....">
         </div>
+      </div>
+      <div class="w-full dis-none js-show-Kerja">
       <h5>Bekerja</h5>
         <div class="wrap-input100 validate-input" data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apakah kategori perusahaan tempat Anda bekerja?</span>
@@ -241,6 +246,8 @@
           <span class="label-input300">Apakah pekerjaan Anda saat ini sesuai dengan bidang kuliah? </span>
           <input class="input100" type="text" name="sesuai" placeholder="Answer Here....">
         </div>
+      </div>
+      <div class="w-full dis-none js-show-sekolah">
       <h5>Tidak bekerja/melanjutkan kuliah</h5>
          <div class="wrap-input100 validate-input " data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apakah Anda pernah bekerja sebelumnya?</span>
@@ -256,6 +263,7 @@
           <span class="label-input300">Apa alasan Anda tidak bekerja (lagi)? </span>
           <input class="input100" type="text" name="alasan" placeholder="Answer Here....">
         </div>
+      </div>
       <h4>Pekerjaan Utama</h4>
         <div class="wrap-input100">
           <span class="label-input300">Nama Kantor</span>
@@ -413,8 +421,49 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/bootstrap-datepicker.min.js"></script>
   <script src="js/aos.js"></script>
-
   <script src="js/main.js"></script>
-    
+    <script src="vendor/select2/select2.min.js"></script>
+  <script>
+    $(".js-select2").each(function(){
+      $(this).select2({
+        minimumResultsForSearch: 20,
+        dropdownParent: $(this).next('.dropDownSelect2')
+      });
+
+
+      $(".js-select2").each(function(){
+        $(this).on('select2:close', function (e){
+          if($(this).val() == "Wiraswasta") {
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-wiraswasta').slideDown();
+            $('.js-show-WiraKerja').slideUp();
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-Kerja').slideUp();
+            }
+          else if($(this).val()== "Bekerja dan wiraswasta") {
+            $('.js-show-WiraKerja').slideUp();
+            $('.js-show-WiraKerja').slideDown();
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-Kerja').slideUp();
+          }
+           else if($(this).val()== "Bekerja") {
+            $('.js-show-Kerja').slideUp();
+            $('.js-show-Kerja').slideDown();
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-WiraKerja').slideUp();
+          }
+           else if($(this).val()== "Tidak Bekerja/Melanjutkan Kuliah") {
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-sekolah').slideDown();
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-Kerja').slideUp();
+            $('.js-show-WiraKerja').slideUp();
+          }
+        });
+      });
+    })
+  </script> 
   </body>
 </html>
