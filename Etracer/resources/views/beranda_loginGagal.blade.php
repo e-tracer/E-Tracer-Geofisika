@@ -96,6 +96,9 @@
                 <input type="password" class="form-control btn-block" id="nim" name="nim" placeholder="Masukkan NIM">
               </div>
               <div class="form-group">
+                <p style="color:#b53636;">LOGIN GAGAL, SILAHKAN COBA LAGI</p>
+              </div>
+              <div class="form-group">
                 <button class="btn btn-primary btn-lg text-white py-2 px-4 btn-block" type="submit" aria-pressed="true">LOGIN</a>
               </div>
             </form>

@@ -63,17 +63,6 @@
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <img src="images/logo.png" alt="Image" class="img-fluid float-left " width="100" height="100">
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
-                <li><a href="{{ url('berita')}}"><BERITA</a></li>
-                <li><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>                
-                <li class="active"><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
-                <li><a href="{{ url('profile')}}">PROFIL</a></li>
-                <li><a href=" ">KONTAK</a></li>
-                <li><a href=" ">TENTANG</a></li>
-                <li><a href="{{ url('berandaLogin')}}">KELUAR</a></li>
-
-              </ul>
             </nav>
           </div>
 
@@ -123,63 +112,63 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td> Alasan Keuangan </td>
+              <td align="left"> Alasan Keuangan </td>
               <td><input type="radio" name="Tanggapan1a" value="1"></td>
               <td><input type="radio" name="Tanggapan1a" value="2"></td>
               <td><input type="radio" name="Tanggapan1a" value="3"></td>
               <td><input type="radio" name="Tanggapan1a" value="4"></td>
               <td><input type="radio" name="Tanggapan1a" value="5"></td>              
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Tidak lulus ujian</td>
+              <td align="left"> Tidak lulus ujian</td>
               <td><input type="radio" name="Tanggapan1b" value="1"></td>
               <td><input type="radio" name="Tanggapan1b" value="2"></td>
               <td><input type="radio" name="Tanggapan1b" value="3"></td>
               <td><input type="radio" name="Tanggapan1b" value="4"></td>
               <td><input type="radio" name="Tanggapan1b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td> Penulisan skripsi lambat </td>
+              <td align="left"> Penulisan skripsi lambat </td>
               <td><input type="radio" name="Tanggapan1c" value="1"></td>
               <td><input type="radio" name="Tanggapan1c" value="2"></td>
               <td><input type="radio" name="Tanggapan1c" value="3"></td>
               <td><input type="radio" name="Tanggapan1c" value="4"></td>
               <td><input type="radio" name="Tanggapan1c" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Alasan keluarga</td>
+              <td align="left"> Alasan keluarga</td>
               <td><input type="radio" name="Tanggapan1d" value="1"></td>
               <td><input type="radio" name="Tanggapan1d" value="2"></td>
               <td><input type="radio" name="Tanggapan1d" value="3"></td>
               <td><input type="radio" name="Tanggapan1d" value="4"></td>
               <td><input type="radio" name="Tanggapan1d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td> Kesehatan </td>              
+              <td align="left"> Kesehatan </td>              
               <td><input type="radio" name="Tanggapan1e" value="1"></td>
               <td><input type="radio" name="Tanggapan1e" value="2"></td>
               <td><input type="radio" name="Tanggapan1e" value="3"></td>
               <td><input type="radio" name="Tanggapan1e" value="4"></td>
               <td><input type="radio" name="Tanggapan1e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Kegiatan Mahasiswa / Ekstrakulikuler</td>        
+              <td align="left"> Kegiatan Mahasiswa / Ekstrakulikuler</td>        
               <td><input type="radio" name="Tanggapan1f" value="1"></td>
               <td><input type="radio" name="Tanggapan1f" value="2"></td>
               <td><input type="radio" name="Tanggapan1f" value="3"></td>
               <td><input type="radio" name="Tanggapan1f" value="4"></td>
               <td><input type="radio" name="Tanggapan1f" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 7 </td>
-              <td> Hobby </td>              
+              <td align="left"> Hobby </td>              
               <td><input type="radio" name="Tanggapan1g" value="1"></td>
               <td><input type="radio" name="Tanggapan1g" value="2"></td>
               <td><input type="radio" name="Tanggapan1g" value="3"></td>
@@ -211,54 +200,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td> Perkuliahan </td>
+              <td align="left">> Perkuliahan </td>
               <td><input type="radio" name="Tanggapan2a" value="1"></td>
               <td><input type="radio" name="Tanggapan2a" value="2"></td>
               <td><input type="radio" name="Tanggapan2a" value="3"></td>
               <td><input type="radio" name="Tanggapan2a" value="4"></td>
               <td><input type="radio" name="Tanggapan2a" value="5"></td>              
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Demonstrasi(Peragaan) </td>
+              <td align="left"> Demonstrasi(Peragaan) </td>
               <td><input type="radio" name="Tanggapan2b" value="1"></td>
               <td><input type="radio" name="Tanggapan2b" value="2"></td>
               <td><input type="radio" name="Tanggapan2b" value="3"></td>
               <td><input type="radio" name="Tanggapan2b" value="4"></td>
               <td><input type="radio" name="Tanggapan2b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td> Partisipasi dalam proyek riset </td>
+              <td align="left"> Partisipasi dalam proyek riset </td>
               <td><input type="radio" name="Tanggapan2c" value="1"></td>
               <td><input type="radio" name="Tanggapan2c" value="2"></td>
               <td><input type="radio" name="Tanggapan2c " value="3"></td>
               <td><input type="radio" name="Tanggapan2c " value="4"></td>
               <td><input type="radio" name="Tanggapan2c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Magang</td>
+              <td align="left"> Magang</td>
               <td><input type="radio" name="Tanggapan2d " value="1"></td>
               <td><input type="radio" name="Tanggapan2d " value="2"></td>
               <td><input type="radio" name="Tanggapan2d " value="3"></td>
               <td><input type="radio" name="Tanggapan2d " value="4"></td>
               <td><input type="radio" name="Tanggapan2d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td> Praktikum Kerja Lapangan </td>             
+              <td align="left"> Praktikum Kerja Lapangan </td>             
               <td><input type="radio" name="Tanggapan2e" value="1"></td>
               <td><input type="radio" name="Tanggapan2e" value="2"></td>
               <td><input type="radio" name="Tanggapan2e" value="3"></td>
               <td><input type="radio" name="Tanggapan2e" value="4"></td>
               <td><input type="radio" name="Tanggapan2e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Diskusi</td> 
+              <td align="left"> Diskusi</td> 
               <td><input type="radio" name="Tanggapan2f" value="1"></td>
               <td><input type="radio" name="Tanggapan2f" value="2"></td>
               <td><input type="radio" name="Tanggapan2f" value="3"></td>
@@ -334,54 +323,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td> Kesempatan untuk berinteraksi dengan dosen-dosen di luar jadwal kuliah</td>
+              <td align="left"> Kesempatan untuk berinteraksi dengan dosen-dosen di luar jadwal kuliah</td>
               <td><input type="radio" name="Tanggapan7a" value="1"></td>
               <td><input type="radio" name="Tanggapan7a" value="2"></td>
               <td><input type="radio" name="Tanggapan7a" value="3"></td>
               <td><input type="radio" name="Tanggapan7a" value="4"></td>
               <td><input type="radio" name="Tanggapan7a" value="5"></td>              
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Pembimbingan akademik</td>
+              <td align="left"> Pembimbingan akademik</td>
               <td><input type="radio" name="Tanggapan7b" value="1"></td>
               <td><input type="radio" name="Tanggapan7b" value="2"></td>
               <td><input type="radio" name="Tanggapan7b" value="3"></td>
               <td><input type="radio" name="Tanggapan7b" value="4"></td>
               <td><input type="radio" name="Tanggapan7b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td> Kesempatan berpartisipasi dalam proyek riset </td>
+              <td align="left"> Kesempatan berpartisipasi dalam proyek riset </td>
               <td><input type="radio" name="Tanggapan7c" value="1"></td>
               <td><input type="radio" name="Tanggapan7c" value="2"></td>
               <td><input type="radio" name="Tanggapan7c " value="3"></td>
               <td><input type="radio" name="Tanggapan7c " value="4"></td>
               <td><input type="radio" name="Tanggapan7c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Kondisi umum belajar mengajar</td>
+              <td align="left"> Kondisi umum belajar mengajar</td>
               <td><input type="radio" name="Tanggapan7d " value="1"></td>
               <td><input type="radio" name="Tanggapan7d " value="2"></td>
               <td><input type="radio" name="Tanggapan7d " value="3"></td>
               <td><input type="radio" name="Tanggapan7d " value="4"></td>
               <td><input type="radio" name="Tanggapan7d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td> Kondisi Umum Belajar Mengajar</td>             
+              <td align="left"> Kondisi Umum Belajar Mengajar</td>             
               <td><input type="radio" name="Tanggapan7e" value="1"></td>
               <td><input type="radio" name="Tanggapan7e" value="2"></td>
               <td><input type="radio" name="Tanggapan7e" value="3"></td>
               <td><input type="radio" name="Tanggapan7e" value="4"></td>
               <td><input type="radio" name="Tanggapan7e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Kesempatan untuk memasuki dan menjadi bagian dari jejaring ilmuan profesional</td> 
+              <td align="left"> Kesempatan untuk memasuki dan menjadi bagian dari jejaring ilmuan profesional</td> 
               <td><input type="radio" name="Tanggapan7f" value="1"></td>
               <td><input type="radio" name="Tanggapan7f" value="2"></td>
               <td><input type="radio" name="Tanggapan7f" value="3"></td>
@@ -413,54 +402,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td> Perpustakaan</td>
+              <td align="left"> Perpustakaan</td>
               <td><input type="radio" name="Tanggapan8a" value="1"></td>
               <td><input type="radio" name="Tanggapan8a" value="2"></td>
               <td><input type="radio" name="Tanggapan8a" value="3"></td>
               <td><input type="radio" name="Tanggapan8a" value="4"></td>
               <td><input type="radio" name="Tanggapan8a" value="5"></td>              
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Teknologi informasi dan komunikasi</td>
+              <td align="left"> Teknologi informasi dan komunikasi</td>
               <td><input type="radio" name="Tanggapan8b" value="1"></td>
               <td><input type="radio" name="Tanggapan8b" value="2"></td>
               <td><input type="radio" name="Tanggapan8b" value="3"></td>
               <td><input type="radio" name="Tanggapan8b" value="4"></td>
               <td><input type="radio" name="Tanggapan8b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td>Modul belajar</td>
+              <td align="left">Modul belajar</td>
               <td><input type="radio" name="Tanggapan8c" value="1"></td>
               <td><input type="radio" name="Tanggapan8c" value="2"></td>
               <td><input type="radio" name="Tanggapan8c " value="3"></td>
               <td><input type="radio" name="Tanggapan8c " value="4"></td>
               <td><input type="radio" name="Tanggapan8c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Ruang belajar</td>
+              <td align="left"> Ruang belajar</td>
               <td><input type="radio" name="Tanggapan8d " value="1"></td>
               <td><input type="radio" name="Tanggapan8d " value="2"></td>
               <td><input type="radio" name="Tanggapan8d " value="3"></td>
               <td><input type="radio" name="Tanggapan8d " value="4"></td>
               <td><input type="radio" name="Tanggapan8d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td>Laboratorium  </td>             
+              <td align="left">Laboratorium  </td>             
               <td><input type="radio" name="Tanggapan8e" value="1"></td>
               <td><input type="radio" name="Tanggapan8e" value="2"></td>
               <td><input type="radio" name="Tanggapan8e" value="3"></td>
               <td><input type="radio" name="Tanggapan8e" value="4"></td>
               <td><input type="radio" name="Tanggapan8e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Variasi mata kuliah yang ditawarkan</td> 
+              <td align="left"> Variasi mata kuliah yang ditawarkan</td> 
               <td><input type="radio" name="Tanggapan8f" value="1"></td>
               <td><input type="radio" name="Tanggapan8f" value="2"></td>
               <td><input type="radio" name="Tanggapan8f" value="3"></td>
@@ -468,9 +457,9 @@
               <td><input type="radio" name="Tanggapan8f" value="5"></td>
             </tr>
     
-            <tr>
+            <tr align="center">
               <td> 7 </td>
-              <td> Akomodasi</td> 
+              <td align="left"> Akomodasi</td> 
               <td><input type="radio" name="Tanggapan8g" value="1"></td>
               <td><input type="radio" name="Tanggapan8g" value="2"></td>
               <td><input type="radio" name="Tanggapan8g" value="3"></td>
@@ -478,9 +467,9 @@
               <td><input type="radio" name="Tanggapan8g" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 7 </td>
-              <td> Kantin</td>  
+              <td align="left"> Kantin</td>  
               <td><input type="radio" name="Tanggapan8h" value="1"></td>
               <td><input type="radio" name="Tanggapan8h" value="2"></td>
               <td><input type="radio" name="Tanggapan8h" value="3"></td>
@@ -488,9 +477,9 @@
               <td><input type="radio" name="Tanggapan8h" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 8 </td>
-              <td> Pusat kegiatan mahasiswa dan fasilitasnya, ruang rekreasi</td> 
+              <td align="left"> Pusat kegiatan mahasiswa dan fasilitasnya, ruang rekreasi</td> 
               <td><input type="radio" name="Tanggapan8i" value="1"></td>
               <td><input type="radio" name="Tanggapan8i" value="2"></td>
               <td><input type="radio" name="Tanggapan8i" value="3"></td>
@@ -529,54 +518,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td> Program diskusi</td>
+              <td align="left"> Program diskusi</td>
               <td><input type="radio" name="Tanggapan11a" value="1"></td>
               <td><input type="radio" name="Tanggapan11a" value="2"></td>
               <td><input type="radio" name="Tanggapan11a" value="3"></td>
               <td><input type="radio" name="Tanggapan11a" value="4"></td>
               <td><input type="radio" name="Tanggapan11a" value="5"></td>             
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Spesialisasi</td>
+              <td align="left"> Spesialisasi</td>
               <td><input type="radio" name="Tanggapan11b" value="1"></td>
               <td><input type="radio" name="Tanggapan11b" value="2"></td>
               <td><input type="radio" name="Tanggapan11b" value="3"></td>
               <td><input type="radio" name="Tanggapan11b" value="4"></td>
               <td><input type="radio" name="Tanggapan11b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td>IPK</td>
+              <td align="left">IPK</td>
               <td><input type="radio" name="Tanggapan11c" value="1"></td>
               <td><input type="radio" name="Tanggapan11c" value="2"></td>
               <td><input type="radio" name="Tanggapan11c " value="3"></td>
               <td><input type="radio" name="Tanggapan11c " value="4"></td>
               <td><input type="radio" name="Tanggapan11c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Pengalaman kerja selama kuliah</td>
+              <td align="left"> Pengalaman kerja selama kuliah</td>
               <td><input type="radio" name="Tanggapan11d " value="1"></td>
               <td><input type="radio" name="Tanggapan11d " value="2"></td>
               <td><input type="radio" name="Tanggapan11d " value="3"></td>
               <td><input type="radio" name="Tanggapan11d " value="4"></td>
               <td><input type="radio" name="Tanggapan11d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td>Reputasi dari perguruan tinggi </td>              
+              <td align="left">Reputasi dari perguruan tinggi </td>              
               <td><input type="radio" name="Tanggapan11e" value="1"></td>
               <td><input type="radio" name="Tanggapan11e" value="2"></td>
               <td><input type="radio" name="Tanggapan11e" value="3"></td>
               <td><input type="radio" name="Tanggapan11e" value="4"></td>
               <td><input type="radio" name="Tanggapan11e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Pengalaman ke luar negeri(untuk bekerja atau magang)</td>  
+              <td align="left"> Pengalaman ke luar negeri(untuk bekerja atau magang)</td>  
               <td><input type="radio" name="Tanggapan11f" value="1"></td>
               <td><input type="radio" name="Tanggapan11f" value="2"></td>
               <td><input type="radio" name="Tanggapan11f" value="3"></td>
@@ -584,9 +573,9 @@
               <td><input type="radio" name="Tanggapan11f" value="5"></td>
             </tr>
     
-            <tr>
+            <tr align="center">
               <td> 7 </td>
-              <td> Kemampuan bahasa Inggris</td>  
+              <td align="left"> Kemampuan bahasa Inggris</td>  
               <td><input type="radio" name="Tanggapan11g" value="1"></td>
               <td><input type="radio" name="Tanggapan11g" value="2"></td>
               <td><input type="radio" name="Tanggapan11g" value="3"></td>
@@ -594,9 +583,9 @@
               <td><input type="radio" name="Tanggapan11g" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 8 </td>
-              <td> Pengoperasian Komputer</td>  
+              <td align="left"> Pengoperasian Komputer</td>  
               <td><input type="radio" name="Tanggapan11h" value="1"></td>
               <td><input type="radio" name="Tanggapan11h" value="2"></td>
               <td><input type="radio" name="Tanggapan11h" value="3"></td>
@@ -604,9 +593,9 @@
               <td><input type="radio" name="Tanggapan11h" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 9 </td>
-              <td> Pengalaman berorganisasi</td>  
+              <td align="left"> Pengalaman berorganisasi</td>  
               <td><input type="radio" name="Tanggapan11i" value="1"></td>
               <td><input type="radio" name="Tanggapan11i" value="2"></td>
               <td><input type="radio" name="Tanggapan11i" value="3"></td>
@@ -614,18 +603,18 @@
               <td><input type="radio" name="Tanggapan11i" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 10 </td>
-              <td> Rekomendasi dari pihak ketiga</td> 
+              <td align="left"> Rekomendasi dari pihak ketiga</td> 
               <td><input type="radio" name="Tanggapan11j" value="1"></td>
               <td><input type="radio" name="Tanggapan11j" value="2"></td>
               <td><input type="radio" name="Tanggapan11j" value="3"></td>
               <td><input type="radio" name="Tanggapan11j" value="4"></td>
               <td><input type="radio" name="Tanggapan11j" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 11 </td>
-              <td> Kepribadian dan keterampilan interpersonal</td>  
+              <td align="left"> Kepribadian dan keterampilan interpersonal</td>  
               <td><input type="radio" name="Tanggapan11k" value="1"></td>
               <td><input type="radio" name="Tanggapan11k" value="2"></td>
               <td><input type="radio" name="Tanggapan11k" value="3"></td>
@@ -790,54 +779,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td>Pengetahuan di bidang atau disiplin ilmu anda</td>
+              <td align="left">Pengetahuan di bidang atau disiplin ilmu anda</td>
               <td><input type="radio" name="Tanggapan24a" value="1"></td>
               <td><input type="radio" name="Tanggapan24a" value="2"></td>
               <td><input type="radio" name="Tanggapan24a" value="3"></td>
               <td><input type="radio" name="Tanggapan24a" value="4"></td>
               <td><input type="radio" name="Tanggapan24a" value="5"></td>             
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Pengetahuan di luar bidang atau disiplin ilmu anda</td>
+              <td align="left"> Pengetahuan di luar bidang atau disiplin ilmu anda</td>
               <td><input type="radio" name="Tanggapan24b" value="1"></td>
               <td><input type="radio" name="Tanggapan24b" value="2"></td>
               <td><input type="radio" name="Tanggapan24b" value="3"></td>
               <td><input type="radio" name="Tanggapan24b" value="4"></td>
               <td><input type="radio" name="Tanggapan24b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td>Pengetahuan umum</td>
+              <td align="left">Pengetahuan umum</td>
               <td><input type="radio" name="Tanggapan24c" value="1"></td>
               <td><input type="radio" name="Tanggapan24c" value="2"></td>
               <td><input type="radio" name="Tanggapan24c " value="3"></td>
               <td><input type="radio" name="Tanggapan24c " value="4"></td>
               <td><input type="radio" name="Tanggapan24c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Ketrampilan internet</td>
+              <td align="left"> Ketrampilan internet</td>
               <td><input type="radio" name="Tanggapan24d " value="1"></td>
               <td><input type="radio" name="Tanggapan24d " value="2"></td>
               <td><input type="radio" name="Tanggapan24d " value="3"></td>
               <td><input type="radio" name="Tanggapan24d " value="4"></td>
               <td><input type="radio" name="Tanggapan24d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td>Ketrampilan komputer </td>              
+              <td align="left">Ketrampilan komputer </td>              
               <td><input type="radio" name="Tanggapan24e" value="1"></td>
               <td><input type="radio" name="Tanggapan24e" value="2"></td>
               <td><input type="radio" name="Tanggapan24e" value="3"></td>
               <td><input type="radio" name="Tanggapan24e" value="4"></td>
               <td><input type="radio" name="Tanggapan24e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Berpikir kritis</td> 
+              <td align="left"> Berpikir kritis</td> 
               <td><input type="radio" name="Tanggapan24f" value="1"></td>
               <td><input type="radio" name="Tanggapan24f" value="2"></td>
               <td><input type="radio" name="Tanggapan24f" value="3"></td>
@@ -845,9 +834,9 @@
               <td><input type="radio" name="Tanggapan24f" value="5"></td>
             </tr>
     
-            <tr>
+            <tr align="center">
               <td> 7 </td>
-              <td> Ketrampilan riset</td> 
+              <td align="left"> Ketrampilan riset</td> 
               <td><input type="radio" name="Tanggapan24g" value="1"></td>
               <td><input type="radio" name="Tanggapan24g" value="2"></td>
               <td><input type="radio" name="Tanggapan24g" value="3"></td>
@@ -855,9 +844,9 @@
               <td><input type="radio" name="Tanggapan24g" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 8 </td>
-              <td> Kemampuan belajar</td> 
+              <td align="left"> Kemampuan belajar</td> 
               <td><input type="radio" name="Tanggapan24h" value="1"></td>
               <td><input type="radio" name="Tanggapan24h" value="2"></td>
               <td><input type="radio" name="Tanggapan24h" value="3"></td>
@@ -865,9 +854,9 @@
               <td><input type="radio" name="Tanggapan24h" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 9 </td>
-              <td> Kemampuan berkomunikasi</td> 
+              <td align="left"> Kemampuan berkomunikasi</td> 
               <td><input type="radio" name="Tanggapan24i" value="1"></td>
               <td><input type="radio" name="Tanggapan24i" value="2"></td>
               <td><input type="radio" name="Tanggapan24i" value="3"></td>
@@ -875,9 +864,9 @@
               <td><input type="radio" name="Tanggapan24i" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 10 </td>
-              <td> Bekerja di bawah tekanan</td>  
+              <td align="left"> Bekerja di bawah tekanan</td>  
               <td><input type="radio" name="Tanggapan24j" value="1"></td>
               <td><input type="radio" name="Tanggapan24j" value="2"></td>
               <td><input type="radio" name="Tanggapan24j" value="3"></td>
@@ -885,18 +874,18 @@
               <td><input type="radio" name="Tanggapan24j" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 11 </td>
-              <td> Manajemen waktu</td> 
+              <td align="left"> Manajemen waktu</td> 
               <td><input type="radio" name="Tanggapan24k" value="1"></td>
               <td><input type="radio" name="Tanggapan24k" value="2"></td>
               <td><input type="radio" name="Tanggapan24k" value="3"></td>
               <td><input type="radio" name="Tanggapan24k" value="4"></td>
               <td><input type="radio" name="Tanggapan24k" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 12 </td>
-              <td> Bekerja secara mandiri</td>  
+              <td align="left"> Bekerja secara mandiri</td>  
               <td><input type="radio" name="Tanggapan24l" value="1"></td>
               <td><input type="radio" name="Tanggapan24l" value="2"></td>
               <td><input type="radio" name="Tanggapan24l" value="3"></td>
@@ -904,9 +893,9 @@
               <td><input type="radio" name="Tanggapan24l" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 13 </td>
-              <td> Bekejra dalam tim/bekerjasama dengan orang lain</td> 
+              <td align="left"> Bekejra dalam tim/bekerjasama dengan orang lain</td> 
               <td><input type="radio" name="Tanggapan24m" value="1"></td>
               <td><input type="radio" name="Tanggapan24m" value="2"></td>
               <td><input type="radio" name="Tanggapan24m" value="3"></td>
@@ -914,9 +903,9 @@
               <td><input type="radio" name="Tanggapan24m" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 14 </td>
-              <td>Kemampuan dalam memecahkan masalah</td> 
+              <td align="left">Kemampuan dalam memecahkan masalah</td> 
               <td><input type="radio" name="Tanggapan24n" value="1"></td>
               <td><input type="radio" name="Tanggapan24n" value="2"></td>
               <td><input type="radio" name="Tanggapan24n" value="3"></td>
@@ -924,28 +913,28 @@
               <td><input type="radio" name="Tanggapan24n" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 15 </td>
-              <td>Negosiasi</td>  
+              <td align="left">Negosiasi</td>  
               <td><input type="radio" name="Tanggapan24o" value="1"></td>
               <td><input type="radio" name="Tanggapan24o" value="2"></td>
               <td><input type="radio" name="Tanggapan24o" value="3"></td>
               <td><input type="radio" name="Tanggapan24o" value="4"></td>
               <td><input type="radio" name="Tanggapan24o" value="5"></td>
             </tr>
-            <tr>
-            <tr>
+            
+            <tr align="center">
               <td> 16 </td>
-              <td> Kemampuan analisis</td>  
+              <td align="left"> Kemampuan analisis</td>  
               <td><input type="radio" name="Tanggapan24p" value="1"></td>
               <td><input type="radio" name="Tanggapan24p" value="2"></td>
               <td><input type="radio" name="Tanggapan24p" value="3"></td>
               <td><input type="radio" name="Tanggapan24p" value="4"></td>
               <td><input type="radio" name="Tanggapan24p" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 17 </td>
-              <td> Toleransi </td>  
+              <td align="left"> Toleransi </td>  
               <td><input type="radio" name="Tanggapan24q" value="1"></td>
               <td><input type="radio" name="Tanggapan24q" value="2"></td>
               <td><input type="radio" name="Tanggapan24q" value="3"></td>
@@ -953,9 +942,9 @@
               <td><input type="radio" name="Tanggapan24q" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 18 </td>
-              <td> Kemampuan adaptasi</td>  
+              <td align="left" align="left"> Kemampuan adaptasi</td>  
               <td><input type="radio" name="Tanggapan24r" value="1"></td>
               <td><input type="radio" name="Tanggapan24r" value="2"></td>
               <td><input type="radio" name="Tanggapan24r" value="3"></td>
@@ -963,18 +952,18 @@
               <td><input type="radio" name="Tanggapan24r" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 19 </td>
-              <td> Loyalitas dan integritas</td>  
+              <td align="left"> Loyalitas dan integritas</td>  
               <td><input type="radio" name="Tanggapan24s" value="1"></td>
               <td><input type="radio" name="Tanggapan24s" value="2"></td>
               <td><input type="radio" name="Tanggapan24s" value="3"></td>
               <td><input type="radio" name="Tanggapan24s" value="4"></td>
               <td><input type="radio" name="Tanggapan24s" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 20 </td>
-              <td> Bekerja dengan orang yang berbeda budaya maupun latar belakang</td>  
+              <td align="left"> Bekerja dengan orang yang berbeda budaya maupun latar belakang</td>  
               <td><input type="radio" name="Tanggapan24t" value="1"></td>
               <td><input type="radio" name="Tanggapan24t" value="2"></td>
               <td><input type="radio" name="Tanggapan24t" value="3"></td>
@@ -982,9 +971,9 @@
               <td><input type="radio" name="Tanggapan24t" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 21 </td>
-              <td> Kepemimpinan</td>  
+              <td align="left"> Kepemimpinan</td>  
               <td><input type="radio" name="Tanggapan24u" value="1"></td>
               <td><input type="radio" name="Tanggapan24u" value="2"></td>
               <td><input type="radio" name="Tanggapan24u" value="3"></td>
@@ -992,27 +981,27 @@
               <td><input type="radio" name="Tanggapan24u" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 22 </td>
-              <td>Kemampuan dalam memegang tanggung jawab</td>  
+              <td align="left">Kemampuan dalam memegang tanggung jawab</td>  
               <td><input type="radio" name="Tanggapan24v" value="1"></td>
               <td><input type="radio" name="Tanggapan24v" value="2"></td>
               <td><input type="radio" name="Tanggapan24v" value="3"></td>
               <td><input type="radio" name="Tanggapan24v" value="4"></td>
               <td><input type="radio" name="Tanggapan24v" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 23 </td>
-              <td> Inisiatif</td> 
+              <td align="left"> Inisiatif</td> 
               <td><input type="radio" name="Tanggapan24w" value="1"></td>
               <td><input type="radio" name="Tanggapan24w"  value="2"></td>
               <td><input type="radio" name="Tanggapan24w" value="3"></td>
               <td><input type="radio" name="Tanggapan24w" value="4"></td>
               <td><input type="radio" name="Tanggapan24w" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 24 </td>
-              <td> Manajemen proyek/program</td>  
+              <td align="left" align="left"> Manajemen proyek/program</td>  
               <td><input type="radio" name="Tanggapan24x" value="1"></td>
               <td><input type="radio" name="Tanggapan24x" value="2"></td>
               <td><input type="radio" name="Tanggapan24x" value="3"></td>
@@ -1020,9 +1009,9 @@
               <td><input type="radio" name="Tanggapan24x" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 25 </td>
-              <td> Kemampuan untuk memresentasikan ide/produk/laporan</td>  
+              <td align="left"> Kemampuan untuk memresentasikan ide/produk/laporan</td>  
               <td><input type="radio" name="Tanggapan24y" value="1"></td>
               <td><input type="radio" name="Tanggapan24y" value="2"></td>
               <td><input type="radio" name="Tanggapan24y" value="3"></td>
@@ -1030,18 +1019,18 @@
               <td><input type="radio" name="Tanggapan24y" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 26 </td>
-              <td>Kemampuan dalam menuis laporan, memo, dan dokumen</td>  
+              <td align="left">Kemampuan dalam menuis laporan, memo, dan dokumen</td>  
               <td><input type="radio" name="Tanggapan24z" value="1"></td>
               <td><input type="radio" name="Tanggapan24z" value="2"></td>
               <td><input type="radio" name="Tanggapan24z" value="3"></td>
               <td><input type="radio" name="Tanggapan24z" value="4"></td>
               <td><input type="radio" name="Tanggapan24z" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 27 </td>
-              <td> Kemampuan untuk terus belajar sepanjang hayat</td> 
+              <td align="left"> Kemampuan untuk terus belajar sepanjang hayat</td> 
               <td><input type="radio" name="Tanggapan24aa" value="1"></td>
               <td><input type="radio" name="Tanggapan24aa"  value="2"></td>
               <td><input type="radio" name="Tanggapan24aa" value="3"></td>
@@ -1072,54 +1061,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td>Pengetahuan di bidang atau disiplin ilmu anda</td>
+              <td align="left">Pengetahuan di bidang atau disiplin ilmu anda</td>
               <td><input type="radio" name="Tanggapan25a" value="1"></td>
               <td><input type="radio" name="Tanggapan25a" value="2"></td>
               <td><input type="radio" name="Tanggapan25a" value="3"></td>
               <td><input type="radio" name="Tanggapan25a" value="4"></td>
               <td><input type="radio" name="Tanggapan25a" value="5"></td>             
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Pengetahuan di luar bidang atau disiplin ilmu anda</td>
+              <td align="left"> Pengetahuan di luar bidang atau disiplin ilmu anda</td>
               <td><input type="radio" name="Tanggapan25b" value="1"></td>
               <td><input type="radio" name="Tanggapan25b" value="2"></td>
               <td><input type="radio" name="Tanggapan25b" value="3"></td>
               <td><input type="radio" name="Tanggapan25b" value="4"></td>
               <td><input type="radio" name="Tanggapan25b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td>Pengetahuan umum</td>
+              <td align="left">Pengetahuan umum</td>
               <td><input type="radio" name="Tanggapan25c" value="1"></td>
               <td><input type="radio" name="Tanggapan25c" value="2"></td>
               <td><input type="radio" name="Tanggapan25c " value="3"></td>
               <td><input type="radio" name="Tanggapan25c " value="4"></td>
               <td><input type="radio" name="Tanggapan25c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Ketrampilan internet</td>
+              <td align="left"> Ketrampilan internet</td>
               <td><input type="radio" name="Tanggapan25d " value="1"></td>
               <td><input type="radio" name="Tanggapan25d " value="2"></td>
               <td><input type="radio" name="Tanggapan25d " value="3"></td>
               <td><input type="radio" name="Tanggapan25d " value="4"></td>
               <td><input type="radio" name="Tanggapan25d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td>Ketrampilan komputer </td>              
+              <td align="left">Ketrampilan komputer </td>              
               <td><input type="radio" name="Tanggapan25e" value="1"></td>
               <td><input type="radio" name="Tanggapan25e" value="2"></td>
               <td><input type="radio" name="Tanggapan25e" value="3"></td>
               <td><input type="radio" name="Tanggapan25e" value="4"></td>
               <td><input type="radio" name="Tanggapan25e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Berpikir kritis</td> 
+              <td align="left"> Berpikir kritis</td> 
               <td><input type="radio" name="Tanggapan25f" value="1"></td>
               <td><input type="radio" name="Tanggapan25f" value="2"></td>
               <td><input type="radio" name="Tanggapan25f" value="3"></td>
@@ -1127,9 +1116,9 @@
               <td><input type="radio" name="Tanggapan25f" value="5"></td>
             </tr>
     
-            <tr>
+            <tr align="center">
               <td> 7 </td>
-              <td> Ketrampilan riset</td> 
+              <td align="left"> Ketrampilan riset</td> 
               <td><input type="radio" name="Tanggapan25g" value="1"></td>
               <td><input type="radio" name="Tanggapan25g" value="2"></td>
               <td><input type="radio" name="Tanggapan25g" value="3"></td>
@@ -1137,9 +1126,9 @@
               <td><input type="radio" name="Tanggapan25g" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 8 </td>
-              <td> Kemampuan belajar</td> 
+              <td align="left"> Kemampuan belajar</td> 
               <td><input type="radio" name="Tanggapan25h" value="1"></td>
               <td><input type="radio" name="Tanggapan25h" value="2"></td>
               <td><input type="radio" name="Tanggapan25h" value="3"></td>
@@ -1147,9 +1136,9 @@
               <td><input type="radio" name="Tanggapan25h" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 9 </td>
-              <td> Kemampuan berkomunikasi</td> 
+              <td align="left"> Kemampuan berkomunikasi</td> 
               <td><input type="radio" name="Tanggapan25i" value="1"></td>
               <td><input type="radio" name="Tanggapan25i" value="2"></td>
               <td><input type="radio" name="Tanggapan25i" value="3"></td>
@@ -1157,9 +1146,9 @@
               <td><input type="radio" name="Tanggapan25i" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 10 </td>
-              <td> Bekerja di bawah tekanan</td>  
+              <td align="left"> Bekerja di bawah tekanan</td>  
               <td><input type="radio" name="Tanggapan25j" value="1"></td>
               <td><input type="radio" name="Tanggapan25j" value="2"></td>
               <td><input type="radio" name="Tanggapan25j" value="3"></td>
@@ -1167,18 +1156,18 @@
               <td><input type="radio" name="Tanggapan25j" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 11 </td>
-              <td> Manajemen waktu</td> 
+              <td align="left"> Manajemen waktu</td> 
               <td><input type="radio" name="Tanggapan25k" value="1"></td>
               <td><input type="radio" name="Tanggapan25k" value="2"></td>
               <td><input type="radio" name="Tanggapan25k" value="3"></td>
               <td><input type="radio" name="Tanggapan25k" value="4"></td>
               <td><input type="radio" name="Tanggapan25k" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 12 </td>
-              <td> Bekerja secara mandiri</td>  
+              <td align="left"> Bekerja secara mandiri</td>  
               <td><input type="radio" name="Tanggapan25l" value="1"></td>
               <td><input type="radio" name="Tanggapan25l" value="2"></td>
               <td><input type="radio" name="Tanggapan25l" value="3"></td>
@@ -1186,9 +1175,9 @@
               <td><input type="radio" name="Tanggapan25l" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 13 </td>
-              <td> Bekejra dalam tim/bekerjasama dengan orang lain</td> 
+              <td align="left"> Bekejra dalam tim/bekerjasama dengan orang lain</td> 
               <td><input type="radio" name="Tanggapan25m" value="1"></td>
               <td><input type="radio" name="Tanggapan25m" value="2"></td>
               <td><input type="radio" name="Tanggapan25m" value="3"></td>
@@ -1196,9 +1185,9 @@
               <td><input type="radio" name="Tanggapan25m" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 14 </td>
-              <td>Kemampuan dalam memecahkan masalah</td> 
+              <td align="left">Kemampuan dalam memecahkan masalah</td> 
               <td><input type="radio" name="Tanggapan25n" value="1"></td>
               <td><input type="radio" name="Tanggapan25n" value="2"></td>
               <td><input type="radio" name="Tanggapan25n" value="3"></td>
@@ -1206,9 +1195,9 @@
               <td><input type="radio" name="Tanggapan25n" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 15 </td>
-              <td>Negosiasi</td>  
+              <td align="left">Negosiasi</td>  
               <td><input type="radio" name="Tanggapan25o" value="1"></td>
               <td><input type="radio" name="Tanggapan25o" value="2"></td>
               <td><input type="radio" name="Tanggapan25o" value="3"></td>
@@ -1216,18 +1205,18 @@
               <td><input type="radio" name="Tanggapan25o" value="5"></td>
             </tr>
             <tr>
-            <tr>
+            <tr align="center">
               <td> 16 </td>
-              <td> Kemampuan analisis</td>  
+              <td align="left"> Kemampuan analisis</td>  
               <td><input type="radio" name="Tanggapan25p" value="1"></td>
               <td><input type="radio" name="Tanggapan25p" value="2"></td>
               <td><input type="radio" name="Tanggapan25p" value="3"></td>
               <td><input type="radio" name="Tanggapan25p" value="4"></td>
               <td><input type="radio" name="Tanggapan25p" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 17 </td>
-              <td> Toleransi </td>  
+              <td align="left"> Toleransi </td>  
               <td><input type="radio" name="Tanggapan25q" value="1"></td>
               <td><input type="radio" name="Tanggapan25q" value="2"></td>
               <td><input type="radio" name="Tanggapan25q" value="3"></td>
@@ -1235,9 +1224,9 @@
               <td><input type="radio" name="Tanggapan25q" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 18 </td>
-              <td> Kemampuan adaptasi</td>  
+              <td align="left"> Kemampuan adaptasi</td>  
               <td><input type="radio" name="Tanggapan25r" value="1"></td>
               <td><input type="radio" name="Tanggapan25r" value="2"></td>
               <td><input type="radio" name="Tanggapan25r" value="3"></td>
@@ -1245,18 +1234,18 @@
               <td><input type="radio" name="Tanggapan25r" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 19 </td>
-              <td> Loyalitas dan integritas</td>  
+              <td align="left"> Loyalitas dan integritas</td>  
               <td><input type="radio" name="Tanggapan25s" value="1"></td>
               <td><input type="radio" name="Tanggapan25s" value="2"></td>
               <td><input type="radio" name="Tanggapan25s" value="3"></td>
               <td><input type="radio" name="Tanggapan25s" value="4"></td>
               <td><input type="radio" name="Tanggapan25s" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 20 </td>
-              <td> Bekerja dengan orang yang berbeda budaya maupun latar belakang</td>  
+              <td align="left"> Bekerja dengan orang yang berbeda budaya maupun latar belakang</td>  
               <td><input type="radio" name="Tanggapan25t" value="1"></td>
               <td><input type="radio" name="Tanggapan25t" value="2"></td>
               <td><input type="radio" name="Tanggapan25t" value="3"></td>
@@ -1264,9 +1253,9 @@
               <td><input type="radio" name="Tanggapan25t" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 21 </td>
-              <td> Kepemimpinan</td>  
+              <td align="left"> Kepemimpinan</td>  
               <td><input type="radio" name="Tanggapan25u" value="1"></td>
               <td><input type="radio" name="Tanggapan25u" value="2"></td>
               <td><input type="radio" name="Tanggapan25u" value="3"></td>
@@ -1274,27 +1263,27 @@
               <td><input type="radio" name="Tanggapan25u" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 22 </td>
-              <td>Kemampuan dalam memegang tanggung jawab</td>  
+              <td align="left">Kemampuan dalam memegang tanggung jawab</td>  
               <td><input type="radio" name="Tanggapan25v" value="1"></td>
               <td><input type="radio" name="Tanggapan25v" value="2"></td>
               <td><input type="radio" name="Tanggapan25v" value="3"></td>
               <td><input type="radio" name="Tanggapan25v" value="4"></td>
               <td><input type="radio" name="Tanggapan25v" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 23 </td>
-              <td> Inisiatif</td> 
+              <td align="left"> Inisiatif</td> 
               <td><input type="radio" name="Tanggapan25w" value="1"></td>
               <td><input type="radio" name="Tanggapan25w"  value="2"></td>
               <td><input type="radio" name="Tanggapan25w" value="3"></td>
               <td><input type="radio" name="Tanggapan25w" value="4"></td>
               <td><input type="radio" name="Tanggapan25w" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 24 </td>
-              <td> Manajemen proyek/program</td>  
+              <td align="left"> Manajemen proyek/program</td>  
               <td><input type="radio" name="Tanggapan25x" value="1"></td>
               <td><input type="radio" name="Tanggapan25x" value="2"></td>
               <td><input type="radio" name="Tanggapan25x" value="3"></td>
@@ -1302,9 +1291,9 @@
               <td><input type="radio" name="Tanggapan25x" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 25 </td>
-              <td> Kemampuan untuk memresentasikan ide/produk/laporan</td>  
+              <td align="left"> Kemampuan untuk memresentasikan ide/produk/laporan</td>  
               <td><input type="radio" name="Tanggapan25y" value="1"></td>
               <td><input type="radio" name="Tanggapan25y" value="2"></td>
               <td><input type="radio" name="Tanggapan25y" value="3"></td>
@@ -1312,18 +1301,18 @@
               <td><input type="radio" name="Tanggapan25y" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 26 </td>
-              <td>Kemampuan dalam menuis laporan, memo, dan dokumen</td>  
+              <td align="left">Kemampuan dalam menuis laporan, memo, dan dokumen</td>  
               <td><input type="radio" name="Tanggapan25z" value="1"></td>
               <td><input type="radio" name="Tanggapan25z" value="2"></td>
               <td><input type="radio" name="Tanggapan25z" value="3"></td>
               <td><input type="radio" name="Tanggapan25z" value="4"></td>
               <td><input type="radio" name="Tanggapan25z" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 27 </td>
-              <td> Kemampuan untuk terus belajar sepanjang hayat</td> 
+              <td align="left"> Kemampuan untuk terus belajar sepanjang hayat</td> 
               <td><input type="radio" name="Tanggapan25aa" value="1"></td>
               <td><input type="radio" name="Tanggapan25aa"  value="2"></td>
               <td><input type="radio" name="Tanggapan25aa" value="3"></td>
@@ -1356,54 +1345,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td>Pengetahuan di bidang atau disiplin ilmu anda</td>
+              <td align="left">Pengetahuan di bidang atau disiplin ilmu anda</td>
               <td><input type="radio" name="Tanggapan26a" value="1"></td>
               <td><input type="radio" name="Tanggapan26a" value="2"></td>
               <td><input type="radio" name="Tanggapan26a" value="3"></td>
               <td><input type="radio" name="Tanggapan26a" value="4"></td>
               <td><input type="radio" name="Tanggapan26a" value="5"></td>             
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Pengetahuan di luar bidang atau disiplin ilmu anda</td>
+              <td align="left"> Pengetahuan di luar bidang atau disiplin ilmu anda</td>
               <td><input type="radio" name="Tanggapan26b" value="1"></td>
               <td><input type="radio" name="Tanggapan26b" value="2"></td>
               <td><input type="radio" name="Tanggapan26b" value="3"></td>
               <td><input type="radio" name="Tanggapan26b" value="4"></td>
               <td><input type="radio" name="Tanggapan26b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td>Pengetahuan umum</td>
+              <td align="left">Pengetahuan umum</td>
               <td><input type="radio" name="Tanggapan26c" value="1"></td>
               <td><input type="radio" name="Tanggapan26c" value="2"></td>
               <td><input type="radio" name="Tanggapan26c " value="3"></td>
               <td><input type="radio" name="Tanggapan26c " value="4"></td>
               <td><input type="radio" name="Tanggapan26c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Ketrampilan internet</td>
+              <td align="left"> Ketrampilan internet</td>
               <td><input type="radio" name="Tanggapan26d " value="1"></td>
               <td><input type="radio" name="Tanggapan26d " value="2"></td>
               <td><input type="radio" name="Tanggapan26d " value="3"></td>
               <td><input type="radio" name="Tanggapan26d " value="4"></td>
               <td><input type="radio" name="Tanggapan26d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td>Ketrampilan komputer </td>              
+              <td align="left">Ketrampilan komputer </td>              
               <td><input type="radio" name="Tanggapan26e" value="1"></td>
               <td><input type="radio" name="Tanggapan26e" value="2"></td>
               <td><input type="radio" name="Tanggapan26e" value="3"></td>
               <td><input type="radio" name="Tanggapan26e" value="4"></td>
               <td><input type="radio" name="Tanggapan26e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Berpikir kritis</td> 
+              <td align="left"> Berpikir kritis</td> 
               <td><input type="radio" name="Tanggapan26f" value="1"></td>
               <td><input type="radio" name="Tanggapan26f" value="2"></td>
               <td><input type="radio" name="Tanggapan26f" value="3"></td>
@@ -1411,9 +1400,9 @@
               <td><input type="radio" name="Tanggapan26f" value="5"></td>
             </tr>
     
-            <tr>
+            <tr align="center">
               <td> 7 </td>
-              <td> Ketrampilan riset</td> 
+              <td align="left"> Ketrampilan riset</td> 
               <td><input type="radio" name="Tanggapan26g" value="1"></td>
               <td><input type="radio" name="Tanggapan26g" value="2"></td>
               <td><input type="radio" name="Tanggapan26g" value="3"></td>
@@ -1421,9 +1410,9 @@
               <td><input type="radio" name="Tanggapan26g" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 8 </td>
-              <td> Kemampuan belajar</td> 
+              <td align="left"> Kemampuan belajar</td> 
               <td><input type="radio" name="Tanggapan26h" value="1"></td>
               <td><input type="radio" name="Tanggapan26h" value="2"></td>
               <td><input type="radio" name="Tanggapan26h" value="3"></td>
@@ -1431,9 +1420,9 @@
               <td><input type="radio" name="Tanggapan26h" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 9 </td>
-              <td> Kemampuan berkomunikasi</td> 
+              <td align="left"> Kemampuan berkomunikasi</td> 
               <td><input type="radio" name="Tanggapan26i" value="1"></td>
               <td><input type="radio" name="Tanggapan26i" value="2"></td>
               <td><input type="radio" name="Tanggapan26i" value="3"></td>
@@ -1441,9 +1430,9 @@
               <td><input type="radio" name="Tanggapan26i" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 10 </td>
-              <td> Bekerja di bawah tekanan</td>  
+              <td align="left"> Bekerja di bawah tekanan</td>  
               <td><input type="radio" name="Tanggapan26j" value="1"></td>
               <td><input type="radio" name="Tanggapan26j" value="2"></td>
               <td><input type="radio" name="Tanggapan26j" value="3"></td>
@@ -1451,18 +1440,18 @@
               <td><input type="radio" name="Tanggapan26j" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 11 </td>
-              <td> Manajemen waktu</td> 
+              <td align="left"> Manajemen waktu</td> 
               <td><input type="radio" name="Tanggapan26k" value="1"></td>
               <td><input type="radio" name="Tanggapan26k" value="2"></td>
               <td><input type="radio" name="Tanggapan26k" value="3"></td>
               <td><input type="radio" name="Tanggapan26k" value="4"></td>
               <td><input type="radio" name="Tanggapan26k" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 12 </td>
-              <td> Bekerja secara mandiri</td>  
+              <td align="left"> Bekerja secara mandiri</td>  
               <td><input type="radio" name="Tanggapan26l" value="1"></td>
               <td><input type="radio" name="Tanggapan26l" value="2"></td>
               <td><input type="radio" name="Tanggapan26l" value="3"></td>
@@ -1470,9 +1459,9 @@
               <td><input type="radio" name="Tanggapan26l" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 13 </td>
-              <td> Bekejra dalam tim/bekerjasama dengan orang lain</td> 
+              <td align="left"> Bekejra dalam tim/bekerjasama dengan orang lain</td> 
               <td><input type="radio" name="Tanggapan26m" value="1"></td>
               <td><input type="radio" name="Tanggapan26m" value="2"></td>
               <td><input type="radio" name="Tanggapan26m" value="3"></td>
@@ -1480,9 +1469,9 @@
               <td><input type="radio" name="Tanggapan26m" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 14 </td>
-              <td>Kemampuan dalam memecahkan masalah</td> 
+              <td align="left">Kemampuan dalam memecahkan masalah</td> 
               <td><input type="radio" name="Tanggapan26n" value="1"></td>
               <td><input type="radio" name="Tanggapan26n" value="2"></td>
               <td><input type="radio" name="Tanggapan26n" value="3"></td>
@@ -1490,28 +1479,28 @@
               <td><input type="radio" name="Tanggapan26n" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 15 </td>
-              <td>Negosiasi</td>  
+              <td align="left">Negosiasi</td>  
               <td><input type="radio" name="Tanggapan26o" value="1"></td>
               <td><input type="radio" name="Tanggapan26o" value="2"></td>
               <td><input type="radio" name="Tanggapan26o" value="3"></td>
               <td><input type="radio" name="Tanggapan26o" value="4"></td>
               <td><input type="radio" name="Tanggapan26o" value="5"></td>
             </tr>
-            <tr>
-            <tr>
+            
+            <tr align="center">
               <td> 16 </td>
-              <td> Kemampuan analisis</td>  
+              <td align="left"> Kemampuan analisis</td>  
               <td><input type="radio" name="Tanggapan26p" value="1"></td>
               <td><input type="radio" name="Tanggapan26p" value="2"></td>
               <td><input type="radio" name="Tanggapan26p" value="3"></td>
               <td><input type="radio" name="Tanggapan26p" value="4"></td>
               <td><input type="radio" name="Tanggapan26p" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 17 </td>
-              <td> Toleransi </td>  
+              <td align="left"> Toleransi </td>  
               <td><input type="radio" name="Tanggapan26q" value="1"></td>
               <td><input type="radio" name="Tanggapan26q" value="2"></td>
               <td><input type="radio" name="Tanggapan26q" value="3"></td>
@@ -1519,9 +1508,9 @@
               <td><input type="radio" name="Tanggapan26q" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 18 </td>
-              <td> Kemampuan adaptasi</td>  
+              <td align="left"> Kemampuan adaptasi</td>  
               <td><input type="radio" name="Tanggapan26r" value="1"></td>
               <td><input type="radio" name="Tanggapan26r" value="2"></td>
               <td><input type="radio" name="Tanggapan26r" value="3"></td>
@@ -1529,18 +1518,18 @@
               <td><input type="radio" name="Tanggapan26r" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 19 </td>
-              <td> Loyalitas dan integritas</td>  
+              <td align="left"> Loyalitas dan integritas</td>  
               <td><input type="radio" name="Tanggapan26s" value="1"></td>
               <td><input type="radio" name="Tanggapan26s" value="2"></td>
               <td><input type="radio" name="Tanggapan26s" value="3"></td>
               <td><input type="radio" name="Tanggapan26s" value="4"></td>
               <td><input type="radio" name="Tanggapan26s" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 20 </td>
-              <td> Bekerja dengan orang yang berbeda budaya maupun latar belakang</td>  
+              <td align="left"> Bekerja dengan orang yang berbeda budaya maupun latar belakang</td>  
               <td><input type="radio" name="Tanggapan26t" value="1"></td>
               <td><input type="radio" name="Tanggapan26t" value="2"></td>
               <td><input type="radio" name="Tanggapan26t" value="3"></td>
@@ -1548,9 +1537,9 @@
               <td><input type="radio" name="Tanggapan26t" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 21 </td>
-              <td> Kepemimpinan</td>  
+              <td align="left"> Kepemimpinan</td>  
               <td><input type="radio" name="Tanggapan26u" value="1"></td>
               <td><input type="radio" name="Tanggapan26u" value="2"></td>
               <td><input type="radio" name="Tanggapan26u" value="3"></td>
@@ -1558,27 +1547,27 @@
               <td><input type="radio" name="Tanggapan26u" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 22 </td>
-              <td>Kemampuan dalam memegang tanggung jawab</td>  
+              <td align="left">Kemampuan dalam memegang tanggung jawab</td>  
               <td><input type="radio" name="Tanggapan26v" value="1"></td>
               <td><input type="radio" name="Tanggapan26v" value="2"></td>
               <td><input type="radio" name="Tanggapan26v" value="3"></td>
               <td><input type="radio" name="Tanggapan26v" value="4"></td>
               <td><input type="radio" name="Tanggapan26v" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 23 </td>
-              <td> Inisiatif</td> 
+              <td align="left"> Inisiatif</td> 
               <td><input type="radio" name="Tanggapan26w" value="1"></td>
               <td><input type="radio" name="Tanggapan26w"  value="2"></td>
               <td><input type="radio" name="Tanggapan26w" value="3"></td>
               <td><input type="radio" name="Tanggapan26w" value="4"></td>
               <td><input type="radio" name="Tanggapan26w" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 24 </td>
-              <td> Manajemen proyek/program</td>  
+              <td align="left"> Manajemen proyek/program</td>  
               <td><input type="radio" name="Tanggapan26x" value="1"></td>
               <td><input type="radio" name="Tanggapan26x" value="2"></td>
               <td><input type="radio" name="Tanggapan26x" value="3"></td>
@@ -1586,9 +1575,9 @@
               <td><input type="radio" name="Tanggapan26x" value="5"></td>
             </tr>
             
-            <tr>
+            <tr align="center">
               <td> 25 </td>
-              <td> Kemampuan untuk memresentasikan ide/produk/laporan</td>  
+              <td align="left"> Kemampuan untuk memresentasikan ide/produk/laporan</td>  
               <td><input type="radio" name="Tanggapan26y" value="1"></td>
               <td><input type="radio" name="Tanggapan26y" value="2"></td>
               <td><input type="radio" name="Tanggapan26y" value="3"></td>
@@ -1596,18 +1585,18 @@
               <td><input type="radio" name="Tanggapan26y" value="5"></td>
             </tr>
 
-            <tr>
+            <tr align="center">
               <td> 26 </td>
-              <td>Kemampuan dalam menuis laporan, memo, dan dokumen</td>  
+              <td align="left">Kemampuan dalam menuis laporan, memo, dan dokumen</td>  
               <td><input type="radio" name="Tanggapan26z" value="1"></td>
               <td><input type="radio" name="Tanggapan26z" value="2"></td>
               <td><input type="radio" name="Tanggapan26z" value="3"></td>
               <td><input type="radio" name="Tanggapan26z" value="4"></td>
               <td><input type="radio" name="Tanggapan26z" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 27 </td>
-              <td> Kemampuan untuk terus belajar sepanjang hayat</td> 
+              <td align="left"> Kemampuan untuk terus belajar sepanjang hayat</td> 
               <td><input type="radio" name="Tanggapan26aa" value="1"></td>
               <td><input type="radio" name="Tanggapan26aa"  value="2"></td>
               <td><input type="radio" name="Tanggapan26aa" value="3"></td>
@@ -1670,54 +1659,54 @@
               <th> 4 </th>
               <th> 5 </th>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 1 </td>
-              <td>Memulai pekerjaan?</td>
+              <td align="left">Memulai pekerjaan?</td>
               <td><input type="radio" name="Tanggapan29a" value="1"></td>
               <td><input type="radio" name="Tanggapan29a" value="2"></td>
               <td><input type="radio" name="Tanggapan29a" value="3"></td>
               <td><input type="radio" name="Tanggapan29a" value="4"></td>
               <td><input type="radio" name="Tanggapan29a" value="5"></td>             
             </tr>
-            <tr>
+            <tr align="center">
               <td> 2 </td>
-              <td> Pembelajaran lanjut dalam pekerjaan?</td>
+              <td align="left"> Pembelajaran lanjut dalam pekerjaan?</td>
               <td><input type="radio" name="Tanggapan29b" value="1"></td>
               <td><input type="radio" name="Tanggapan29b" value="2"></td>
               <td><input type="radio" name="Tanggapan29b" value="3"></td>
               <td><input type="radio" name="Tanggapan29b" value="4"></td>
               <td><input type="radio" name="Tanggapan29b" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 3 </td>
-              <td>Kinerja dalam menjalankan tugas?</td>
+              <td align="left">Kinerja dalam menjalankan tugas?</td>
               <td><input type="radio" name="Tanggapan29c" value="1"></td>
               <td><input type="radio" name="Tanggapan29c" value="2"></td>
               <td><input type="radio" name="Tanggapan29c " value="3"></td>
               <td><input type="radio" name="Tanggapan29c " value="4"></td>
               <td><input type="radio" name="Tanggapan29c " value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 4 </td>
-              <td> Karir di masa depan?</td>
+              <td align="left"> Karir di masa depan?</td>
               <td><input type="radio" name="Tanggapan29d " value="1"></td>
               <td><input type="radio" name="Tanggapan29d " value="2"></td>
               <td><input type="radio" name="Tanggapan29d " value="3"></td>
               <td><input type="radio" name="Tanggapan29d " value="4"></td>
               <td><input type="radio" name="Tanggapan29d" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 5 </td>
-              <td>Pengembangan diri? </td>              
+              <td align="left">Pengembangan diri? </td>              
               <td><input type="radio" name="Tanggapan29e" value="1"></td>
               <td><input type="radio" name="Tanggapan29e" value="2"></td>
               <td><input type="radio" name="Tanggapan29e" value="3"></td>
               <td><input type="radio" name="Tanggapan29e" value="4"></td>
               <td><input type="radio" name="Tanggapan29e" value="5"></td>
             </tr>
-            <tr>
+            <tr align="center">
               <td> 6 </td>
-              <td> Meningkatkan ketrampilan kewirausahaan?</td> 
+              <td align="left"> Meningkatkan ketrampilan kewirausahaan?</td> 
               <td><input type="radio" name="Tanggapan29f" value="1"></td>
               <td><input type="radio" name="Tanggapan29f" value="2"></td>
               <td><input type="radio" name="Tanggapan29f" value="3"></td>
