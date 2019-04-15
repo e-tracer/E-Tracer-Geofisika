@@ -49,8 +49,6 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="{{ url('beranda')}}">BERANDA</a></li>
                 <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
-                <li><a href="blog.html">KONTAK</a></li>
-                <li><a href="contact.html">TENTANG</a></li>
               </ul>
             </nav>
           </div>

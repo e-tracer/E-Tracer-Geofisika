@@ -35,17 +35,27 @@ class EtracerController extends Controller
         $cekNim = DB::table('user')->select('id_user')->where('id_user','=',$nim)->value('id_user');
 
         $cekStatus = DB::table('user')->select('status')->where('id_user','=',$nim)->value('status');
+        $cek = DB::table('kuis_pendahuluan')->select('Id_user')->where('id_user','=',$nim)->value('id_user');
 
+        
         if($cekEmail != NULL and $cekNim != NULL){
 
             if($cekStatus == 'Alumni' or $cekStatus == 'alumni'){
-                return redirect('berandaLogin');
+
+                if($cek == NULL){
+                    return redirect('KuisionerPendahuluan');
+                } else {
+                    return redirect('berandaLogin');
+                }
+
             } else {
                 return redirect('admin');
             }
          } else {
             return redirect('loginGagal');
-        } 
+        }
+
+        //return $cek;
 
     }
 
@@ -67,7 +77,11 @@ class EtracerController extends Controller
 
     //masuk halaman kuisioner pendahuluan
     public function pendahuluan(Request $request){
-        return view('kuisionerAlumniPendahuluan');
+        $nim = $request->session()->get('nim');
+
+        $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+
+        return view('kuisionerAlumniPendahuluan',['pengguna' => $pengguna]);
     }
 
     //menyimpan data kuisioner pendahuluan
@@ -120,7 +134,7 @@ class EtracerController extends Controller
         $jenisPekerjaan = $request->input('jenispekerjaan');
         $sejak = $request->input('sejak');
         $noKantor = $request->input('nokantor');
-        $emaiKantor = $request->input('emailKantor');
+        $emailKantor = $request->input('emailKantor');
         $alamatKantor = $request->input('alamatkantor');
         $pengahsilan = $request->input('pengahsilan');
 
@@ -130,7 +144,7 @@ class EtracerController extends Controller
         $posisi2 = $request->input('posisi2');
         $jenisPekerjaan2 = $request->input('jenispekerjaan2');
         $sejak2 = $request->input('sejak2');
-        $noKantor = $request->input('nokantor2');
+        $noKantor2 = $request->input('nokantor2');
         $emailKantor2 = $request->input('emailKantor2');
         $alamatKantor2 = $request->input('alamatkantor2');
         $pengahsilan2 = $request->input('pengahsilan2');
@@ -140,6 +154,8 @@ class EtracerController extends Controller
         $bidangUsaha3 = $request->input('bidangUsaha3');
         $posisi3 = $request->input('posisi3');
         $alasanPindah = $request->input('alasanPindah');
+
+
 
         //menimpandata kuisioner pendahuluan
 
@@ -154,38 +170,35 @@ class EtracerController extends Controller
                 ['Id_kuisioner' => $id_pendahuluan,'Id_user' => $nim,'kerja_sebelum' => $pernahWir, 'brp_lama' => $brplamaWir,'alasana' => $alasanWir,'jenis' => $jenisWir, 'asal_modal' => $modalWir, 'omset' => $omsetWir]
             );
         } else if ($status == 'Bekerja dan wiraswasta'){
-
+            DB::table('kerja_wiraswasta')->insert(
+                ['id_kuisioner' => $id_pendahuluan, 'id_user' => $nim, 'jenis' => $jenisBWir, 'asal_modal' => $modalBwir, 'omset' => $omsetBwir]
+            );
         } else if ($status == 'Bekerja'){
-
+            DB::table('kerja')->insert(
+                ['id_kuisioner' => $id_pendahuluan, 'id_user' => $nim, 'kategori' => $kategoriBer, 'sesuai' => $sesuaiBer]
+            );
         } else if ($status == 'Tidak Bekerja atau Melanjutkan Kuliah') {
-            
+            DB::table('sekolah')->insert(
+                ['id_kuisioner' => $id_pendahuluan, 'id_user' => $nim, 'pernah_kerja' => $pernahSe, 'berapa_lama' => $brplamaSe, 'alasan_tdkkerja' => $alasanSe]
+            );
         }
 
+        //menyimpan data pekerjaan utama
 
+        DB::table('pekerjaan')->insert(
+            ['id_user' => $nim, 'nama_kantor' => $namaKantor, 'bidang_usaha' => $bidangUsaha, 'jabatan' => $posisi, 'jenis_pekerjaan' => $jenisPekerjaan, 'web_kantor' => $emailKantor, 'telp_kantor' =>$noKantor, 'alamat_kantor' => $alamatKantor, 'sejak' =>  $sejak,'penghasilan' => $penghasilan]
+        );
 
-/*
-        //menyimpan data status pekerjaan
-        if($pernahWir != NULL){
-            $cek=1;
+        //menyimpan data pekerjaan lain
+        DB::table('pekerjaanLain')->insert(
+            ['id_user' => $nim, 'nama_kantor' => $namaKantor2, 'bidang_usaha' => $bidangUsaha2, 'jabatan' => $posisi2, 'jenis_pekerjaan' => $jenisPekerjaan2, 'web_kantor' => $emailKantor2, 'telp_kantor' =>$noKantor2, 'alamat_kantor' => $alamatKantor2, 'sejak' =>  $sejak2,'penghasilan' => $penghasilan2]
+        );
 
-            DB::table('wiraswasta')->insert(
-                ['']
-            );
-
-        }else if($jenisBWir != NULL ){
-            $cek=2
-
-        } else if($kategoriBer != NULL){
-            $cek=3
-
-        } else if($pernahSe != NULL){
-            $cek=4;
-
-        } else {
-             return redirect('KuisionerUtama');
-        } */
-
-
+        //menyimpan data pekerjaan sebelumnya
+         DB::table('pekerjaanLSebel')->insert(
+            ['id_user' => $nim, 'nama_kantor' => $namaKantor3, 'bidang_usaha' => $bidangUsaha3, 'jabatan' => $posisi3, 'deskripsi' => $alasanPindah]
+        );
+        
         return redirect('KuisionerUtama');
     }
 

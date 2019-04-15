@@ -93,10 +93,7 @@
                 <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li><a href="{{ url('berita')}}">BERITA</a></li>
                 <li class="active"><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>             
-                <li><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
                 <li><a href="{{ url('profile')}}">PROFIL</a></li>   
-                <li><a href="blog.html">KONTAK</a></li>
-                <li><a href="contact.html">TENTANG</a></li>
                 <li><a href="{{ url('beranda')}}">KELUAR</a></li>
               </ul>
             </nav>

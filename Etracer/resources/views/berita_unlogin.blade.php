@@ -50,8 +50,6 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="{{ url('beranda')}}">BERANDA</a></li>
                 <li class="active"><a href="{{ url('beritaUnlogin')}}">BERITA</a></li>
-                <li><a href="">KONTAK</a></li>
-                <li><a href="">TENTANG</a></li>
               </ul>
             </nav>
           </div>
