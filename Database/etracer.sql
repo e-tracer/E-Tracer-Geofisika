@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 13, 2019 at 02:37 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Host: localhost
+-- Generation Time: Apr 15, 2019 at 09:11 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,8 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `etracer`
 --
-CREATE DATABASE etracer;
-USE etracer;
+
 -- --------------------------------------------------------
 
 --
@@ -28,9 +29,9 @@ USE etracer;
 --
 
 CREATE TABLE `kerja` (
-  `id_kuisioner` varchar(6) NOT NULL,
-  `id_kerja` varchar(6) NOT NULL,
-  `id_user` varchar(6) NOT NULL,
+  `id_kuisioner` int(11) NOT NULL,
+  `id_kerja` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `kategori` varchar(30) NOT NULL,
   `sesuai` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -42,9 +43,9 @@ CREATE TABLE `kerja` (
 --
 
 CREATE TABLE `kerja_wiraswasta` (
-  `id_kuisioner` varchar(6) NOT NULL,
-  `id_kerjawiraswasta` varchar(6) NOT NULL,
-  `id_user` varchar(100) NOT NULL,
+  `id_kuisioner` int(11) NOT NULL,
+  `id_kerjawiraswasta` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `jenis` varchar(30) NOT NULL,
   `asal_modal` varchar(30) NOT NULL,
   `omset` varchar(30) NOT NULL
@@ -57,7 +58,7 @@ CREATE TABLE `kerja_wiraswasta` (
 --
 
 CREATE TABLE `kuis_pendahuluan` (
-  `id_kuisioner` varchar(6) NOT NULL,
+  `id_kuisioner` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `jenis_kel` varchar(20) NOT NULL,
   `angkatan` varchar(10) NOT NULL,
@@ -71,8 +72,21 @@ CREATE TABLE `kuis_pendahuluan` (
   `telp` varchar(15) NOT NULL,
   `kerjaan_pos` varchar(100) NOT NULL,
   `kerjaan_neg` varchar(100) NOT NULL,
-  `gambaran_ideal` varchar(100) NOT NULL
+  `gambaran_ideal` varchar(100) NOT NULL,
+  `id_user` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -81,8 +95,8 @@ CREATE TABLE `kuis_pendahuluan` (
 --
 
 CREATE TABLE `pekerjaan` (
-  `id_data` varchar(6) NOT NULL,
-  `id_user` varchar(6) NOT NULL,
+  `id_data` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `nama_kantor` varchar(30) NOT NULL,
   `bidang_usaha` varchar(30) NOT NULL,
   `jabatan` varchar(30) NOT NULL,
@@ -100,8 +114,8 @@ CREATE TABLE `pekerjaan` (
 --
 
 CREATE TABLE `penilaian1` (
-  `id_penilaian` varchar(6) NOT NULL,
-  `id_user` varchar(6) NOT NULL,
+  `id_penilaian` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `pert1` varchar(30) NOT NULL,
   `pert2` varchar(30) NOT NULL,
   `pert3` varchar(30) NOT NULL,
@@ -120,8 +134,8 @@ CREATE TABLE `penilaian1` (
 --
 
 CREATE TABLE `penilaian2` (
-  `id_penilaian` varchar(6) NOT NULL,
-  `id_user` varchar(6) NOT NULL,
+  `id_penilaian` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `pert1` varchar(30) NOT NULL,
   `pert2` varchar(30) NOT NULL,
   `pert3` varchar(30) NOT NULL,
@@ -136,9 +150,9 @@ CREATE TABLE `penilaian2` (
 --
 
 CREATE TABLE `pertanyaan` (
-  `id_data` varchar(6) NOT NULL,
-  `id_bekerja` varchar(6) NOT NULL,
-  `id_user` varchar(6) NOT NULL
+  `id_data` int(11) NOT NULL,
+  `id_bekerja` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -148,9 +162,9 @@ CREATE TABLE `pertanyaan` (
 --
 
 CREATE TABLE `sekolah` (
-  `id_kuisioner` varchar(6) NOT NULL,
-  `id_sekolah` varchar(6) NOT NULL,
-  `id_user` varchar(6) NOT NULL,
+  `id_kuisioner` int(11) NOT NULL,
+  `id_sekolah` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `pernah_kerja` varchar(30) NOT NULL,
   `berapa_lama` varchar(30) NOT NULL,
   `alasan_tdkkerja` varchar(30) NOT NULL
@@ -163,11 +177,20 @@ CREATE TABLE `sekolah` (
 --
 
 CREATE TABLE `user` (
-  `id_user` varchar(6) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `status` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `tgl_lahir` varchar(10) NOT NULL
+  `tgl_lahir` varchar(10) NOT NULL,
+  `email` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `status`, `nama`, `tgl_lahir`, `email`) VALUES
+('12345678', 'admin', 'Bi Ijah', '30-02-1987', 'ijah@dosen.itera.ac.id'),
+('14116036', 'alumni', 'Nursano Gandung Praseto', '18-10-1997', 'nursano.14116036@student.itera.ac.id');
 
 -- --------------------------------------------------------
 
@@ -176,9 +199,9 @@ CREATE TABLE `user` (
 --
 
 CREATE TABLE `wiraswasta` (
-  `id_kuisioner` varchar(6) NOT NULL,
-  `id_wiraswasta` varchar(6) NOT NULL,
-  `id_user` varchar(100) NOT NULL,
+  `id_kuisioner` int(11) NOT NULL,
+  `id_wiraswasta` int(11) NOT NULL,
+  `id_user` varchar(8) NOT NULL,
   `kerja_sebelum` varchar(30) NOT NULL,
   `brp_lama` varchar(10) NOT NULL,
   `alasan` varchar(50) NOT NULL,
@@ -211,7 +234,14 @@ ALTER TABLE `kerja_wiraswasta`
 -- Indexes for table `kuis_pendahuluan`
 --
 ALTER TABLE `kuis_pendahuluan`
-  ADD PRIMARY KEY (`id_kuisioner`);
+  ADD PRIMARY KEY (`id_kuisioner`),
+  ADD KEY `id_user` (`id_user`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pekerjaan`
@@ -265,6 +295,64 @@ ALTER TABLE `wiraswasta`
   ADD KEY `id_user` (`id_user`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `kerja`
+--
+ALTER TABLE `kerja`
+  MODIFY `id_kerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `kerja_wiraswasta`
+--
+ALTER TABLE `kerja_wiraswasta`
+  MODIFY `id_kerjawiraswasta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `kuis_pendahuluan`
+--
+ALTER TABLE `kuis_pendahuluan`
+  MODIFY `id_kuisioner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `pekerjaan`
+--
+ALTER TABLE `pekerjaan`
+  MODIFY `id_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `penilaian1`
+--
+ALTER TABLE `penilaian1`
+  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `penilaian2`
+--
+ALTER TABLE `penilaian2`
+  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `pertanyaan`
+--
+ALTER TABLE `pertanyaan`
+  MODIFY `id_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `sekolah`
+--
+ALTER TABLE `sekolah`
+  MODIFY `id_sekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `wiraswasta`
+--
+ALTER TABLE `wiraswasta`
+  MODIFY `id_wiraswasta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -281,6 +369,12 @@ ALTER TABLE `kerja`
 ALTER TABLE `kerja_wiraswasta`
   ADD CONSTRAINT `kerja_wiraswasta_ibfk_2` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuis_pendahuluan` (`id_kuisioner`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kerja_wiraswasta_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `kuis_pendahuluan`
+--
+ALTER TABLE `kuis_pendahuluan`
+  ADD CONSTRAINT `kuis_pendahuluan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pekerjaan`
@@ -320,6 +414,7 @@ ALTER TABLE `sekolah`
 ALTER TABLE `wiraswasta`
   ADD CONSTRAINT `wiraswasta_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `wiraswasta_ibfk_2` FOREIGN KEY (`id_kuisioner`) REFERENCES `kuis_pendahuluan` (`id_kuisioner`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
