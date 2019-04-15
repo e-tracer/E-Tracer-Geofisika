@@ -11,14 +11,25 @@
 |
 */
 //beranda
+/*
 Route::get('/beranda', function () {
     return view('beranda');
-});
+}); */ 
+
+Route::get('/beranda','EtracerController@beranda');
+Route::get('/beranda/proses','EtracerController@proses');
+
+
+
+/*
+Route::get('/beranda','EtracerController@login'); */
+
+//beranda_login
+Route::get('/berandaLogin', 'EtracerController@login');
 
 //kuisioner pendahuluan
-Route::get('/KuisionerPendahuluan', function () {
-    return view('KuisionerAlumniPendahuluan');
-});
+Route::get('/KuisionerPendahuluan', 'EtracerController@pendahuluan');
+Route::get('/KuisionerPendahuluan/simpanPendahuluan','EtracerController@simpanPendahuluan');
 
 //kuisioner utama
 Route::get('/KuisionerUtama', function () {
@@ -45,10 +56,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-//beranda_login
-Route::get('/berandaLogin', function () {
-    return view('beranda_login');
-});
+
 
 //berita_unlogin
 Route::get('/beritaUnlogin', function () {
@@ -94,6 +102,17 @@ Route::get('/studyTable', function () {
 Route::get('/kuisionerPerusahaan', function () {
     return view('kuisionerPerusahaan');
 });
+
+//beranda_loginGagal
+Route::get('/loginGagal', function () {
+    return view('beranda_loginGagal');
+});
+
+
+
+
+
+
 
 
 
