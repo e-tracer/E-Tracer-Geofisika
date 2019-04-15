@@ -97,11 +97,11 @@
 
   <div class="container">
     <div class="wrap-contact100">
-      <form class="contact100-form validate-form">
+      <form action="{{ url('/KuisionerPendahuluan/simpanPendahuluan') }}"  method="get" class="contact100-form validate-form">
          <h2>Kuesioner Pendahuluan</h2> 
          <div class="wrap-input100 validate-input " data-validate="Please Type Your Name">
           <span class="label-input300">Nama Lengkap *</span>
-          <input class="input100" type="text" name="name" placeholder="Enter Your Name">
+          <input class="input100" type="text" name="nama" placeholder="Enter Your Name">
         </div>
         
       <div class="wrap-input100 ">
@@ -110,8 +110,8 @@
           <br>
 
             <tr>
-              <td><input type="radio" name="Gender" value="1"></td> Laki-laki<br>
-              <td><input type="radio" name="Gender" value="2"></td> Perempuan<br>
+              <td><input type="radio" name="jk" value="Laki-laki"></td> Laki-laki<br>
+              <td><input type="radio" name="jk" value="Perempuan"></td> Perempuan<br>
 
             </tr>
         </div>  
@@ -126,16 +126,14 @@
         <div class="wrap-input100 input100-select ">
           <span class="label-input300">Program Studi / Jurusan *</span>
           <div>
-            <select class="js-select2" name="Prodi">
-              <option>Teknik Geofisika</option>
-            </select>
+              <input value="Teknik Geofisika" name="prodi" />
             <div class="dropDownSelect2"></div>
           </div>
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input IPK anda">
           <span class="label-input300">IPK *</span>
-          <input class="input100" type="number" name="IPK" placeholder="IPK">
+          <input class="input100" type="number" name="ipk" placeholder="IPK">
         </div>
 
 
@@ -176,10 +174,10 @@
           <br>
 
             <tr>
-              <td><input type="radio" name="Status" value="1"></td> Wiraswasta<br>
-              <td><input type="radio" name="Status" value="2"></td> Bekerja dan wiraswasta<br>
-              <td><input type="radio" name="Status" value="3"></td> Bekerja<br>
-              <td><input type="radio" name="Status" value="4"></td> Tidak Bekerja/Melanjutkan Kuliah<br>
+              <td><input type="radio" name="Status" value="Wiraswasta"></td> Wiraswasta<br>
+              <td><input type="radio" name="Status" value="Bekerja dan wiraswasta"></td> Bekerja dan wiraswasta<br>
+              <td><input type="radio" name="Status" value="Bekerja"></td> Bekerja<br>
+              <td><input type="radio" name="Status" value="Tidak Bekerja atau Melanjutkan Kuliah"></td> Tidak Bekerja/Melanjutkan Kuliah<br>
 
 
             </tr>
@@ -188,84 +186,84 @@
       <h5>Wiraswasta</h5>
       <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Apakah anda pernah bekerja sebelumnya? *</span>
-          <input class="input100" type="text" name="pernah" placeholder="Answer Here....">
+          <input class="input100" type="text" name="pernahWir" placeholder="Answer Here....">
         </div>
         
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Berapa lama Anda bekerja setelah lulus kuliah (dengan kata lain pekerjaan pertama) sebelum memutuskan untuk wirausaha? *</span>
-          <input class="input100" type="text" name="brplama" placeholder="Answer Here....">
+          <input class="input100" type="text" name="brplamaWir" placeholder="Answer Here....">
         </div>
 
 
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Apa alasan anda memutuskan wirausaha? *</span>
-          <input class="input100" type="text" name="alasan" placeholder="Answer Here....">
+          <input class="input100" type="text" name="alasanWir" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Jenis usaha apa yang Anda kembangkan saat ini? *</span>
-          <input class="input100" type="text" name="jenis" placeholder="Answer Here....">
+          <input class="input100" type="text" name="jenisWir" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Berasal dari mana modal yang Anda gunakan untuk membangun usaha pertama kali? *</span>
-          <input class="input100" type="text" name="modal" placeholder="Answer Here....">
+          <input class="input100" type="text" name="modalWir" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Berapa omset rata-rata perbulan? *</span>
-          <input class="input100" type="text" name="omset" placeholder="Answer Here....">
+          <input class="input100" type="text" name="omsetWir" placeholder="Answer Here....">
         </div>
 
       <h5>Bekerja dan wiraswasta</h5>
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Jenis usaha apa yang Anda kembangkan saat ini? *</span>
-          <input class="input100" type="text" name="jenis" placeholder="Answer Here....">
+          <input class="input100" type="text" name="jenisBWir" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Berasal dari mana modal yang Anda gunakan untuk membangun usaha pertama kali? *</span>
-          <input class="input100" type="text" name="modal" placeholder="Answer Here....">
+          <input class="input100" type="text" name="modalBWir" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Berapa omset rata-rata perbulan? *</span>
-          <input class="input100" type="text" name="omset" placeholder="Answer Here....">
+          <input class="input100" type="text" name="omsetBWir" placeholder="Answer Here....">
         </div>
       <h5>Bekerja</h5>
         <div class="wrap-input100 validate-input" data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apakah kategori perusahaan tempat Anda bekerja?*</span>
-          <input class="input100" type="text" name="kategori" placeholder="Answer Here....">
+          <input class="input100" type="text" name="kategoriBer" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apakah pekerjaan Anda saat ini sesuai dengan bidang kuliah?* </span>
-          <input class="input100" type="text" name="sesuai" placeholder="Answer Here....">
+          <input class="input100" type="text" name="sesuaiBer" placeholder="Answer Here....">
         </div>
       <h5>Tidak bekerja/melanjutkan kuliah</h5>
          <div class="wrap-input100 validate-input " data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apakah Anda pernah bekerja sebelumnya?*</span>
-          <input class="input100" type="text" name="pernah" placeholder="Answer Here....">
+          <input class="input100" type="text" name="pernahSe" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Berapa lama Anda bekerja setela lulus kuliah(dengan kata lain pekerjaan pertama) sebelum memutuskan untuk berhenti atau tidak bekerja lagi?* </span>
-          <input class="input100" type="text" name="brplama" placeholder="Answer Here....">
+          <input class="input100" type="text" name="brplamaSe" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apa alasan Anda tidak bekerja (lagi)? * </span>
-          <input class="input100" type="text" name="alasan" placeholder="Answer Here....">
+          <input class="input100" type="text" name="alasanSe" placeholder="Answer Here....">
         </div>
       <h4>Pekerjaan Utama</h4>
         <div class="wrap-input100">
           <span class="label-input300">Nama Kantor</span>
-          <input class="input100" type="text" name="nama-kantor" placeholder="Answer Here....">
+          <input class="input100" type="text" name="namaKantor" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100">
           <span class="label-input300">Bidang Usaha </span>
-          <input class="input100" type="text" name="bidangusha" placeholder="Answer Here....">
+          <input class="input100" type="text" name="bidangUsaha" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100">
@@ -287,8 +285,8 @@
         </div>
 
         <div class="wrap-input100 ">
-          <span class="label-input300">Website Kantor  </span>
-          <input class="input100" type="text" name="webkantor" placeholder="Answer Here....">
+          <span class="label-input300">Email Kantor  </span>
+          <input class="input100" type="text" name="emailKantor" placeholder="Answer Here....">
         </div>
         <div class="wrap-input100 ">
           <span class="label-input300">Alamat Kantor  </span>
@@ -303,12 +301,12 @@
         <h4>Pekerjaan Lain (Jika ada, termasuk pekerjaan paruh waktu)</h4>         
         <div class="wrap-input100 ">
           <span class="label-input300">Nama Kantor </span>
-          <input class="input100" type="text" name="nama-kantor2" placeholder="Answer Here....">
+          <input class="input100" type="text" name="namaKantor2" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100  ">
           <span class="label-input300">Bidang Usaha  </span>
-          <input class="input100" type="text" name="bidangusha2" placeholder="Answer Here....">
+          <input class="input100" type="text" name="bidangUsaha2" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100  ">
@@ -330,8 +328,8 @@
         </div>
 
         <div class="wrap-input100 ">
-          <span class="label-input300">Website Kantor  </span>
-          <input class="input100" type="text" name="webkantor2" placeholder="Answer Here....">
+          <span class="label-input300">Email Kantor  </span>
+          <input class="input100" type="text" name="emailKantor2" placeholder="Answer Here....">
         </div>
         <div class="wrap-input100 ">
           <span class="label-input300">Alamat Kantor  </span>
@@ -347,12 +345,12 @@
         <h4>Pekerjaan Sebelumnya(Jika ada)</h4>
         <div class="wrap-input100 ">
           <span class="label-input300">Nama Kantor    </span>
-          <input class="input100" type="text" name="nama-kantor3" placeholder="Answer Here....">
+          <input class="input100" type="text" name="namaKantor3" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 ">
           <span class="label-input300">Bidang Usaha     </span>
-          <input class="input100" type="text" name="bidangusha3" placeholder="Answer Here....">
+          <input class="input100" type="text" name="bidangUsaha3" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 ">
@@ -362,32 +360,32 @@
 
         <div class="wrap-input100 ">
           <span class="label-input300">Deskripsikan alasan pindah kerja     </span>
-          <input class="input100" type="text" name="alasanpindah" placeholder="Answer Here....">
+          <input class="input100" type="text" name="alasanPindah" placeholder="Answer Here....">
         </div>
 
 
         <h4>Pekerjaan Ideal</h4>
         <div class="wrap-input100 ">
           <span class="label-input300">Komentar Positif anda terhadap pekerjaan Anda saat ini    </span>
-          <input class="input100" type="text" name="nama-kantor3" placeholder="Answer Here....">
+          <input class="input100" type="text" name="komenPositif" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 ">
           <span class="label-input300">Komentar Negatif Anda terhadap pekerjaan Anda saat ini     </span>
-          <input class="input100" type="text" name="bidangusha3" placeholder="Answer Here....">
+          <input class="input100" type="text" name="komenNegatif" placeholder="Answer Here....">
         </div>
 
         <div class="wrap-input100 ">
           <span class="label-input300">Gambaran pekerjaan ideal yang Anda inginkan     </span>
-          <input class="input100" type="text" name="posisi3" placeholder="Answer Here....">
+          <input class="input100" type="text" name="gambaran" placeholder="Answer Here....">
         </div>
        <div class="container-contact100-form-btn">
-          <a href="{{ url('KuisionerUtama')}}" class="btn btn-secondary btn-lg contact100-form" >
+          <button class="btn btn-secondary btn-lg contact100-form" >
             <span>
               Next
               <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
             </span>
-          </a>
+          </button>
         </div>
       </form>
       </div>

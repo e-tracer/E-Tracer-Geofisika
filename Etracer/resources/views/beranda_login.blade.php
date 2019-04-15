@@ -76,7 +76,9 @@
             <div class="testimonial">
               <figure class="mb-4">
                 <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-3">
-                <p class="text-white">Letfi Wahyu</p>
+                  @foreach ($pengguna as $p)
+                    <p class="text-white">{{ $p->nama }}</p>
+                  @endforeach
                 <div class="meta mb-4 text-white font-weight-light">Angkatan 2016 <span class="mx-2">&bullet;</span> Tahun lulus 2020</div>
                 </figure>
               </div>
