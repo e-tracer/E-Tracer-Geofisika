@@ -125,16 +125,27 @@
 
     <div class="site-section">
        <div class="container">
+        <form action="{{ url('buatBerita/simpanData') }}" method="POST" enctype="multipart/form-data">
+          {{ csrf_field() }}
+            <div class="form-group">
+                <label for="file_gambar">Upload Gambar</label><br>
+                <input type="file" id="file_gambar" name="file_gambar">
+            </div>
 
-        <form action="">
            <div class="form-group">
-             <input type="text" class="form-control" id="judul" aria-describedby="emailHelp" placeholder="Masukkan judul">
+             <input type="text" class="form-control" name="judul" id="judul" aria-describedby="emailHelp" placeholder="Masukkan judul" required="required">
           </div>
-          <textarea name="" id="" cols="20" rows="30"></textarea>
+
+          <textarea name="isi" id="isi" cols="20" rows="30"></textarea>
+          <button class="btn btn-secondary btn-lg contact100-form btn-block" >
+              <span>
+              Submit
+              <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+            </span>
+          </button>
         </form> 
-        <button type="button" class="btn btn-primary btn-lg btn-block">SIMPAN</button> 
-    </div>
       </div>
+    </div>
     <div class="row pt-5 mt-5 text-center ">
       <div class="col-md-12">
         <p>

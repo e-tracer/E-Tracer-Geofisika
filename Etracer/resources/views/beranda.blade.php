@@ -89,11 +89,11 @@
             <form action="{{ url('/beranda/proses') }} " method="get">
               <div class="form-group">
                 <label for="fq_name">EMAIL</label>
-                <input type="text" class="form-control btn-block" id="email" name="email" placeholder="Masukkan Email">
+                <input type="text" class="form-control btn-block" id="email" name="email" placeholder="Masukkan Email" required>
               </div>
               <div class="form-group mb-4">
                 <label for="fq_email">NIM</label>
-                <input type="password" class="form-control btn-block" id="nim" name="nim" placeholder="Masukkan NIM">
+                <input type="password" class="form-control btn-block" id="nim" name="nim" placeholder="Masukkan NIM" required>
               </div>
               <div class="form-group">
                 <button class="btn btn-primary btn-lg text-white py-2 px-4 btn-block" type="submit" aria-pressed="true">LOGIN</a>

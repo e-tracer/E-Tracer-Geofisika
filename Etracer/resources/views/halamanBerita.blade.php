@@ -45,7 +45,7 @@
         <div class="row align-items-center">
             <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
-              <img src="images/logo.png" alt="Image" class="img-fluid float-left " width="100" height="100">
+              <img src="{{ url('images/logo.png')}}" alt="Image" class="img-fluid float-left " width="100" height="100">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
@@ -68,14 +68,14 @@
 
     
 
-
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/BG1.png);" data-aos="fade" data-stellar-background-ratio="0.5">
+    @foreach($berita as $b)
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{url('uploadGambar')}}/{{$b->file_gambar}});" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-            <h1 class="text-white font-weight-light text-uppercase font-weight-bold">PPLK 2018</h1>
-            <div class="meta mb-4 text-white font-weight-light">Nursano Gandung P <span class="mx-2">&bullet;</span> Agustus 17, 2018<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
+            <h1 class="text-white font-weight-light text-uppercase font-weight-bold">{{ $b->judul }}</h1>
+            <div class="meta mb-4 text-white font-weight-light">{{ $b->nama }}<span class="mx-2">&bullet;</span> {{ $b->tanggal }}<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
 
 
           </div>
@@ -83,19 +83,14 @@
       </div>
     </div> 
 
+    
     <div class="container">
       <div class="site-section">
-        <p>
-              PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan. Selain itu, kamu juga akan mengetahui hal-hal menarik seputar ITERA dan menciptakan mahasiswa yang berbasis industri 4.0 dan memiliki karakter sehingga akan menumbuhkan rasa cinta terhadap kampus perjuangan, Institut Teknologi Sumatera!
-            </p>
-          <br>
-          <p>
-              PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan. Selain itu, kamu juga akan mengetahui hal-hal menarik seputar ITERA dan menciptakan mahasiswa yang berbasis industri 4.0 dan memiliki karakter sehingga akan menumbuhkan rasa cinta terhadap kampus perjuangan, Institut Teknologi Sumatera!
-            </p>
-
+        <?=str_replace('"', ' ', $b->isi)?>
       </div>
     </div>
-      </div>
+   </div>
+   @endforeach
     <div class="row pt-5 mt-5 text-center ">
       <div class="col-md-12">
         <p>
