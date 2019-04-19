@@ -190,4 +190,39 @@ class EtracerController extends Controller
     }
 
 
+    public function profile(Request $request){
+        return view('profile');
+    }
+
+   public function profile(Request $request){
+        $nama = $request->input('nama');
+        $jk = $request->input('jk');
+        $angkatan = $request->input('angkatan');
+        $prodi = $request->input('prodi');
+        $ipk = $request->input('ipk');
+        $Alamat = $request->input('alamat');
+        $Kota = $request->input('kota');
+        $Provinsi = $request->input('Provinsi');
+        $kodePos = $request->input('kodepos');
+        $nomorHp = $request->input('nomer');
+        $status = $request->input('Status');
+
+        DB::table('kuis_pendahuluan')->insert(
+          [ 'nama' => $nama, 
+            'jenis_kel' => $jk, 
+            'angkatan' => $angkatan, 
+            'prodi' => $prodi, 
+            'Ipk' => $ipk, 
+            'almt' => $Alamat, 
+            'almt_kota' => $Kota, 
+            'almt_prov' => $Provinsi, 
+            'almt_kodepos' => $kodePos, 
+            'telp' => $nomorHp,
+            'status' => $Status,
+            'Id_user' => $nim]  
+        )
+
+        return view('beranda');
+    }
+
 }
