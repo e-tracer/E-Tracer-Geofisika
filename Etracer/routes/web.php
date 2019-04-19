@@ -11,18 +11,8 @@
 |
 */
 //beranda
-/*
-Route::get('/beranda', function () {
-    return view('beranda');
-}); */ 
-
 Route::get('/beranda','EtracerController@beranda');
 Route::get('/beranda/proses','EtracerController@proses');
-
-
-
-/*
-Route::get('/beranda','EtracerController@login'); */
 
 //beranda_login
 Route::get('/berandaLogin', 'EtracerController@login');
@@ -32,24 +22,19 @@ Route::get('/KuisionerPendahuluan', 'EtracerController@pendahuluan');
 Route::get('/KuisionerPendahuluan/simpanPendahuluan','EtracerController@simpanPendahuluan');
 
 //kuisioner utama
-Route::get('/KuisionerUtama', function () {
-    return view('KuisionerAlumniUtama');
-});
+Route::get('/KuisionerUtama', 'EtracerController@utama');
+Route::get('/KuisionerUtama/simpanUtama', 'EtracerController@simpanUtama');
+
 
 //buat berita
-Route::get('/buatBerita', function () {
-    return view('buatBerita');
-});
+Route::get('/buatBerita', 'EtracerController@buatBerita');
+Route::post('/buatBerita/simpanData', 'EtracerController@simpanData');
 
 //berita
-Route::get('/berita', function () {
-    return view('berita');
-});
+Route::get('/berita', 'EtracerController@berita');
 
-//berita
-Route::get('/halamanBerita', function () {
-    return view('halamanBerita');
-});
+//halaman berita
+Route::get('/halamanBerita/{id}', 'EtracerController@halaman');
 
 //profile
 Route::get('/profile', function () {
@@ -59,9 +44,10 @@ Route::get('/profile', function () {
 
 
 //berita_unlogin
-Route::get('/beritaUnlogin', function () {
-    return view('berita_unlogin');
-});
+Route::get('/beritaUnlogin', 'EtracerController@beritaUnlogin');
+Route::get('/halamanBerita2/{id}', 'EtracerController@halaman2');
+
+
 
 //halamanBerita_unlogin
 Route::get('/halamanBeritaUnlogin', function () {

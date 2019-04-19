@@ -51,10 +51,7 @@
                 <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
                 <li><a href="{{ url('buatBerita')}}">BUAT BERITA</a></li>                
-                <li><a href="{{ url('KuisionerPendahuluan')}}">KUISIONER</a></li>
                 <li><a href="{{ url('profile')}}">PROFIL</a></li>
-                <li><a href="">KONTAK</a></li>
-                <li><a href="">TENTANG</a></li>
                 <li><a href="{{ url('beranda')}}">KELUAR</a></li>
               </ul>
             </nav>
@@ -88,66 +85,14 @@
     <div class="site-section">
       <div class="container">
         <div class="row">
+          @foreach($listBerita as $l)
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="h-entry">
-              <img src="images/BG1.png" alt="Image" height="200" width="350">
-              <h2 class="font-size-regular"><a href="{{ url('halamanBerita')}}">PPLK ITERA 2018</a></h2>
-              <div class="meta mb-4">Nursano Gandung P <span class="mx-2">&bullet;</span> Agustus 17, 2018<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
-              <p>PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan.</p>
-            </div> 
+              <img src="{{ url('uploadGambar')}}/{{$l->file_gambar}}" alt="Image" height="200" width="350">
+              <h2 class="font-size-regular"><a href="{{ url('halamanBerita')}}/{{ $l->id_berita}}">{{ $l->judul }}</a></h2>
+              <div class="meta mb-4">{{ $l->nama}} <span class="mx-2">&bullet;</span> {{ $l->tanggal }}<span class="mx-2">&bullet;</span></div></div> 
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/bi_taifa.jpg" alt="Image" height="200" width="350">
-              <h2 class="font-size-regular"><a href="#">Bi Taifah Mencari Suami</a></h2>
-              <div class="meta mb-4">Andre Bailing <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
-              <p>Pak Iqbal'Qu sayang, I Love You <i class="fas fa-heart" aria-hidden="true"></i></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/blog_1.jpg" alt="Image" height="200" width="350>
-              <h2 class="font-size-regular"><a href="#">Warehousing Your Packages</a></h2>
-              <div class="meta mb-4">Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-            </div> 
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/blog_2.jpg" alt="Image" height="200" width="350">
-              <h2 class="font-size-regular"><a href="#">Warehousing Your Packages</a></h2>
-              <div class="meta mb-4">Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/blog_1.jpg" alt="Image" height="200" width="350>
-              <h2 class="font-size-regular"><a href="#">Warehousing Your Packages</a></h2>
-              <div class="meta mb-4">Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-            </div> 
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/blog_2.jpg" alt="Image" height="200" width="350>
-              <h2 class="font-size-regular"><a href="#">Warehousing Your Packages</a></h2>
-              <div class="meta mb-4">Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">Berita</a></div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container text-center pb-5">
-      <div class="row">
-        <div class="col-12">
-          <p class="custom-pagination">
-            <span>1</span>
-            <a href="#">2</a>
-            <a href="#">3</a>
-          </p>
+          @endforeach
         </div>
       </div>
     </div>

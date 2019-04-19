@@ -48,8 +48,6 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="{{ url('beranda')}}">BERANDA</a></li>
                 <li><a href="{{ url('beritaUnlogin')}}">BERITA</a></li>
-                <li><a href="">KONTAK</a></li>
-                <li><a href="">TENTANG</a></li>
               </ul>
             </nav>
           </div>
@@ -87,17 +85,18 @@
         <div class="col-md-8 col-centered">
           <div class="free-quote bg-dark h-100">
             <h2 class="my-4 heading  text-center">SIGN IN</h2>
-            <form method="post">
+
+            <form action="{{ url('/beranda/proses') }} " method="get">
               <div class="form-group">
                 <label for="fq_name">EMAIL</label>
-                <input type="text" class="form-control btn-block" id="fq_name" name="fq_name" placeholder="Masukkan Email">
+                <input type="text" class="form-control btn-block" id="email" name="email" placeholder="Masukkan Email" required>
               </div>
               <div class="form-group mb-4">
                 <label for="fq_email">NIM</label>
-                <input type="text" class="form-control btn-block" id="fq_email" name="fq_email" placeholder="Masukkan NIM">
+                <input type="password" class="form-control btn-block" id="nim" name="nim" placeholder="Masukkan NIM" required>
               </div>
               <div class="form-group">
-                <a href="{{ url('berandaLogin')}}" class="btn btn-primary btn-lg text-white py-2 px-4 btn-block" role="button" aria-pressed="true">LOGIN</a>
+                <button class="btn btn-primary btn-lg text-white py-2 px-4 btn-block" type="submit" aria-pressed="true">LOGIN</a>
               </div>
             </form>
           </div>
