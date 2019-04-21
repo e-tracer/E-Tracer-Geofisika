@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
-<<<<<<< HEAD
--- Generation Time: Apr 19, 2019 at 10:43 AM
-=======
--- Generation Time: Apr 15, 2019 at 03:05 PM
->>>>>>> master
+-- Generation Time: Apr 21, 2019 at 02:47 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -46,9 +42,9 @@ CREATE TABLE `berits` (
 --
 
 INSERT INTO `berits` (`id_berita`, `id_user`, `judul`, `isi`, `file_gambar`, `tanggal`) VALUES
-(1, '14116036', 'Judul', '<p>diriku&nbsp;<strong><em>sakit hati</em></strong></p>', 'IMG_0396.JPG', '2019-04-19'),
 (6, '14116036', 'PPLK 2018', '<p style=\"text-align: justify;\">&nbsp;PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan. Selain itu, kamu juga akan mengetahui hal-hal menarik seputar ITERA dan menciptakan mahasiswa yang berbasis industri 4.0 dan memiliki karakter sehingga akan menumbuhkan rasa cinta terhadap kampus perjuangan, Institut Teknologi Sumatera!</p>\r\n<p style=\"text-align: justify;\">&nbsp;</p>\r\n<p style=\"text-align: justify;\">PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan. Selain itu, kamu juga akan mengetahui hal-hal menarik seputar ITERA dan menciptakan mahasiswa yang berbasis industri 4.0 dan memiliki karakter sehingga akan menumbuhkan rasa cinta terhadap kampus perjuangan, Institut Teknologi Sumatera!</p>', 'BG1.png', '2019-04-19'),
-(7, '14116036', 'Bi Taifah Mencari Pak Iqbal', '<p>cieee pak iqbal</p>', 'bi_taifa.jpg', '2019-04-19');
+(7, '14116036', 'Bi Taifah Mencari Pak Iqbal', '<p>cieee pak iqbal</p>', 'bi_taifa.jpg', '2019-04-19'),
+(8, '15151515', 'Dies Natalis 3', '<p>Hari peringatan des natalis 3</p>', 'Dies Natalis 3', '2021-04-19');
 
 -- --------------------------------------------------------
 
@@ -126,7 +122,7 @@ CREATE TABLE `kuisUtama` (
 --
 
 INSERT INTO `kuisUtama` (`id_kuisionerUtama`, `id_user`, `pertanyaan3`, `pertanyaan4`, `pertanyaan5`, `pertanyaan6`, `pertanyaan9`, `pertanyaan10`, `pertanyaan12`, `pertanyaan13`, `pertanyaan14`, `pertanyaan15`, `pertanyaan16`, `pertanyaan17`, `pertanyaan18`, `pertanyaan19`, `pertanyaan20`, `pertanyaan21`, `pertanyaan22`, `pertanyaan23`, `pertanyaan27`, `pertanyaan28`, `pertanyaan30`, `pertanyaan31`, `id_masaStudi`, `id_aspekPembelajaran`, `id_aspekBelajar`, `id_fasilitas`, `id_penting`, `id_kontribusi1`, `id_kontribusi2`, `id_kontribusi3`, `id_manfaat`) VALUES
-(1, '14116036', 'sendiri', 'sendiri', '1', '1', 'afwds', 'sdfs', 'asdf', 'sfsaf', 'sadfas', 'sdfas', 'sdfasf', 'asdfsa', '1', 'asdfsa', 'Instansi pemerintah (Termasuk BUMN)', 'asdfaf', 'asdfa', NULL, '2', '1', '1', 'Di pekerjaan ini saya memperoleh prospek karir yang baik', 1, NULL, 1, 1, 1, 1, 1, 1, 1);
+(1, '14116036', 'sendiri', 'sendiri', '1', '1', 'afwds', 'sdfs', 'asdf', 'sfsaf', 'sadfas', 'sdfas', 'sdfasf', 'asdfsa', '1', 'asdfsa', 'Instansi pemerintah (Termasuk BUMN)', 'asdfaf', 'asdfa', NULL, '2', '1', '1', 'Di pekerjaan ini saya memperoleh prospek karir yang baik', 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -150,15 +146,17 @@ CREATE TABLE `kuis_pendahuluan` (
   `kerjaan_pos` varchar(100) DEFAULT NULL,
   `kerjaan_neg` varchar(100) DEFAULT NULL,
   `gambaran_ideal` varchar(100) DEFAULT NULL,
-  `id_user` varchar(8) NOT NULL
+  `id_user` varchar(8) NOT NULL,
+  `status` varchar(55) DEFAULT NULL,
+  `tahun_keluar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kuis_pendahuluan`
 --
 
-INSERT INTO `kuis_pendahuluan` (`id_kuisioner`, `nama`, `jenis_kel`, `angkatan`, `prodi`, `ipk`, `tahun_masuk`, `almt`, `almt_kota`, `almt_prov`, `almt_kodepos`, `telp`, `kerjaan_pos`, `kerjaan_neg`, `gambaran_ideal`, `id_user`) VALUES
-(1, 'Nursano Gandung Praseto', 'Laki-laki', '2016', 'Teknik Geofisika', '3.00', '2016', 'Dimana mana hatiku senang', 'Tangerang', 'Banten', '123345', '083170609165', NULL, NULL, NULL, '14116036');
+INSERT INTO `kuis_pendahuluan` (`id_kuisioner`, `nama`, `jenis_kel`, `angkatan`, `prodi`, `ipk`, `tahun_masuk`, `almt`, `almt_kota`, `almt_prov`, `almt_kodepos`, `telp`, `kerjaan_pos`, `kerjaan_neg`, `gambaran_ideal`, `id_user`, `status`, `tahun_keluar`) VALUES
+(1, 'Michael Angelo', 'Laki-laki', '2016', 'Teknik Geofisika', '3.00', '2016', 'Dimana mana hatiku senang', 'Tangerang', 'Banten', '123345', '083170609165', NULL, NULL, NULL, '14116036', 'alumni', 2020);
 
 -- --------------------------------------------------------
 
@@ -255,17 +253,16 @@ INSERT INTO `pekerjaanSebel` (`id_data`, `id_user`, `nama_kantor`, `bidang_usaha
 --
 
 CREATE TABLE `penilaian1` (
-  `id_penilaian` int(11) NOT NULL,
-  `id_user` varchar(8) NOT NULL,
-  `pert1` varchar(30) NOT NULL,
-  `pert2` varchar(30) NOT NULL,
-  `pert3` varchar(30) NOT NULL,
-  `pert4` varchar(30) NOT NULL,
-  `pert5` varchar(30) NOT NULL,
-  `pert6` varchar(30) NOT NULL,
-  `pert7` varchar(30) NOT NULL,
-  `pert8` varchar(30) NOT NULL,
-  `pert9` varchar(30) NOT NULL
+  `id_penilaian1` int(11) NOT NULL,
+  `pert1` varchar(30) DEFAULT NULL,
+  `pert2` varchar(30) DEFAULT NULL,
+  `pert3` varchar(30) DEFAULT NULL,
+  `pert4` varchar(30) DEFAULT NULL,
+  `pert5` varchar(30) DEFAULT NULL,
+  `pert6` varchar(30) DEFAULT NULL,
+  `pert7` varchar(30) DEFAULT NULL,
+  `pert8` varchar(30) DEFAULT NULL,
+  `pert9` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -275,13 +272,16 @@ CREATE TABLE `penilaian1` (
 --
 
 CREATE TABLE `penilaian2` (
-  `id_penilaian` int(11) NOT NULL,
-  `id_user` varchar(8) NOT NULL,
-  `pert1` varchar(30) NOT NULL,
-  `pert2` varchar(30) NOT NULL,
-  `pert3` varchar(30) NOT NULL,
-  `pert4` varchar(30) NOT NULL,
-  `pert5` varchar(30) NOT NULL
+  `id_penilaian2` int(11) NOT NULL,
+  `pert1` text,
+  `pert2` text,
+  `pert3` text,
+  `pert4` text,
+  `pert5` text,
+  `objek` text,
+  `nama` varchar(55) DEFAULT NULL,
+  `bidang` varchar(55) DEFAULT NULL,
+  `posisi` varchar(55) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -597,17 +597,18 @@ CREATE TABLE `user` (
   `id_user` varchar(8) NOT NULL,
   `status` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `tgl_lahir` varchar(10) NOT NULL,
-  `email` varchar(55) NOT NULL
+  `email` varchar(55) NOT NULL,
+  `file_gambar2` varchar(55) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `status`, `nama`, `tgl_lahir`, `email`) VALUES
-('12345678', 'admin', 'Bi Ijah', '30-02-1987', 'ijah@dosen.itera.ac.id'),
-('14116036', 'alumni', 'Nursano Gandung Praseto', '18-10-1997', 'nursano.14116036@student.itera.ac.id');
+INSERT INTO `user` (`id_user`, `status`, `nama`, `email`, `file_gambar2`) VALUES
+('12121212', 'alumni', 'sartiah', 'sartiah@gmail.com', NULL),
+('14116036', 'alumni', 'Michael Angelo', 'nursano.14116036@student.itera.ac.id', 'person_4.jpg'),
+('15151515', 'admin', 'Juminten', 'juminten@yahoo.com', 'person_1.jpg');
 
 -- --------------------------------------------------------
 
@@ -632,8 +633,7 @@ CREATE TABLE `wiraswasta` (
 --
 
 INSERT INTO `wiraswasta` (`id_kuisioner`, `id_wiraswasta`, `id_user`, `kerja_sebelum`, `brp_lama`, `alasan`, `jenis`, `asal_modal`, `omset`) VALUES
-(1, 1, '14116036', 'sudah', '5 tahun', 'gak punya duit', 'jual diri', 'ngemis', '2 milyar'),
-(1, 2, '14116036', 'sudah', '5 tahun', 'gak punya duit', 'jual diri', 'ngemis', '2 milyar');
+(1, 1, '14116036', 'sudah', '5 tahun', 'gak punya duit', 'jual diri', 'ngemis', '2 milyar');
 
 --
 -- Indexes for dumped tables
@@ -668,7 +668,6 @@ ALTER TABLE `kerja_wiraswasta`
 ALTER TABLE `kuisUtama`
   ADD PRIMARY KEY (`id_kuisionerUtama`),
   ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_aspekPembelajaran` (`id_aspekPembelajaran`),
   ADD KEY `id_aspekBelajar` (`id_aspekBelajar`),
   ADD KEY `id_fasilitas` (`id_fasilitas`),
   ADD KEY `id_penting` (`id_penting`),
@@ -676,7 +675,8 @@ ALTER TABLE `kuisUtama`
   ADD KEY `id_kontribusi2` (`id_kontribusi2`),
   ADD KEY `id_kontribusi3` (`id_kontribusi3`),
   ADD KEY `id_manfaat` (`id_manfaat`),
-  ADD KEY `id_masaStudi` (`id_masaStudi`);
+  ADD KEY `id_masaStudi` (`id_masaStudi`),
+  ADD KEY `id_aspekPembelajaran` (`id_aspekPembelajaran`);
 
 --
 -- Indexes for table `kuis_pendahuluan`
@@ -716,15 +716,13 @@ ALTER TABLE `pekerjaanSebel`
 -- Indexes for table `penilaian1`
 --
 ALTER TABLE `penilaian1`
-  ADD PRIMARY KEY (`id_penilaian`),
-  ADD KEY `id_user` (`id_user`);
+  ADD PRIMARY KEY (`id_penilaian1`);
 
 --
 -- Indexes for table `penilaian2`
 --
 ALTER TABLE `penilaian2`
-  ADD PRIMARY KEY (`id_penilaian`),
-  ADD KEY `id_user` (`id_user`);
+  ADD PRIMARY KEY (`id_penilaian2`);
 
 --
 -- Indexes for table `pertanyaan1`
@@ -843,7 +841,7 @@ ALTER TABLE `kuisUtama`
 -- AUTO_INCREMENT for table `kuis_pendahuluan`
 --
 ALTER TABLE `kuis_pendahuluan`
-  MODIFY `id_kuisioner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kuisioner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pekerjaan`
@@ -867,13 +865,13 @@ ALTER TABLE `pekerjaanSebel`
 -- AUTO_INCREMENT for table `penilaian1`
 --
 ALTER TABLE `penilaian1`
-  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penilaian1` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `penilaian2`
 --
 ALTER TABLE `penilaian2`
-  MODIFY `id_penilaian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penilaian2` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pertanyaan1`
@@ -939,7 +937,7 @@ ALTER TABLE `sekolah`
 -- AUTO_INCREMENT for table `wiraswasta`
 --
 ALTER TABLE `wiraswasta`
-  MODIFY `id_wiraswasta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_wiraswasta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -972,7 +970,7 @@ ALTER TABLE `kuisUtama`
   ADD CONSTRAINT `kuisutama_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kuisutama_ibfk_10` FOREIGN KEY (`id_manfaat`) REFERENCES `pertanyaan29` (`id_manfaat`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kuisutama_ibfk_11` FOREIGN KEY (`id_masaStudi`) REFERENCES `pertanyaan1` (`id_masaStudi`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `kuisutama_ibfk_3` FOREIGN KEY (`id_aspekPembelajaran`) REFERENCES `pertanyaan2` (`id_aspekPembelajaran`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `kuisutama_ibfk_12` FOREIGN KEY (`id_aspekPembelajaran`) REFERENCES `pertanyaan2` (`id_aspekPembelajaran`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kuisutama_ibfk_4` FOREIGN KEY (`id_aspekBelajar`) REFERENCES `pertanyaan7` (`id_aspekBelajar`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kuisutama_ibfk_5` FOREIGN KEY (`id_fasilitas`) REFERENCES `pertanyaan8` (`id_fasilitas`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kuisutama_ibfk_6` FOREIGN KEY (`id_penting`) REFERENCES `pertanyaan11` (`id_penting`) ON UPDATE CASCADE,
@@ -1003,18 +1001,6 @@ ALTER TABLE `pekerjaanLain`
 --
 ALTER TABLE `pekerjaanSebel`
   ADD CONSTRAINT `pekerjaanSebel_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `penilaian1`
---
-ALTER TABLE `penilaian1`
-  ADD CONSTRAINT `penilaian1_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `penilaian2`
---
-ALTER TABLE `penilaian2`
-  ADD CONSTRAINT `penilaian2_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pertanyaan1`
