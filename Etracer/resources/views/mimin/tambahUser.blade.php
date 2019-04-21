@@ -73,17 +73,13 @@
                         <li class="nav-item">
                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="{{url('homeAdmin')}}" class="dropdown-item">Admin-Home</a>
+                                <a href="{{url('admin')}}" class="dropdown-item">Admin-Home</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-table"></i> <span class="mini-dn">Data Tables</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
-                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="{{url('formTable')}}" class="dropdown-item">Form Table</a>
-                            </div>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-edit"></i> <span class="mini-dn">Forms Elements</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown  animated flipInX">
-                                <a href="{{url('formElement')}}" class="dropdown-item">Show Form</a>
+                                <a href="{{url('adminShowForm')}}" class="dropdown-item">Show Form</a>
                             </div>
                         </li>
                     </ul>
@@ -117,28 +113,13 @@
                                 <div class="header-right-info">
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                         
-                                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span></a>
-                                            <div role="menu" class="notification-author dropdown-menu animated flipInX">
-                                                <div class="notification-single-top">
-                                                    <h1>Notifications</h1>
-                                                </div>
-                                                <ul class="notification-menu">
-                                                </ul>
-                                                <div class="notification-view">
-                                                    <a href="#">View All Notification</a>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
                                                 <span class="admin-name">Dediepow</span>
                                                 <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
                                             </a>
-                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
-                                                <li><a href="#"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
-                                                </li>
-                                            </ul>
                                         </li>
 
                                     </ul>
@@ -168,54 +149,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Static Table</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Breadcome End-->
-            <!-- Mobile Menu start -->
-            <div class="mobile-menu-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="mobile-menu">
-                                <nav id="dropdown">
-                                    
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile Menu end -->
-            <!-- Breadcome start-->
-            <div class="breadcome-area mg-b-30 des-none">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcome-heading">
-                                            <form role="search" class="">
-												<input type="text" placeholder="Search..." class="form-control">
-												<a href=""><i class="fa fa-search"></i></a>
-											</form>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <ul class="breadcome-menu">
-                                            <li><a href="#">Home</a> <span class="bread-slash">/</span>
-                                            </li>
-                                            <li><span class="bread-blod">Dashboard</span>
+                                            <li><span class="bread-blod">User Setting</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -230,50 +164,28 @@
             <div class="static-table-area mg-b-15">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="sparkline8-list shadow-reset">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
-                                        <h1>Basic Table</h1>
-                                        <div class="sparkline8-outline-icon">
-                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
-                                            <span><i class="fa fa-wrench"></i></span>
-                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
-                                        </div>
+                                        <h1>Data User</h1>
                                     </div>
                                 </div>
                                 <div class="sparkline8-graph">
                                     <div class="static-table-list">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>First Name</th>
-                                                    <th>Last Name</th>
-                                                    <th>Username</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Mamun</td>
-                                                    <td>Roshid</td>
-                                                    <td>@Facebook</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Suhag</td>
-                                                    <td>Khan</td>
-                                                    <td>@Twitter</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Sakil</td>
-                                                    <td>Shak</td>
-                                                    <td>@Linkedin</td>
-                                                </tr>
-                                            </tbody>
+                                        <form action="storeUser" method="post">
+	                                    	{{ csrf_field() }}
+                                         <table class="table">
+                                         <tbody>
+	                                    	<th>ID User <input type="text" name="id_user" required="required"> </th>
+	                                    	<th>Nama <input type="text" name="nama" required="required"> </th>
+	                                    	<th>Email<input type="text" name="email" required="required"> </th>
+	                                    	<th>Status <input type="text" name="status" required="required"> </th>
+                                            <th>Tanggal Lahir <input type="text" name="tgl_lahir" required="required"> </th>
+	                                    	<th><input type="submit" value="Simpan Data"></th>
+                                        </tbody>
                                         </table>
+                                        </form> 
                                     </div>
                                 </div>
                             </div>

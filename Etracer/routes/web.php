@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 //beranda
 Route::get('/beranda','EtracerController@beranda');
 Route::get('/beranda/proses','EtracerController@proses');
@@ -30,18 +32,40 @@ Route::get('/KuisionerUtama/simpanUtama', 'EtracerController@simpanUtama');
 Route::get('/buatBerita', 'EtracerController@buatBerita');
 Route::post('/buatBerita/simpanData', 'EtracerController@simpanData');
 
+
 //berita
 Route::get('/berita', 'EtracerController@berita');
 
 //halaman berita
 Route::get('/halamanBerita/{id}', 'EtracerController@halaman');
 
+//adminhome
+Route::get ('/admin','AdminContoller@AdminHome');
+
+//Pengaturankuesioner
+Route::get('adminShowForm','AdminController@FormPendahuluan');
+
+Route::get('adminStudyTable','AdminController@StudyTable');
+//Pengaturan User
+Route::get('adminPengaturanUser','AdminController@PengaturanUser');
+//Tambah User
+Route::get('tambahUser','AdminController@TambahUser');
+//Hapus User
+//store User
+Route::post('storeUser','AdminController@Store');
+Route::get('hapusUser/{id}','AdminController@HapusUser');
+//EditUser
+Route::get('editUser/{id}','AdminController@EditUser');
+//update user
+Route::post('editUser/{id}','AdminController@UpdateUser');
+//download pfd kuisioner
+Route::get('downloadKuisPendahuluan','AdminController@DownloadKuisPendahuluan');
+// view PDF file
+
 //profile
 Route::get('/profile', function () {
     return view('profile');
 });
-
-
 
 //berita_unlogin
 Route::get('/beritaUnlogin', 'EtracerController@beritaUnlogin');
@@ -93,6 +117,7 @@ Route::get('/kuisionerPerusahaan', function () {
 Route::get('/loginGagal', function () {
     return view('beranda_loginGagal');
 });
+
 
 
 
