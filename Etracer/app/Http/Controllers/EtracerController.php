@@ -149,6 +149,8 @@ class EtracerController extends Controller
         $posisi3 = $request->input('posisi3');
         $alasanPindah = $request->input('alasanPindah');
 
+
+
         //menimpandata kuisioner pendahuluan
       
         DB::table('kuis_pendahuluan')->insert(
@@ -169,11 +171,16 @@ class EtracerController extends Controller
             DB::table('kerja')->insert(
                 ['id_kuisioner' => $id_pendahuluan, 'id_user' => $nim, 'kategori' => $kategoriBer, 'sesuai' => $sesuaiBer]
             );
+<<<<<<< HEAD
         } else if ($status == 'Tidak Bekerja') {
+=======
+        } else if ($status == 'Tidak Bekerja atau Melanjutkan Kuliah') {
+>>>>>>> master
             DB::table('sekolah')->insert(
                 ['id_kuisioner' => $id_pendahuluan, 'id_user' => $nim, 'pernah_kerja' => $pernahSe, 'berapa_lama' => $brplamaSe, 'alasan_tdkkerja' => $alasanSe]
             );
         }
+<<<<<<< HEAD
 
 
         DB::table('pekerjaan')->insert(
@@ -443,8 +450,21 @@ class EtracerController extends Controller
        return redirect('berandaLogin');
 
     }
+=======
 
+        //menyimpan data pekerjaan utama
 
+        DB::table('pekerjaan')->insert(
+            ['id_user' => $nim, 'nama_kantor' => $namaKantor, 'bidang_usaha' => $bidangUsaha, 'jabatan' => $posisi, 'jenis_pekerjaan' => $jenisPekerjaan, 'web_kantor' => $emailKantor, 'telp_kantor' =>$noKantor, 'alamat_kantor' => $alamatKantor, 'sejak' =>  $sejak,'penghasilan' => $penghasilan]
+        );
+>>>>>>> master
+
+        //menyimpan data pekerjaan lain
+        DB::table('pekerjaanLain')->insert(
+            ['id_user' => $nim, 'nama_kantor' => $namaKantor2, 'bidang_usaha' => $bidangUsaha2, 'jabatan' => $posisi2, 'jenis_pekerjaan' => $jenisPekerjaan2, 'web_kantor' => $emailKantor2, 'telp_kantor' =>$noKantor2, 'alamat_kantor' => $alamatKantor2, 'sejak' =>  $sejak2,'penghasilan' => $penghasilan2]
+        );
+
+<<<<<<< HEAD
     //BUAT BERITA
 
 
@@ -512,6 +532,14 @@ class EtracerController extends Controller
 
     public function profile(Request $request){
         return view('profile');
+=======
+        //menyimpan data pekerjaan sebelumnya
+         DB::table('pekerjaanLSebel')->insert(
+            ['id_user' => $nim, 'nama_kantor' => $namaKantor3, 'bidang_usaha' => $bidangUsaha3, 'jabatan' => $posisi3, 'deskripsi' => $alasanPindah]
+        );
+        
+        return redirect('KuisionerUtama');
+>>>>>>> master
     }
 
    public function profile(Request $request){

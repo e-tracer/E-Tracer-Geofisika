@@ -122,8 +122,12 @@
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input IPK anda">
+<<<<<<< HEAD
           <span class="label-input300">IPK</span>
           <p>contoh : 4.00</p>
+=======
+          <span class="label-input300">IPK *</span>
+>>>>>>> master
           <input class="input100" type="number" name="ipk" placeholder="IPK" required>
         </div>
 
@@ -155,7 +159,10 @@
 
         <div class="wrap-input100 validate-input " data-validate="Input nomer telpon anda/HP">
           <span class="label-input300">Nomor telpon/hp *</span>
+<<<<<<< HEAD
           <p>contoh : 0831897xxx</p>
+=======
+>>>>>>> master
           <input class="input100" type="number" name="nomer" placeholder="Nomor telpon/HP" required>
         </div>
 

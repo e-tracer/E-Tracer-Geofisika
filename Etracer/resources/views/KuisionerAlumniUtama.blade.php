@@ -99,6 +99,7 @@
         <h2>Kuesioner Utama</h2> 
         <div class="wrap-input100 ">
           <span class="label-input300">1. Seberapa besar alasan-alasan di bawah ini menyebabkan ketidaktepatan masa studi anda?</span>
+<<<<<<< HEAD
             <br>
             <table border="2" width="700px">
               <tr align="center">
@@ -177,12 +178,96 @@
                 <td><input type="radio" name="Tanggapan1g" value="5"></td>  
               </tr>
             </table>
+=======
+          <div>
+          <br>
+          <table border="2" width="700px">
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Alasan </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+            <tr align="center">
+              <td> 1 </td>
+              <td align="left"> Alasan Keuangan </td>
+              <td><input type="radio" name="Tanggapan1a" value="1"></td>
+              <td><input type="radio" name="Tanggapan1a" value="2"></td>
+              <td><input type="radio" name="Tanggapan1a" value="3"></td>
+              <td><input type="radio" name="Tanggapan1a" value="4"></td>
+              <td><input type="radio" name="Tanggapan1a" value="5"></td>              
+            </tr>
+            <tr align="center">
+              <td> 2 </td>
+              <td align="left"> Tidak lulus ujian</td>
+              <td><input type="radio" name="Tanggapan1b" value="1"></td>
+              <td><input type="radio" name="Tanggapan1b" value="2"></td>
+              <td><input type="radio" name="Tanggapan1b" value="3"></td>
+              <td><input type="radio" name="Tanggapan1b" value="4"></td>
+              <td><input type="radio" name="Tanggapan1b" value="5"></td>
+            </tr>
+            <tr align="center">
+              <td> 3 </td>
+              <td align="left"> Penulisan skripsi lambat </td>
+              <td><input type="radio" name="Tanggapan1c" value="1"></td>
+              <td><input type="radio" name="Tanggapan1c" value="2"></td>
+              <td><input type="radio" name="Tanggapan1c" value="3"></td>
+              <td><input type="radio" name="Tanggapan1c" value="4"></td>
+              <td><input type="radio" name="Tanggapan1c" value="5"></td>
+            </tr>
+            <tr align="center">
+              <td> 4 </td>
+              <td align="left"> Alasan keluarga</td>
+              <td><input type="radio" name="Tanggapan1d" value="1"></td>
+              <td><input type="radio" name="Tanggapan1d" value="2"></td>
+              <td><input type="radio" name="Tanggapan1d" value="3"></td>
+              <td><input type="radio" name="Tanggapan1d" value="4"></td>
+              <td><input type="radio" name="Tanggapan1d" value="5"></td>
+            </tr>
+            <tr align="center">
+              <td> 5 </td>
+              <td align="left"> Kesehatan </td>              
+              <td><input type="radio" name="Tanggapan1e" value="1"></td>
+              <td><input type="radio" name="Tanggapan1e" value="2"></td>
+              <td><input type="radio" name="Tanggapan1e" value="3"></td>
+              <td><input type="radio" name="Tanggapan1e" value="4"></td>
+              <td><input type="radio" name="Tanggapan1e" value="5"></td>
+            </tr>
+            <tr align="center">
+              <td> 6 </td>
+              <td align="left"> Kegiatan Mahasiswa / Ekstrakulikuler</td>        
+              <td><input type="radio" name="Tanggapan1f" value="1"></td>
+              <td><input type="radio" name="Tanggapan1f" value="2"></td>
+              <td><input type="radio" name="Tanggapan1f" value="3"></td>
+              <td><input type="radio" name="Tanggapan1f" value="4"></td>
+              <td><input type="radio" name="Tanggapan1f" value="5"></td>
+            </tr>
+            <tr align="center">
+              <td> 7 </td>
+              <td align="left"> Hobby </td>              
+              <td><input type="radio" name="Tanggapan1g" value="1"></td>
+              <td><input type="radio" name="Tanggapan1g" value="2"></td>
+              <td><input type="radio" name="Tanggapan1g" value="3"></td>
+              <td><input type="radio" name="Tanggapan1g" value="4"></td>
+              <td><input type="radio" name="Tanggapan1g" value="5"></td>  </tr>
+            
+          </table>
+
+        </div>  
+>>>>>>> master
         </div>
 
         <div class="wrap-input100 ">
           <span class="label-input300">2. Menurut Anda seberapa besar penekanan pada aspek-aspek pembelajaran di bawah ini dilaksanakan di program studi anda</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
               <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -198,6 +283,23 @@
             <tr align="center">
               <td> 1 </td>
               <td align="left"> Perkuliahan </td>
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Aspek </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+            <tr align="center">
+              <td> 1 </td>
+              <td align="left">> Perkuliahan </td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan2a" value="1"></td>
               <td><input type="radio" name="Tanggapan2a" value="2"></td>
               <td><input type="radio" name="Tanggapan2a" value="3"></td>
@@ -225,10 +327,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Magang</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan2d" value="1"></td>
               <td><input type="radio" name="Tanggapan2d" value="2"></td>
               <td><input type="radio" name="Tanggapan2d" value="3"></td>
               <td><input type="radio" name="Tanggapan2d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan2d " value="1"></td>
+              <td><input type="radio" name="Tanggapan2d " value="2"></td>
+              <td><input type="radio" name="Tanggapan2d " value="3"></td>
+              <td><input type="radio" name="Tanggapan2d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan2d" value="5"></td>
             </tr>
             <tr align="center">
@@ -288,6 +397,7 @@
           <span class="label-input300">7. Dalam skala 1 sampai 5, bagaimana penilaian Anda terhadap aspek belajar mengajar di bawah ini?</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
             <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -300,6 +410,20 @@
                 <th><center>4</center></th>
                 <th><center>5</center></th>
               </tr>            
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Aspek </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+>>>>>>> master
             <tr align="center">
               <td> 1 </td>
               <td align="left"> Kesempatan untuk berinteraksi dengan dosen-dosen di luar jadwal kuliah</td>
@@ -330,10 +454,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Kondisi umum belajar mengajar</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan7d" value="1"></td>
               <td><input type="radio" name="Tanggapan7d" value="2"></td>
               <td><input type="radio" name="Tanggapan7d" value="3"></td>
               <td><input type="radio" name="Tanggapan7d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan7d " value="1"></td>
+              <td><input type="radio" name="Tanggapan7d " value="2"></td>
+              <td><input type="radio" name="Tanggapan7d " value="3"></td>
+              <td><input type="radio" name="Tanggapan7d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan7d" value="5"></td>
             </tr>
             <tr align="center">
@@ -361,6 +492,7 @@
           <span class="label-input300">8. Bagaimana penilaian Anda terhadap kondisi fasilitas belajar di bawah ini?</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
             <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -373,6 +505,20 @@
                 <th><center>4</center></th>
                 <th><center>5</center></th>
               </tr>            
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Fasilitas </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+>>>>>>> master
             <tr align="center">
               <td> 1 </td>
               <td align="left"> Perpustakaan</td>
@@ -403,10 +549,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Ruang belajar</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan8d" value="1"></td>
               <td><input type="radio" name="Tanggapan8d" value="2"></td>
               <td><input type="radio" name="Tanggapan8d" value="3"></td>
               <td><input type="radio" name="Tanggapan8d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan8d " value="1"></td>
+              <td><input type="radio" name="Tanggapan8d " value="2"></td>
+              <td><input type="radio" name="Tanggapan8d " value="3"></td>
+              <td><input type="radio" name="Tanggapan8d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan8d" value="5"></td>
             </tr>
             <tr align="center">
@@ -427,6 +580,10 @@
               <td><input type="radio" name="Tanggapan8f" value="4"></td>
               <td><input type="radio" name="Tanggapan8f" value="5"></td>
             </tr>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
             <tr align="center">
               <td> 7 </td>
               <td align="left"> Akomodasi</td> 
@@ -436,8 +593,14 @@
               <td><input type="radio" name="Tanggapan8g" value="4"></td>
               <td><input type="radio" name="Tanggapan8g" value="5"></td>
             </tr>
+<<<<<<< HEAD
             <tr align="center">
               <td> 8 </td>
+=======
+            
+            <tr align="center">
+              <td> 7 </td>
+>>>>>>> master
               <td align="left"> Kantin</td>  
               <td><input type="radio" name="Tanggapan8h" value="1"></td>
               <td><input type="radio" name="Tanggapan8h" value="2"></td>
@@ -445,8 +608,14 @@
               <td><input type="radio" name="Tanggapan8h" value="4"></td>
               <td><input type="radio" name="Tanggapan8h" value="5"></td>
             </tr>
+<<<<<<< HEAD
             <tr align="center">
               <td> 9 </td>
+=======
+            
+            <tr align="center">
+              <td> 8 </td>
+>>>>>>> master
               <td align="left"> Pusat kegiatan mahasiswa dan fasilitasnya, ruang rekreasi</td> 
               <td><input type="radio" name="Tanggapan8i" value="1"></td>
               <td><input type="radio" name="Tanggapan8i" value="2"></td>
@@ -471,6 +640,7 @@
           <span class="label-input300">11. Berdasarkan persepsi Anda, seberapa pentingkah aspek-aspek dibawah ini bagi perusahaan/instansi dalam melakukan penerimaan pegawai?</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
             <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -484,6 +654,20 @@
                 <th><center>5</center></th>
               </tr>
 
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Aspek </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+>>>>>>> master
             <tr align="center">
               <td> 1 </td>
               <td align="left"> Program diskusi</td>
@@ -514,10 +698,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Pengalaman kerja selama kuliah</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan11d" value="1"></td>
               <td><input type="radio" name="Tanggapan11d" value="2"></td>
               <td><input type="radio" name="Tanggapan11d" value="3"></td>
               <td><input type="radio" name="Tanggapan11d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan11d " value="1"></td>
+              <td><input type="radio" name="Tanggapan11d " value="2"></td>
+              <td><input type="radio" name="Tanggapan11d " value="3"></td>
+              <td><input type="radio" name="Tanggapan11d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan11d" value="5"></td>
             </tr>
             <tr align="center">
@@ -558,6 +749,10 @@
               <td><input type="radio" name="Tanggapan11h" value="4"></td>
               <td><input type="radio" name="Tanggapan11h" value="5"></td>
             </tr>
+<<<<<<< HEAD
+=======
+            
+>>>>>>> master
             <tr align="center">
               <td> 9 </td>
               <td align="left"> Pengalaman berorganisasi</td>  
@@ -567,6 +762,10 @@
               <td><input type="radio" name="Tanggapan11i" value="4"></td>
               <td><input type="radio" name="Tanggapan11i" value="5"></td>
             </tr>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
             <tr align="center">
               <td> 10 </td>
               <td align="left"> Rekomendasi dari pihak ketiga</td> 
@@ -694,6 +893,7 @@
           <span class="label-input300">24. Pada saat lulus, bagaimana kontribusi perguruan tinggi dalam hal kompetensi di bawah ini? Dalam skala 1 sampai 5, pada tingkat mana kompetensi di bawah ini Anda kuasai?</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
             <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -706,6 +906,20 @@
                 <th><center>4</center></th>
                 <th><center>5</center></th>
               </tr>            
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Kompetensi </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+>>>>>>> master
             <tr align="center">
               <td> 1 </td>
               <td align="left">Pengetahuan di bidang atau disiplin ilmu anda</td>
@@ -736,10 +950,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Ketrampilan internet</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan24d" value="1"></td>
               <td><input type="radio" name="Tanggapan24d" value="2"></td>
               <td><input type="radio" name="Tanggapan24d" value="3"></td>
               <td><input type="radio" name="Tanggapan24d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan24d " value="1"></td>
+              <td><input type="radio" name="Tanggapan24d " value="2"></td>
+              <td><input type="radio" name="Tanggapan24d " value="3"></td>
+              <td><input type="radio" name="Tanggapan24d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan24d" value="5"></td>
             </tr>
             <tr align="center">
@@ -971,6 +1192,7 @@
           <span class="label-input300">25. Bagaimana kontribusi perguruan tinggi dalam hal kompetensi di bawah ini?</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
             <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -983,6 +1205,20 @@
                 <th><center>4</center></th>
                 <th><center>5</center></th>
               </tr>
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Kompetensi </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+>>>>>>> master
             <tr align="center">
               <td> 1 </td>
               <td align="left">Pengetahuan di bidang atau disiplin ilmu anda</td>
@@ -1013,10 +1249,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Ketrampilan internet</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan25d" value="1"></td>
               <td><input type="radio" name="Tanggapan25d" value="2"></td>
               <td><input type="radio" name="Tanggapan25d" value="3"></td>
               <td><input type="radio" name="Tanggapan25d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan25d " value="1"></td>
+              <td><input type="radio" name="Tanggapan25d " value="2"></td>
+              <td><input type="radio" name="Tanggapan25d " value="3"></td>
+              <td><input type="radio" name="Tanggapan25d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan25d" value="5"></td>
             </tr>
             <tr align="center">
@@ -1248,6 +1491,7 @@
           <span class="label-input300">26 .Seberapa besar peran kompetensi yang diperoleh di perguruantinggi berikut ini dalam melaksanakan pekerjaan anda</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
             <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -1260,6 +1504,20 @@
                 <th><center>4</center></th>
                 <th><center>5</center></th>
               </tr>            
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Kompetensi </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+>>>>>>> master
             <tr align="center">
               <td> 1 </td>
               <td align="left">Pengetahuan di bidang atau disiplin ilmu anda</td>
@@ -1290,10 +1548,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Ketrampilan internet</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan26d" value="1"></td>
               <td><input type="radio" name="Tanggapan26d" value="2"></td>
               <td><input type="radio" name="Tanggapan26d" value="3"></td>
               <td><input type="radio" name="Tanggapan26d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan26d " value="1"></td>
+              <td><input type="radio" name="Tanggapan26d " value="2"></td>
+              <td><input type="radio" name="Tanggapan26d " value="3"></td>
+              <td><input type="radio" name="Tanggapan26d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan26d" value="5"></td>
             </tr>
             <tr align="center">
@@ -1549,6 +1814,7 @@
           <span class="label-input300">29. Sejauh mana program studi anda bermanfaat untuk hal-hal di bawah ini?</span>
           <br>
           <table border="2" width="700px">
+<<<<<<< HEAD
             <tr align="center">
                 <th width="50" rowspan="2"><center>No</center> </th>
                 <th width="300" rowspan="2"><center>Alasan</center></th>
@@ -1561,6 +1827,20 @@
                 <th><center>4</center></th>
                 <th><center>5</center></th>
               </tr>            
+=======
+            <tr>
+              <th width="50" rowspan="2" > No </th>
+              <th width="300" rowspan="2"> Kompetensi </th>
+              <th width="400" colspan="5"> Tanggapan Pihak Pengguna </th>
+            </tr>
+            <tr>
+              <th> 1 </th>
+              <th> 2 </th>
+              <th> 3 </th>
+              <th> 4 </th>
+              <th> 5 </th>
+            </tr>
+>>>>>>> master
             <tr align="center">
               <td> 1 </td>
               <td align="left">Memulai pekerjaan?</td>
@@ -1591,10 +1871,17 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Karir di masa depan?</td>
+<<<<<<< HEAD
               <td><input type="radio" name="Tanggapan29d" value="1"></td>
               <td><input type="radio" name="Tanggapan29d" value="2"></td>
               <td><input type="radio" name="Tanggapan29d" value="3"></td>
               <td><input type="radio" name="Tanggapan29d" value="4"></td>
+=======
+              <td><input type="radio" name="Tanggapan29d " value="1"></td>
+              <td><input type="radio" name="Tanggapan29d " value="2"></td>
+              <td><input type="radio" name="Tanggapan29d " value="3"></td>
+              <td><input type="radio" name="Tanggapan29d " value="4"></td>
+>>>>>>> master
               <td><input type="radio" name="Tanggapan29d" value="5"></td>
             </tr>
             <tr align="center">

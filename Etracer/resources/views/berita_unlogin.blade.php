@@ -48,8 +48,13 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <img src="images/logo.png" alt="Image" class="img-fluid float-left " width="100" height="100">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+<<<<<<< HEAD
                 <li><a href="{{ url('berandaLogin')}}">BERANDA</a></li>
                 <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
+=======
+                <li><a href="{{ url('beranda')}}">BERANDA</a></li>
+                <li class="active"><a href="{{ url('beritaUnlogin')}}">BERITA</a></li>
+>>>>>>> master
               </ul>
             </nav>
           </div>
