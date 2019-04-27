@@ -559,7 +559,7 @@ class EtracerController extends Controller
 
         //inisiasi
         $gambar = $request->file('file_gambar');
-        $nama_gambar = $request->$nim;
+        $nama_gambar = $request->session()->get('nim');
 
         //update data
         DB::table('kuis_pendahuluan')->where('id_user','=',$nim)->update(
@@ -571,7 +571,7 @@ class EtracerController extends Controller
           $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 
           DB::table('user')->where('id_user','=',$nim)->update(
-            ['nama'=>$nama,'file_gambar'=>$nama_gambar]
+            ['nama'=>$nama,'file_gambar2'=>$nama_gambar]
           );
 
           return redirect('profile');
@@ -657,7 +657,7 @@ class EtracerController extends Controller
 
       //inisiasi
       $gambar = $request->file('file_gambar');
-      $nama_gambar = $request->$sandi;
+      $nama_gambar = $request->sandi;
 
 
       if($nama_gambar != null){
@@ -851,13 +851,54 @@ class EtracerController extends Controller
     }
 
     //download
-/*
-    public function downloadForm(){
+public function unduh(Request $request){
+      //ini yang atas
+      //$nim = $request->session()->get('nim');
+      $nim = '14116036';
+      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
 
-        $data =  ['title' => 'Welcome to belajarphp.net'];
-        $pdf = PDF::loadView('mimin/unduhPendahuluan', $data);
-        return $pdf->download('kuisioner.pdf');
-    } */
+      
+      $cari = '14116036';
+      $request->session()->put('alumni',$cari);
 
 
+      //menangkap hasil
+      $dapat1 = DB::table('kuis_pendahuluan')->where('id_user','=',$cari)->get();
+      $dapat2 = DB::table('kuisUtama')->where('id_user','=',$cari)->get();
+
+      //inisialisasi
+      $dapatWir = DB::table('wiraswasta')->where('id_user','=',$cari)->get();
+      $dapatSek = DB::table('sekolah')->where('id_user','=',$cari)->get();
+      $dapatKer = DB::table('kerja')->where('id_user','=',$cari)->get();
+      $dapatKewir = DB::table('kerja_wiraswasta')->where('id_user','=',$cari)->get();
+
+      $pekerjaan1 = DB::table('pekerjaan')->where('id_user','=',$cari)->get();
+      $pekerjaan2 = DB::table('pekerjaanLain')->where('id_user','=',$cari)->get();
+      $pekerjaan3 = DB::table('pekerjaanSebel')->where('id_user','=',$cari)->get();
+
+      $pertanyaan25 = DB::table('pertanyaan25')->where('id_user','=',$cari)->get();
+
+      $kuisUtama = DB::table('kuisUtama')->join('pertanyaan1','pertanyaan1.id_masaStudi','=','kuisUtama.id_masaStudi')
+      ->join('pertanyaan2','pertanyaan2.id_aspekPembelajaran','=','kuisUtama.id_aspekPembelajaran')
+      ->join('pertanyaan7','pertanyaan7.id_aspekBelajar','=','kuisUtama.id_aspekBelajar')
+      ->join('pertanyaan8','pertanyaan8.id_fasilitas','=','kuisUtama.id_fasilitas')
+      ->join('pertanyaan11','pertanyaan11.id_penting','=','kuisUtama.id_penting')
+      ->join('pertanyaan24','pertanyaan24.id_kontribusi1','=','kuisUtama.id_kontribusi1')
+      ->join('pertanyaan25','pertanyaan25.id_kontribusi2','=','kuisUtama.id_kontribusi2')
+      ->join('pertanyaan26','pertanyaan26.id_kontribusi3','=','kuisUtama.id_kontribusi3')
+      ->join('pertanyaan29','pertanyaan29.id_manfaat','=','pertanyaan29.id_manfaat')
+      ->where('kuisUtama.id_user','=',$cari)->get();
+
+
+      //$pdf = PDF::loadView('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
+      
+      $pdf = PDF::loadView('mimin/downloadKuisioner',['kuisUtama' => $kuisUtama]);
+
+      //return view('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
+      //return $kuisUtama;
+
+      return $pdf->download('Kuisione.pdf');
+
+
+    }
 }

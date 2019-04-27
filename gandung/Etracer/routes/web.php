@@ -94,9 +94,8 @@ Route::get('/loginGagal', function () {
 });
 
 //unduh
-Route::get('/unduh', function () {
-    return view('mimin/unduhPendahuluan');
-});
+Route::get('/unduh', 'EtracerController@unduh');
+
 
 
 
