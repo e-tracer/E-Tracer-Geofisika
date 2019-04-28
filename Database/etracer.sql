@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 21, 2019 at 02:47 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Host: 127.0.0.1
+-- Generation Time: Apr 21, 2019 at 04:10 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,16 +19,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `etracer`
+-- Database: `tracer`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berits`
+-- Table structure for table `berita`
 --
 
-CREATE TABLE `berits` (
+CREATE TABLE `berita` (
   `id_berita` int(11) NOT NULL,
   `id_user` varchar(8) NOT NULL,
   `judul` varchar(100) DEFAULT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `berits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `berits`
+-- Dumping data for table `berita`
 --
 
-INSERT INTO `berits` (`id_berita`, `id_user`, `judul`, `isi`, `file_gambar`, `tanggal`) VALUES
+INSERT INTO `berita` (`id_berita`, `id_user`, `judul`, `isi`, `file_gambar`, `tanggal`) VALUES
 (6, '14116036', 'PPLK 2018', '<p style=\"text-align: justify;\">&nbsp;PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan. Selain itu, kamu juga akan mengetahui hal-hal menarik seputar ITERA dan menciptakan mahasiswa yang berbasis industri 4.0 dan memiliki karakter sehingga akan menumbuhkan rasa cinta terhadap kampus perjuangan, Institut Teknologi Sumatera!</p>\r\n<p style=\"text-align: justify;\">&nbsp;</p>\r\n<p style=\"text-align: justify;\">PPLK atau Program Pengenalan Lingkungan Kampus merupakan acara pesta penyambutan terbesar untuk mahasiswa baru yang diselenggarakan setiap tahunnya di kampus ITERA. Melalui PPLK, kamu akan mendapatkan pengalaman menyenangkan yang tidak terlupakan. Selain itu, kamu juga akan mengetahui hal-hal menarik seputar ITERA dan menciptakan mahasiswa yang berbasis industri 4.0 dan memiliki karakter sehingga akan menumbuhkan rasa cinta terhadap kampus perjuangan, Institut Teknologi Sumatera!</p>', 'BG1.png', '2019-04-19'),
 (7, '14116036', 'Bi Taifah Mencari Pak Iqbal', '<p>cieee pak iqbal</p>', 'bi_taifa.jpg', '2019-04-19'),
 (8, '15151515', 'Dies Natalis 3', '<p>Hari peringatan des natalis 3</p>', 'Dies Natalis 3', '2021-04-19');
@@ -78,10 +78,10 @@ CREATE TABLE `kerja_wiraswasta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kuisUtama`
+-- Table structure for table `kuisutama`
 --
 
-CREATE TABLE `kuisUtama` (
+CREATE TABLE `kuisutama` (
   `id_kuisionerUtama` int(11) NOT NULL,
   `id_user` varchar(8) NOT NULL,
   `pertanyaan3` varchar(50) DEFAULT NULL,
@@ -118,10 +118,10 @@ CREATE TABLE `kuisUtama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kuisUtama`
+-- Dumping data for table `kuisutama`
 --
 
-INSERT INTO `kuisUtama` (`id_kuisionerUtama`, `id_user`, `pertanyaan3`, `pertanyaan4`, `pertanyaan5`, `pertanyaan6`, `pertanyaan9`, `pertanyaan10`, `pertanyaan12`, `pertanyaan13`, `pertanyaan14`, `pertanyaan15`, `pertanyaan16`, `pertanyaan17`, `pertanyaan18`, `pertanyaan19`, `pertanyaan20`, `pertanyaan21`, `pertanyaan22`, `pertanyaan23`, `pertanyaan27`, `pertanyaan28`, `pertanyaan30`, `pertanyaan31`, `id_masaStudi`, `id_aspekPembelajaran`, `id_aspekBelajar`, `id_fasilitas`, `id_penting`, `id_kontribusi1`, `id_kontribusi2`, `id_kontribusi3`, `id_manfaat`) VALUES
+INSERT INTO `kuisutama` (`id_kuisionerUtama`, `id_user`, `pertanyaan3`, `pertanyaan4`, `pertanyaan5`, `pertanyaan6`, `pertanyaan9`, `pertanyaan10`, `pertanyaan12`, `pertanyaan13`, `pertanyaan14`, `pertanyaan15`, `pertanyaan16`, `pertanyaan17`, `pertanyaan18`, `pertanyaan19`, `pertanyaan20`, `pertanyaan21`, `pertanyaan22`, `pertanyaan23`, `pertanyaan27`, `pertanyaan28`, `pertanyaan30`, `pertanyaan31`, `id_masaStudi`, `id_aspekPembelajaran`, `id_aspekBelajar`, `id_fasilitas`, `id_penting`, `id_kontribusi1`, `id_kontribusi2`, `id_kontribusi3`, `id_manfaat`) VALUES
 (1, '14116036', 'sendiri', 'sendiri', '1', '1', 'afwds', 'sdfs', 'asdf', 'sfsaf', 'sadfas', 'sdfas', 'sdfasf', 'asdfsa', '1', 'asdfsa', 'Instansi pemerintah (Termasuk BUMN)', 'asdfaf', 'asdfa', NULL, '2', '1', '1', 'Di pekerjaan ini saya memperoleh prospek karir yang baik', 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
@@ -200,10 +200,10 @@ INSERT INTO `pekerjaan` (`id_data`, `id_user`, `nama_kantor`, `bidang_usaha`, `j
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pekerjaanLain`
+-- Table structure for table `pekerjaanlain`
 --
 
-CREATE TABLE `pekerjaanLain` (
+CREATE TABLE `pekerjaanlain` (
   `id_data` int(11) NOT NULL,
   `id_user` varchar(8) NOT NULL,
   `nama_kantor` varchar(30) DEFAULT NULL,
@@ -218,19 +218,19 @@ CREATE TABLE `pekerjaanLain` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pekerjaanLain`
+-- Dumping data for table `pekerjaanlain`
 --
 
-INSERT INTO `pekerjaanLain` (`id_data`, `id_user`, `nama_kantor`, `bidang_usaha`, `jabatan`, `jenis_pekerjaan`, `web_kantor`, `telp_kantor`, `alamat_kantor`, `sejak`, `penghasilan`) VALUES
+INSERT INTO `pekerjaanlain` (`id_data`, `id_user`, `nama_kantor`, `bidang_usaha`, `jabatan`, `jenis_pekerjaan`, `web_kantor`, `telp_kantor`, `alamat_kantor`, `sejak`, `penghasilan`) VALUES
 (1, '14116036', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pekerjaanSebel`
+-- Table structure for table `pekerjaansebel`
 --
 
-CREATE TABLE `pekerjaanSebel` (
+CREATE TABLE `pekerjaansebel` (
   `id_data` int(11) NOT NULL,
   `id_user` varchar(8) NOT NULL,
   `nama_kantor` varchar(30) DEFAULT NULL,
@@ -240,10 +240,10 @@ CREATE TABLE `pekerjaanSebel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pekerjaanSebel`
+-- Dumping data for table `pekerjaansebel`
 --
 
-INSERT INTO `pekerjaanSebel` (`id_data`, `id_user`, `nama_kantor`, `bidang_usaha`, `jabatan`, `deskripsi`) VALUES
+INSERT INTO `pekerjaansebel` (`id_data`, `id_user`, `nama_kantor`, `bidang_usaha`, `jabatan`, `deskripsi`) VALUES
 (1, '14116036', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -640,9 +640,9 @@ INSERT INTO `wiraswasta` (`id_kuisioner`, `id_wiraswasta`, `id_user`, `kerja_seb
 --
 
 --
--- Indexes for table `berits`
+-- Indexes for table `berita`
 --
-ALTER TABLE `berits`
+ALTER TABLE `berita`
   ADD PRIMARY KEY (`id_berita`),
   ADD KEY `id_user` (`id_user`);
 
@@ -663,9 +663,9 @@ ALTER TABLE `kerja_wiraswasta`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `kuisUtama`
+-- Indexes for table `kuisutama`
 --
-ALTER TABLE `kuisUtama`
+ALTER TABLE `kuisutama`
   ADD PRIMARY KEY (`id_kuisionerUtama`),
   ADD KEY `id_user` (`id_user`),
   ADD KEY `id_aspekBelajar` (`id_aspekBelajar`),
@@ -699,16 +699,16 @@ ALTER TABLE `pekerjaan`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `pekerjaanLain`
+-- Indexes for table `pekerjaanlain`
 --
-ALTER TABLE `pekerjaanLain`
+ALTER TABLE `pekerjaanlain`
   ADD PRIMARY KEY (`id_data`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `pekerjaanSebel`
+-- Indexes for table `pekerjaansebel`
 --
-ALTER TABLE `pekerjaanSebel`
+ALTER TABLE `pekerjaansebel`
   ADD PRIMARY KEY (`id_data`),
   ADD KEY `id_user` (`id_user`);
 
@@ -814,9 +814,9 @@ ALTER TABLE `wiraswasta`
 --
 
 --
--- AUTO_INCREMENT for table `berits`
+-- AUTO_INCREMENT for table `berita`
 --
-ALTER TABLE `berits`
+ALTER TABLE `berita`
   MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
@@ -832,9 +832,9 @@ ALTER TABLE `kerja_wiraswasta`
   MODIFY `id_kerjawiraswasta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kuisUtama`
+-- AUTO_INCREMENT for table `kuisutama`
 --
-ALTER TABLE `kuisUtama`
+ALTER TABLE `kuisutama`
   MODIFY `id_kuisionerUtama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -850,15 +850,15 @@ ALTER TABLE `pekerjaan`
   MODIFY `id_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pekerjaanLain`
+-- AUTO_INCREMENT for table `pekerjaanlain`
 --
-ALTER TABLE `pekerjaanLain`
+ALTER TABLE `pekerjaanlain`
   MODIFY `id_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pekerjaanSebel`
+-- AUTO_INCREMENT for table `pekerjaansebel`
 --
-ALTER TABLE `pekerjaanSebel`
+ALTER TABLE `pekerjaansebel`
   MODIFY `id_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -944,10 +944,10 @@ ALTER TABLE `wiraswasta`
 --
 
 --
--- Constraints for table `berits`
+-- Constraints for table `berita`
 --
-ALTER TABLE `berits`
-  ADD CONSTRAINT `berits_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE;
+ALTER TABLE `berita`
+  ADD CONSTRAINT `berita_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `kerja`
@@ -964,9 +964,9 @@ ALTER TABLE `kerja_wiraswasta`
   ADD CONSTRAINT `kerja_wiraswasta_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `kuisUtama`
+-- Constraints for table `kuisutama`
 --
-ALTER TABLE `kuisUtama`
+ALTER TABLE `kuisutama`
   ADD CONSTRAINT `kuisutama_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kuisutama_ibfk_10` FOREIGN KEY (`id_manfaat`) REFERENCES `pertanyaan29` (`id_manfaat`) ON UPDATE CASCADE,
   ADD CONSTRAINT `kuisutama_ibfk_11` FOREIGN KEY (`id_masaStudi`) REFERENCES `pertanyaan1` (`id_masaStudi`) ON UPDATE CASCADE,
@@ -991,15 +991,15 @@ ALTER TABLE `pekerjaan`
   ADD CONSTRAINT `pekerjaan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `pekerjaanLain`
+-- Constraints for table `pekerjaanlain`
 --
-ALTER TABLE `pekerjaanLain`
+ALTER TABLE `pekerjaanlain`
   ADD CONSTRAINT `pekerjaanLain_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `pekerjaanSebel`
+-- Constraints for table `pekerjaansebel`
 --
-ALTER TABLE `pekerjaanSebel`
+ALTER TABLE `pekerjaansebel`
   ADD CONSTRAINT `pekerjaanSebel_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
