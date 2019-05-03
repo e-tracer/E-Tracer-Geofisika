@@ -232,7 +232,7 @@
                                                         </div>
                                                         <div class="login-btn-inner">
                                                             <div class="inline-remember-me">
-                                                                <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Log In</button>
+                                                                <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Daftar</button>
                                                             </div>
                                                         </div>
                                                 </div>
@@ -286,7 +286,7 @@
                                                         </div>
                                                         <div class="login-btn-inner">
                                                             <div class="inline-remember-me">
-                                                                <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Log In</button>
+                                                                <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Daftar</button>
                                                             </div>
                                                         </div>
                                                   </div>
