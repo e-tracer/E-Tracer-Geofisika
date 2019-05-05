@@ -262,7 +262,7 @@
 
         <div class="wrap-input100 validate-input " data-validate="Input angkatan anda">
           <span class="label-input300" style="float: left; font-size: 12pt;">Program Studi/Jurusan </span>
-          <input class="input100" type="number" name="prodi" placeholder="Angkatan"  value="{{ $d->prodi }}">
+          <input class="input100" type="text" name="prodi" placeholder="Prodi"  value="{{ $d->prodi }}">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input IPK anda">
@@ -309,7 +309,7 @@
 
         <div class="wrap-input100 validate-input " data-validate="Input nomer telpon anda/HP">
           <span class="label-input300" style="float: left; font-size: 12pt;">Status </span>
-          <input class="input100" type="number" name="status" placeholder="Status"  value="{{ $d->status }}">
+          <input class="input100" type="text" name="status" placeholder="Status"  value="{{ $d->status }}">
         </div>
         @endforeach
 

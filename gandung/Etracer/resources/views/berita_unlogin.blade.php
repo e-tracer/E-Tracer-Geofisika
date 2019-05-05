@@ -49,7 +49,7 @@
               <img src="images/logo.png" alt="Image" class="img-fluid float-left " width="100" height="100">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="{{ url('beranda')}}">BERANDA</a></li>
-                <li class="active"><a href="{{ url('berita')}}">BERITA</a></li>
+                <li class="active"><a href="{{ url('beritaUnlogin')}}">BERITA</a></li>
               </ul>
             </nav>
           </div>

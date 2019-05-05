@@ -140,7 +140,7 @@
             <tr align="center">
               <td> 1 </td>
               <td align="left"> Integritas (etika dan moral) </td>
-              <td><input type="radio" name="Tanggapan1" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan1" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan1" value="Baik"></td>
               <td><input type="radio" name="Tanggapan1" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan1" value="Kurang"></td>
@@ -148,7 +148,7 @@
             <tr align="center">
               <td> 2 </td>
               <td align="left"> Keahlian berdasarkan bidang ilmu (profesionalisme) </td>
-              <td><input type="radio" name="Tanggapan2" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan2" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan2" value="Baik"></td>
               <td><input type="radio" name="Tanggapan2" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan2" value="Kurang"></td>
@@ -156,7 +156,7 @@
             <tr align="center">
               <td> 3 </td>
               <td align="left"> Keluasan wawasan antar disiplin ilmu </td>
-              <td><input type="radio" name="Tanggapan3" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan3" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan3" value="Baik"></td>
               <td><input type="radio" name="Tanggapan3" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan3" value="Kurang"></td>
@@ -164,7 +164,7 @@
             <tr align="center">
               <td> 4 </td>
               <td align="left"> Kepemimpinan </td>
-              <td><input type="radio" name="Tanggapan4" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan4" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan4" value="Baik"></td>
               <td><input type="radio" name="Tanggapan4" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan4" value="Kurang"></td>
@@ -172,7 +172,7 @@
             <tr align="center">
               <td> 5 </td>
               <td align="left"> Kerjasama dalam Tim </td>
-              <td><input type="radio" name="Tanggapan5" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan5" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan5" value="Baik"></td>
               <td><input type="radio" name="Tanggapan5" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan5" value="Kurang"></td>
@@ -180,7 +180,7 @@
             <tr align="center">
               <td> 6 </td>
               <td align="left"> Bahasa Asing </td>
-              <td><input type="radio" name="Tanggapan6" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan6" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan6" value="Baik"></td>
               <td><input type="radio" name="Tanggapan6" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan6" value="Kurang"></td>
@@ -188,7 +188,7 @@
             <tr align="center">
               <td> 7 </td>
               <td align="left"> Komunikasi </td>
-              <td><input type="radio" name="Tanggapan7" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan7" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan7" value="Baik"></td>
               <td><input type="radio" name="Tanggapan7" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan7" value="Kurang"></td>
@@ -196,7 +196,7 @@
             <tr align="center">
               <td> 8 </td>
               <td align="left"> Penggunaan Teknologi Informasi </td>
-              <td><input type="radio" name="Tanggapan8" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan8" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan8" value="Baik"></td>
               <td><input type="radio" name="Tanggapan8" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan8" value="Kurang"></td>
@@ -204,7 +204,7 @@
             <tr align="center">
               <td> 9 </td>
               <td align="left"> Pengembangan Diri </td>
-              <td><input type="radio" name="Tanggapan9" value="Sangat Baik"></td>
+              <td><input type="radio" name="Tanggapan9" value="Sangat Baik" required></td>
               <td><input type="radio" name="Tanggapan9" value="Baik"></td>
               <td><input type="radio" name="Tanggapan9" value="Cukup"></td>
               <td><input type="radio" name="Tanggapan9" value="Kurang"></td>

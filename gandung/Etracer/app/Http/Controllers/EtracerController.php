@@ -471,13 +471,13 @@ class EtracerController extends Controller
 
       //inisiasi
       $gambar = $request->file('file_gambar');
-      $nama_gambar = $request->judul;
       $judul = $request->judul;
       $isi = $request->isi;
       $tanggal = \Carbon\Carbon::now()->format('d-m-y');
 
 
-      if($nama_gambar != null){
+      if($gambar != null){
+        $nama_gambar =  $gambar->getClientOriginalName();
         //menyimpan gambar di folder
         $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 
@@ -529,7 +529,7 @@ class EtracerController extends Controller
       return view('halamanBerita_unlogin',['berita' => $berita]);
     }
 
-    // menampilkan data profile
+    // menampilkan data 
     public function profile(Request $request){
       $nim = $request->session()->get('nim');
 
@@ -559,14 +559,14 @@ class EtracerController extends Controller
 
         //inisiasi
         $gambar = $request->file('file_gambar');
-        $nama_gambar = $request->session()->get('nim');
-
+  
         //update data
         DB::table('kuis_pendahuluan')->where('id_user','=',$nim)->update(
             ['nama' => $nama, 'jenis_kel' => $jk, 'angkatan' => $angkatan, 'prodi' => $prodi, 'Ipk' => $ipk, 'tahun_masuk' => $TahunMasuk, 'almt' => $Alamat, 'almt_kota' => $Kota, 'almt_prov' => $Provinsi, 'almt_kodepos' => $kodePos, 'telp' => $nomorHp, 'Id_user' => $nim,'status' => $status, 'tahun_keluar' => $TahunKeluar]
         );
 
-        if($nama_gambar != null){
+        if($gambar != null){
+          $nama_gambar =  $gambar->getClientOriginalName();
           //menyimpan gambar di folder
           $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 
@@ -657,11 +657,10 @@ class EtracerController extends Controller
 
       //inisiasi
       $gambar = $request->file('file_gambar');
-      $nama_gambar = $request->sandi;
 
 
-      if($nama_gambar != null){
-
+      if($gambar != null){
+        $nama_gambar = $gambar->getClientOriginalName();
         //menyimpan gambar di folder
         $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 
@@ -689,11 +688,10 @@ class EtracerController extends Controller
 
       //inisiasi
       $gambar = $request->file('file_gambar');
-      $nama_gambar = $request->$sandi;
 
 
-      if($nama_gambar != null){
-
+      if($gambar != null){
+        $nama_gambar =  $gambar->getClientOriginalName();
         //menyimpan gambar di folder
         $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 
@@ -753,13 +751,14 @@ class EtracerController extends Controller
 
       //inisiasi
       $gambar = $request->file('file_gambar');
-      $nama_gambar = $request->judul;
+      
       $judul = $request->judul;
       $isi = $request->isi;
       $tanggal = \Carbon\Carbon::now()->format('d-m-y');
 
 
-      if($nama_gambar != null){
+      if($gambar != null){
+        $nama_gambar = $gambar->getClientOriginalName();
         //menyimpan gambar di folder
         $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 

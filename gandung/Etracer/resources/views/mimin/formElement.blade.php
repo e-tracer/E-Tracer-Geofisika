@@ -415,7 +415,6 @@
                                             </thead>
                                             <tbody>
                                                 @foreach($berita as $p)
-                                                @if($p->status == 'alumni')
                                                 <tr>
                                                     <td>{{ $p->id_berita}}</td>
                                                     <td>{{ $p->judul}}</td>
@@ -423,7 +422,6 @@
                                                     <td>{{ $p->nama}}</td>
                                                     <th><a href="{{ url('hapusBerita') }}/{{ $p->id_berita }}">hapus</a></th>
                                                 </tr>
-                                                @endif
                                                 @endforeach
                                             </tbody>
                                         </table>

@@ -110,7 +110,7 @@
 
         <div class="wrap-input100 validate-input " data-validate="Input angkatan anda">
           <span class="label-input300">Angkatan *</span>
-          <input class="input100" type="number" name="angkatan" placeholder="Angkatan" required>
+          <input class="input100" type="number" name="angkatan" placeholder="Angkatan" min="2000" max="5000" required>
         </div>
 
         <div class="wrap-input100 input100-select ">
@@ -124,18 +124,18 @@
         <div class="wrap-input100 validate-input " data-validate="Input IPK anda">
           <span class="label-input300">IPK</span>
           <p>contoh : 4.00</p>
-          <input class="input100" type="number" name="ipk" placeholder="IPK" step="0.01" required>
+          <input class="input100" type="number" name="ipk" placeholder="IPK" step="0.01" min="0.01" max="4.00" required>
         </div>
 
 
         <div class="wrap-input100 validate-input " data-validate="Input tahun masuk anda">
           <span class="label-input300">Tahun Masuk *</span>
-          <input class="input100" type="number" name="TahunMasuk" placeholder="Tahun Masuk" required>
+          <input class="input100" type="number" name="TahunMasuk" placeholder="Tahun Masuk" min="2000" max="5000" required>
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input tahun masuk anda">
           <span class="label-input300">Tahun Lulus *</span>
-          <input class="input100" type="number" name="TahunKeluar" placeholder="Tahun Keluar" required>
+          <input class="input100" type="number" name="TahunKeluar" placeholder="Tahun Keluar" min="2000" max="5000" required>
         </div>
 
 
@@ -170,22 +170,20 @@
           <span class="label-input300">Status saat ini*</span>
           <div>
           <br>
-
-            <tr>
-              <td><input type="radio" name="Status" value="Wiraswasta"></td> Wiraswasta<br>
-              <td><input type="radio" name="Status" value="Bekerja dan wiraswasta"></td> Bekerja dan wiraswasta<br>
-              <td><input type="radio" name="Status" value="Bekerja"></td> Bekerja<br>
-              <td><input type="radio" name="Status" value="Tidak Bekerja"></td> Tidak Bekerja/Melanjutkan Kuliah<br>
-
-
-            </tr>
+           
+           <select class="js-select2" name="status">
+              <option value="Wiraswasta">Wiraswasta</option>
+              <option value="Bekerja dan wiraswasta">Bekerja dan wiraswasta</option>
+              <option value="Bekerja">Bekerja</option>
+              <option value="Tidak Bekerja">Tidak Bekerja/Melanjutkan Kuliah</option>
+            </select>
+            <div class="dropDownSelect2"></div>
         </div>  
       </div>
 
-      <h3>Isi sesuai status yang dipilih</h3>
-      <div class="contact100-form">
-
-      <h5>1. Wiraswasta</h5>
+  <div class="contact100-form">
+   <div class="w-full dis-none js-show-wiraswasta">
+      <h5>Wiraswasta</h5>
       <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Apakah anda pernah bekerja sebelumnya? </span>
           <input class="input100" type="text" name="pernahWir" placeholder="Answer Here....">
@@ -195,7 +193,6 @@
           <span class="label-input300">Berapa lama Anda bekerja setelah lulus kuliah (dengan kata lain pekerjaan pertama) sebelum memutuskan untuk wirausaha? </span>
           <input class="input100" type="text" name="brplamaWir" placeholder="Answer Here....">
         </div>
-
 
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Apa alasan anda memutuskan wirausaha? </span>
@@ -216,8 +213,9 @@
           <span class="label-input300">Berapa omset rata-rata perbulan? </span>
           <input class="input100" type="text" name="omsetWir" placeholder="Answer Here....">
         </div>
-
-      <h5>2. Bekerja dan wiraswasta</h5>
+    </div>
+    <div class="w-full dis-none js-show-WiraKerja">
+      <h5>Bekerja dan wiraswasta</h5>
         <div class="wrap-input100 validate-input" data-validate="Please Type Your Name">
           <span class="label-input300">Jenis usaha apa yang Anda kembangkan saat ini? </span>
           <input class="input100" type="text" name="jenisBWir" placeholder="Answer Here....">
@@ -232,7 +230,9 @@
           <span class="label-input300">Berapa omset rata-rata perbulan? </span>
           <input class="input100" type="text" name="omsetBWir" placeholder="Answer Here....">
         </div>
-      <h5>3. Bekerja</h5>
+    </div>
+    <div class="w-full dis-none js-show-Kerja">
+      <h5>Bekerja</h5>
         <div class="wrap-input100 validate-input" data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apakah kategori perusahaan tempat Anda bekerja?</span>
           <input class="input100" type="text" name="kategoriBer" placeholder="Answer Here....">
@@ -242,7 +242,9 @@
           <span class="label-input300">Apakah pekerjaan Anda saat ini sesuai dengan bidang kuliah? </span>
           <input class="input100" type="text" name="sesuaiBer" placeholder="Answer Here....">
         </div>
-      <h5>4. Tidak bekerja/melanjutkan kuliah</h5>
+    </div>
+          <div class="w-full dis-none js-show-sekolah">
+      <h5>Tidak bekerja/melanjutkan kuliah</h5>
          <div class="wrap-input100 validate-input " data-validate="Tolong jawab pertanyaan ini">
           <span class="label-input300">Apakah Anda pernah bekerja sebelumnya?</span>
           <input class="input100" type="text" name="pernahSe" placeholder="Answer Here....">
@@ -258,7 +260,7 @@
           <input class="input100" type="text" name="alasanSe" placeholder="Answer Here....">
         </div>
       </div>
-
+    </div>
       <h4>Pekerjaan Utama</h4>
         <div class="wrap-input100">
           <span class="label-input300">Nama Kantor</span>
@@ -323,8 +325,8 @@
           <input class="input100" type="text" name="jenispekerjaan2" placeholder="Answer Here....">
         </div>                
         <div class="wrap-input100  ">
-          <span class="label-input300">Sejak  </span>
-          <input class="input100" type="text" name="sejak2" placeholder="Answer Here....">
+          <span class="label-input300">Sejak (Tahun)  </span>
+          <input class="input100" type="number" name="sejak2" placeholder="Answer Here....">
         </div>
         <div class="wrap-input100 ">
           <span class="label-input300">Telpon Kantor  </span>
@@ -341,8 +343,8 @@
         </div>
 
         <div class="wrap-input100 ">
-          <span class="label-input300">Perkiraan penghasilan per-bulan  </span>
-          <input class="input100" type="text" name="penghasilan2" placeholder="Answer Here....">
+          <span class="label-input300">Perkiraan penghasilan per-bulan (Rupiah, ex = 1000000)  </span>
+          <input class="input100" type="number" name="penghasilan2" placeholder="Answer Here....">
         </div>        
 
 
@@ -415,6 +417,50 @@
   <script src="{{asset('js/aos.js')}}"></script>
 
   <script src="{{asset('js/main.js')}}"></script>
+  <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
+   <script>
+    $(".js-select2").each(function(){
+      $(this).select2({
+        minimumResultsForSearch: 20,
+        dropdownParent: $(this).next('.dropDownSelect2')
+      });
+
+
+      $(".js-select2").each(function(){
+        $(this).on('select2:close', function (e){
+          if($(this).val() == "Wiraswasta") {
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-wiraswasta').slideDown();
+            $('.js-show-WiraKerja').slideUp();
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-Kerja').slideUp();
+            }
+          else if($(this).val()== "Bekerja dan wiraswasta") {
+            $('.js-show-WiraKerja').slideUp();
+            $('.js-show-WiraKerja').slideDown();
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-Kerja').slideUp();
+          }
+           else if($(this).val()== "Bekerja") {
+            $('.js-show-Kerja').slideUp();
+            $('.js-show-Kerja').slideDown();
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-WiraKerja').slideUp();
+          }
+           else if($(this).val()== "Tidak Bekerja/Melanjutkan Kuliah") {
+            $('.js-show-sekolah').slideUp();
+            $('.js-show-sekolah').slideDown();
+            $('.js-show-wiraswasta').slideUp();
+            $('.js-show-Kerja').slideUp();
+            $('.js-show-WiraKerja').slideUp();
+          }
+        });
+      });
+    })
+  </script> 
+
     
   </body>
 </html>

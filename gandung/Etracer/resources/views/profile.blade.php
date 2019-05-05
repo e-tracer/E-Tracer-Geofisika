@@ -113,6 +113,7 @@
 
         <div class="form-group">
           <label for="file_gambar">Foto Profil</label><br>
+          <p>ukuran maksimal 2 mb</p>
           <input type="file" id="file_gambar" name="file_gambar">
         </div>
         @foreach($data as $d)
@@ -139,7 +140,7 @@
 
         <div class="wrap-input100 validate-input " data-validate="Input IPK anda">
           <span class="label-input300">IPK </span>
-          <input class="input100" type="number" name="ipk" placeholder="IPK" value="{{ $d->ipk }}">
+          <input class="input100" type="number" name="ipk" placeholder="IPK" step="0.01" min="0.01" max="4.00" value="{{ $d->ipk }}">
         </div>
 
 
