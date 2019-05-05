@@ -853,13 +853,11 @@ class EtracerController extends Controller
 public function unduh(Request $request){
       //ini yang atas
       //$nim = $request->session()->get('nim');
-      $nim = '14116036';
-      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+      //$nim = '14116036';
+     // $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
 
       
-      $cari = '14116036';
-      $request->session()->put('alumni',$cari);
-
+      $cari = $request->session()->get('alumni');
 
       //menangkap hasil
       $dapat1 = DB::table('kuis_pendahuluan')->where('id_user','=',$cari)->get();
@@ -891,12 +889,16 @@ public function unduh(Request $request){
 
       //$pdf = PDF::loadView('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
       
-      $pdf = PDF::loadView('mimin/downloadKuisioner',['kuisUtama' => $kuisUtama]);
+      //$pdf = PDF::loadView('mimin/downloadKuisioner',['kuisUtama' => $kuisUtama]);
 
-      //return view('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
+      //$pdf = PDF::loadView('pesanPerusahaan');
+
+      $pdf = PDF::loadview('mimin/downloadKuisioner',['dapat1'=>$dapat1, 'dapatWir'=>$dapatWir, 'dapatKewir'=>$dapatKewir,'dapatSek' =>$dapatSek, 'pekerjaan1'=>$pekerjaan1,'pekerjaan2'=>$pekerjaan2,'pekerjaan3' =>$pekerjaan3,'kuisUtama'=>$kuisUtama]);
+
+      //$pdf = PDF::loadview('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
       //return $kuisUtama;
 
-      return $pdf->download('Kuisione.pdf');
+      return $pdf->stream();
 
 
     }

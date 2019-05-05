@@ -160,7 +160,8 @@
                                         <div class="breadcome-heading">
                                             <form role="search" class="" action="{{ url('/formTable/mencari') }}" method="GET">
 												<input type="text" placeholder="Search..." class="form-control" name='cari'>
-												<button type="submit"><i class="fa fa-search"></i></button>
+                                             </form>
+
 											</form>
                                         </div>
                                     </div>
@@ -169,7 +170,13 @@
                                             <li><a href="#">Admin</a> <span class="bread-slash">/</span>
                                             </li>
                                             @foreach ($dapat1 as $d)
-                                            <li><span class="bread-blod">Kuisioner/{{ $d->nama }}</span>
+                                            <li><span class="bread-blod">Kuisioner {{ $d->nama }}</span>
+                                            <form method="GET" action="{{ url('/unduh') }}">                                                <button class="btn btn-outline-dark" >
+              <span>
+              Download
+            </span>
+          </button>
+
                                             @endforeach
                                             </li>
                                         </ul>
