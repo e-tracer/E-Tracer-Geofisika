@@ -91,12 +91,15 @@
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-3" height="200%" width="200%" >
-                <p class="text-white" style="font-size: 36px; font-family: Poppins">Letfi Wahyu</p>
-                <div class="meta mb-4 text-white font-weight-light">Angkatan 2016 <span class="mx-2">&bullet;</span> Tahun lulus 2020</div>
+
+                @foreach ($data as $d)
+                <img src="{{ url('uploadGambar')}}/{{$d->file_gambar2}}" alt="Image" class="img-fluid mb-3" height="200%" width="200%" >
+
+                <p class="text-white" style="font-size: 36px; font-family: Poppins">{{ $d->nama }}</p>
+                <div class="meta mb-4 text-white font-weight-light">Angkatan {{ $d->angkatan}} <span class="mx-2">&bullet;</span> Tahun Lulus {{ $d->tahun_keluar }}</div>
                 </figure>
               </div>
-  
+              @endforeach
            </div>
         </div>
       </div>
@@ -105,86 +108,82 @@
     <div class="container">
        <div class="wrap-contact100">
 
-      <form class="contact100-form validate-form">
+      <form class="contact100-form validate-form" action="{{ url('/profile/dataProfile') }}" method="POST" enctype="multipart/form-data">
+         {{ csrf_field() }}
+
+        <div class="form-group">
+          <label for="file_gambar">Foto Profil</label><br>
+          <input type="file" id="file_gambar" name="file_gambar">
+        </div>
+        @foreach($data as $d)
         <div class="wrap-input100 validate-input " data-validate="Please Type Your Name">
-          <span class="label-input300">Nama Lengkap *</span>
-          <input class="input100" type="text" name="name" placeholder="Enter Your Name">
+          <span class="label-input300">Nama Lengkap </span>
+          <input class="input100" type="text" name="nama" placeholder="Enter Your Name" value="{{ $d->nama }}">
         </div>
         
-        <div class="wrap-input100 input100-select ">
-          <span class="label-input300">Jenis Kelamin *</span>
-          <div>
-            <select class="js-select2" name="Jenis Kelamin">
-              <option>Laki-laki</option>
-              <option>Perempuan</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-          </div>
+       <div class="wrap-input100 validate-input " data-validate="Please Type Your Name">
+          <span class="label-input300">Jenis Kelamin </span>
+          <input class="input100" type="text" name="jk" placeholder="Enter Your Name" value="{{ $d->jenis_kel }}">
         </div>
 
 
         <div class="wrap-input100 validate-input " data-validate="Input angkatan anda">
-          <span class="label-input300">Angkatan *</span>
-          <input class="input100" type="number" name="angkatan" placeholder="Angkatan">
+          <span class="label-input300">Angkatan </span>
+          <input class="input100" type="number" name="angkatan" placeholder="Angkatan" value="{{ $d->angkatan }}">
         </div>
 
-        <div class="wrap-input100 input100-select ">
-          <span class="label-input300">Program Studi / Jurusan *</span>
-          <div>
-            <select class="js-select2" name="Jenis Kelamin">
-              <option>Teknik Geofisika</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-          </div>
+        <div class="wrap-input100 validate-input " data-validate="Input angkatan anda">
+          <span class="label-input300">Program Studi/Jurusan</span>
+          <input class="input100" type="text" name="prodi" placeholder="prodi" value="{{ $d->prodi }}">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input IPK anda">
-          <span class="label-input300">IPK *</span>
-          <input class="input100" type="number" name="IPK" placeholder="IPK">
+          <span class="label-input300">IPK </span>
+          <input class="input100" type="number" name="ipk" placeholder="IPK" step="0.01" min="0.01" max="4.00" value="{{ $d->ipk }}">
         </div>
 
 
         <div class="wrap-input100 validate-input " data-validate="Input tahun masuk anda">
-          <span class="label-input300">Tahun Masuk *</span>
-          <input class="input100" type="number" name="TahunMasuk" placeholder="Tahun Masuk">
+          <span class="label-input300">Tahun Masuk </span>
+          <input class="input100" type="number" name="TahunMasuk" placeholder="Tahun Masuk" value="{{ $d->tahun_masuk }}">
+        </div>
+
+         <div class="wrap-input100 validate-input " data-validate="Input tahun masuk anda">
+          <span class="label-input300">Tahun Lulus </span>
+          <input class="input100" type="number" name="TahunKeluar" placeholder="Tahun Keluar" value="{{ $d->tahun_keluar }}">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input alamat anda">
-          <span class="label-input300">Alamat *</span>
-          <input class="input100" type="text" name="alamat" placeholder="Alamat">
+          <span class="label-input300">Alamat </span>
+          <input class="input100" type="text" name="alamat" placeholder="Alamat" value="{{ $d->almt }}">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input kota anda">
-          <span class="label-input300">Kota *</span>
-          <input class="input100" type="text" name="kota" placeholder="Kota">
+          <span class="label-input300">Kota </span>
+          <input class="input100" type="text" name="kota" placeholder="Kota" value="{{ $d->almt_kota }}">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input provinsi anda">
-          <span class="label-input300">Provinsi *</span>
-          <input class="input100" type="text" name="Provinsi" placeholder="Provinsi">
+          <span class="label-input300">Provinsi </span>
+          <input class="input100" type="text" name="provinsi" placeholder="Provinsi" value="{{ $d->almt_prov }}">
         </div>
   
         <div class="wrap-input100 validate-input " data-validate="Input kode pos anda">
-          <span class="label-input300">Kode pos *</span>
-          <input class="input100" type="number" name="kodepos" placeholder="Kode Pos">
+          <span class="label-input300">Kode pos </span>
+          <input class="input100" type="number" name="kodepos" placeholder="Kode Pos" value="{{ $d->almt_kodepos }}">
         </div>
 
         <div class="wrap-input100 validate-input " data-validate="Input nomer telpon anda/HP">
-          <span class="label-input300">Nomor telpon/hp *</span>
-          <input class="input100" type="number" name="nomer" placeholder="Nomor telpon/HP">
+          <span class="label-input300">Nomor telpon/hp </span>
+          <input class="input100" type="number" name="nomer" placeholder="Nomor telpon/HP" value="{{ $d->telp }}">
         </div>
-        <div class="wrap-input100 input100-select ">
-          <span class="label-input300">Status saat ini *</span>
-          <div>
-            <select class="js-select2" name="service">
-              <option>Wiraswasta</option>
-              <option>Bekerja dan Wiraswasta</option>
-              <option>Bekerja</option>
-              <option>Tidak bekerja/Melanjutkan Kuliah</option>
-            </select>
-            <div class="dropDownSelect2"></div>
-          </div>
+
+        <div class="wrap-input100 validate-input " data-validate="Input nomer telpon anda/HP">
+          <span class="label-input300">Status Pekerjaan </span>
+          <input class="input100" type="text" name="status" placeholder="Nomor telpon/HP" value="{{ $d->status }}">
         </div>
+        @endforeach
+
         <div class="container-contact100-form-btn">
           <button class="contact100-form-btn">
             <span>

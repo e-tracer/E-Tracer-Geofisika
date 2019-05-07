@@ -72,11 +72,11 @@
           <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-3">
-                  @foreach ($pengguna as $p)
+                @foreach ($dataPengguna as $p)
+                <img src="{{ url('uploadGambar')}}/{{ $p->file_gambar2 }}" alt="Image" class="img-fluid mb-3">
                     <p class="text-white">{{ $p->nama }}</p>
-                  @endforeach
-                <div class="meta mb-4 text-white font-weight-light">Angkatan 2016 <span class="mx-2">&bullet;</span> Tahun lulus 2020</div>
+                <div class="meta mb-4 text-white font-weight-light">Angkatan {{ $p->angkatan }} <span class="mx-2">&bullet;</span> Tahun Lulus {{ $p->tahun_keluar }}</div>
+                @endforeach
                 </figure>
               </div>
   

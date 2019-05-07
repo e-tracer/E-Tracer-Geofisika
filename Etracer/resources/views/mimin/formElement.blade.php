@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Element Form | Admin</title>
+    <title>HOME | Admin</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -58,30 +58,34 @@
     <div class="wrapper-pro">
         <div class="left-sidebar-pro">
             <nav id="sidebar">
+                 @foreach($pengguna as $p)
                 <div class="sidebar-header">
-                    <a href="#"><img src="deded/img/Logo-TG.jpg" alt="" />
+                    <a href="#"><img src="{{ url('uploadGambar')}}/{{$p->file_gambar2}}" alt="Foto" />
                     </a>
-                    <h3>Dediepow</h3>
-                    <p>Admin</p>
+                    <h3>{{ $p->nama }}</h3>
+                    <p>{{ $p->status }}</p>
                     <strong>TG-I</strong>
                 </div>
+                @endforeach
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
                         <li class="nav-item">
                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="{{url('admin')}}" class="dropdown-item">Admin Home</a>
+                                <a href="{{url('/formElement')}}" class="dropdown-item">Admin Home</a>
                             </div>
                         </li>
                         
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-bar-chart-o"></i> <span class="mini-dn">Charts</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown  animated flipInX">
-                                <a href="{{url('barCharts')}}" class="dropdown-item">Bar Charts</a>
+                                <a href="{{url('barCharts')}}" class="dropdown-item">Static</a>
+                                <a href="{{ url('formTable') }}"class="dropdown-item">Kuisioner</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-table"></i> <span class="mini-dn">User</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-edit"></i> <span class="mini-dn">Data Tables</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="{{url('adminPengaturanUser')}}" class="dropdown-item">Pengaturan User</a>
+                                <a href="{{url('studyTable')}}" class="dropdown-item">Buat Berita</a>
                             </div>
                         </li>
                         
@@ -107,7 +111,7 @@
                             <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
                                 <div class="header-top-menu">
                                     <ul class="nav navbar-nav mai-top-nav">
-                                        <li class="nav-item"><a href="#" class="nav-link">Admin Form Element</a>
+                                        <li class="nav-item"><a href="{{ url('formElement')}}" class="nav-link">Admin Home</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -116,15 +120,16 @@
                                 <div class="header-right-info">
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
                                         
-
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
-                                                <span class="admin-name">Dediepow</span>
+                                                @foreach($pengguna as $p)
+                                                <span class="admin-name">{{ $p->nama }}</span>
+                                                @endforeach
                                                 <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
-                                                <li><a href="#"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Log Out</a>
+                                                <li><a href="{{ url('beranda') }}"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Keluar</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -145,18 +150,10 @@
                             <div class="breadcome-list shadow-reset">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="breadcome-heading">
-                                            <form role="search" class="">
-												<input type="text" placeholder="Search..." class="form-control">
-												<a href=""><i class="fa fa-search"></i></a>
-											</form>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Admin</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">Form Element</span>
+                                            <li><span class="bread-blod">Home</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -201,259 +198,243 @@
             <div class="basic-form-area mg-b-15">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="sparkline8-list basic-res-b-30 shadow-reset">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
-                                        <h1>Kuesioner Pendahuluan</h1>   
+                                        <h1>DAFTAR ADMIN</h1>
+                                        <div class="sparkline8-outline-icon">
+                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>                         
+                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="sparkline8-graph">
+                                    <div class="basic-login-form-ad">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="basic-login-inner">
+                                                    <p>Daftarkan admin disini</p>
+                                                    <form action="{{ url('/formElement/adminProses') }}" method="POST" enctype="multipart/form-data">
+                                                        {{ csrf_field() }}
+                                                        <div class="form-group-inner">
+                                                            <label>Nama</label>
+                                                            <input type="text" class="form-control" placeholder="Masukkan nama" name="nama" required />
+                                                        </div>
+
+                                                        <div class="form-group-inner">
+                                                            <label>Email</label>
+                                                            <input type="email" class="form-control" placeholder="Masukkan Email" name="pesan" required />
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                            <label>Password</label>
+                                                            <input type="password" class="form-control" placeholder="Masukkan password" name="sandi" required/>
+                                                        </div>
+                                                        <div class="login-btn-inner">
+                                                            <div class="inline-remember-me">
+                                                                <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Daftar</button>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="basic-login-inner basic-ele-mg-t-20">
+                                                    <p>Upload Foto</p>
+                                                    <div class="form-group">
+                                                        <label for="file_gambar">Foto Profil</label><br>
+                                                        <input type="file" id="file_gambar" name="file_gambar">
+                                                     </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="sparkline8-list basic-res-b-30 shadow-reset">
+                                <div class="sparkline8-hd">
+                                    <div class="main-sparkline8-hd">
+                                        <h1>DAFTAR ALUMNI</h1>
+                                        <div class="sparkline8-outline-icon">
+                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>                         
+                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sparkline8-graph">
+                                    <div class="basic-login-form-ad">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="basic-login-inner">
+                                                    <p>Daftarkan alumni disini</p>
+                                                    <form action="{{ url('/formElement/alumniProses') }}" method="POST" enctype="multipart/form-data" >
+                                                         {{ csrf_field() }}
+                                                        <div class="form-group-inner">
+                                                            <label>Nama</label>
+                                                            <input type="text" class="form-control" placeholder="Masukkan nama" name="nama2" required />
+                                                        </div>
+
+                                                        <div class="form-group-inner">
+                                                            <label>Email</label>
+                                                            <input type="email" class="form-control" placeholder="Masukkan Email" name="pesan2" required />
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                            <label>NIM</label>
+                                                            <input type="password" class="form-control" placeholder="Masukkan password" name="sandi2" required />
+                                                        </div>
+                                                        <div class="login-btn-inner">
+                                                            <div class="inline-remember-me">
+                                                                <button class="btn btn-sm btn-primary pull-right login-submit-cs" type="submit">Daftar</button>
+                                                            </div>
+                                                        </div>
+                                                  </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="basic-login-inner basic-ele-mg-t-20">
+                                                    <p>Upload Foto</p>
+                                                    <div class="form-group">
+                                                        <label for="file_gambar">Foto Profil</label><br>
+                                                        <input type="file" id="file_gambar" name="file_gambar">
+                                                     </div>
+                                                </div>
+                                            </div>
+                                             </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="row">
+                        <div class="col-lg-6">
+                            <div class="sparkline8-list shadow-reset mg-t-30">
+                                <div class="sparkline8-hd">
+                                    <div class="main-sparkline8-hd">
+                                        <h1>Tabel Admin</h1>
+                                        <div class="sparkline8-outline-icon">
+                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sparkline8-graph">
                                     <div class="static-table-list">
                                         <table class="table">
                                             <thead>
                                                 <tr>
+                                                    <th>ID</th>
                                                     <th>Nama</th>
-                                                    <th>Jenis Kelamin</th>
-                                                    <th>Angkatan</th>
-                                                    <th>Prodi</th>
-                                                    <th>IPK</th>
-                                                    <th>Tahun Masuk</th>
-                                                    <th>Alamat</th>
-                                                    <th>Kota</th>
-                                                    <th>Provinsi</th>
-                                                    <th>Kode Pos</th>
-                                                    <th>Nomer HP</th>
-                                                    
-
+                                                    <th>Status</th>
+                                                    <th>Email</th>
+                                                    <th>Tindakan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($formPendahuluan as $p)
+                                                @foreach($data as $p)
+                                                @if($p->status == 'admin')
                                                 <tr>
-                                                    <td>{{$p->nama}}</td>
-                                                    <td>{{$p->jenis_kel}}</td>
-                                                    <td>{{$p->angkatan}}</td>
-                                                    <td>{{$p->prodi}}</td>
-                                                    <td>{{$p->ipk}}</td>
-                                                    <td>{{$p->tahun_masuk}}</td>
-                                                    <td>{{$p->almt}}</td>
-                                                    <td>{{$p->almt_kota}}</td>
-                                                    <td>{{$p->almt_prov}}</td>
-                                                    <td>{{$p->almt_kodepos}}</td>
-                                                    <td>{{$p->telp}}</td>
-                                                    <td><a href="downloadKuisPendahuluan"><i class="fa fa-download" style= font-size:24px></i></a></td>
+                                                    <td>{{ $p->id_user}}</td>
+                                                    <td>{{ $p->nama}}</td>
+                                                    <td>{{ $p->status}}</td>
+                                                    <td>{{ $p->email}}</td>
+                                                    <th><a href="{{ url('hapusAdmin') }}/{{ $p->id_user }}">hapus</a></th>
                                                 </tr>
-                    
+                                                @endif
                                                 @endforeach
-                                                  
                                             </tbody>
-                                            
                                         </table>
-                                    </div>        
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-
-            <div class="basic-form-area mg-b-15">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="sparkline8-list basic-res-b-30 shadow-reset">
+                         </div>
+                         <div class="col-lg-6">
+                            <div class="sparkline8-list shadow-reset mg-t-30">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
-                                        <h1>Kuesioner Pekerjaan Utama</h1>   
+                                        <h1>Tabel Alumni</h1>
+                                        <div class="sparkline8-outline-icon">
+                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="sparkline8-graph">
                                     <div class="static-table-list">
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th>Nama Kantor</th>
-                                                    <th>Bidang Usaha</th>
-                                                    <th>Jabatan</th>
-                                                    <th>Jenis Pekerjaan</th>
-                                                    <th>Bekerja Sejak</th>
-                                                    <th>Nomer Kantor</th>
-                                                    <th>Web Kantor</th>
-                                                    <th>Alamat KAntor</th>
-                                                    <th>Penghasilan</th>
-                                                    <td>
-                                                    <a href="#"><i class="fa fa-download" style= font-size:24px></i></a>
-                                                    </td>
-
+                                                    <th>ID</th>
+                                                    <th>Nama</th>
+                                                    <th>Status</th>
+                                                    <th>Email</th>
+                                                    <th>Tindakan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($pekerjaan as $p)
+                                                @foreach($data as $p)
+                                                @if($p->status == 'alumni')
                                                 <tr>
-                                                    <td>{{$p->nama_kantor}}</td>
-                                                    <td>{{$p->bidang_usaha}}</td>
-                                                    <td>{{$p->jabatan}}</td>
-                                                    <td>{{$p->jenis_pekerjaan}}</td>
-                                                    <td>{{$p->sejak}}</td>
-                                                    <td>{{$p->telp_kantor}}</td>
-                                                    <td>{{$p->web_kantor}}</td>
-                                                    <td>{{$p->alamat_kantor}}</td>
-                                                    <td>{{$p->penghasilan}}</td>
-
+                                                    <td>{{ $p->id_user}}</td>
+                                                    <td>{{ $p->nama}}</td>
+                                                    <td>{{ $p->status}}</td>
+                                                    <td>{{ $p->email}}</td>
+                                                    <th><a href="{{ url('hapusAlumni') }}/{{ $p->id_user}}">hapus</a></th>
                                                 </tr>
+                                                @endif
                                                 @endforeach
- 
-
-                                                
                                             </tbody>
                                         </table>
-                                    </div>        
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-
-
-             <div class="basic-form-area mg-b-15">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="sparkline8-list basic-res-b-30 shadow-reset">
+                         </div>
+                         <div class="col-lg-12">
+                            <div class="sparkline8-list shadow-reset mg-t-30">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
-                                        <h1>Kuesioner Pekerjaan Lain</h1>   
+                                        <h1>Tabel Berita</h1>
+                                        <div class="sparkline8-outline-icon">
+                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="sparkline8-graph">
                                     <div class="static-table-list">
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <th>Nama Kantor</th>
-                                                    <th>Bidang Usaha</th>
-                                                    <th>Jabatan</th>
-                                                    <th>Jenis Pekerjaan</th>
-                                                    <th>Bekerja Sejak</th>
-                                                    <th>Nomer Kantor</th>
-                                                    <th>Email Kantor</th>
-                                                    <th>Alamat KAntor</th>
-                                                    <th>Penghasilan</th>
-                                                    <td>
-                                                    <a href="#"><i class="fa fa-download" style= font-size:24px></i></a>
-                                                    </td>
-
-
+                                                    <th>ID</th>
+                                                    <th>Judul</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Penulis</th>
+                                                    <th>Tindakan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($pekerjaanLain as $p)
+                                                @foreach($berita as $p)
+                                                @if($p->status == 'alumni')
                                                 <tr>
-                                                    <td>{{$p->nama_kantor}}</td>
-                                                    <td>{{$p->bidang_usaha}}</td>
-                                                    <td>{{$p->jabatan}}</td>
-                                                    <td>{{$p->jenis_pekerjaan}}</td>
-                                                    <td>{{$p->sejak}}</td>
-                                                    <td>{{$p->telp_kantor}}</td>
-                                                    <td>{{$p->web_kantor}}</td>
-                                                    <td>{{$p->alamat_kantor}}</td>
-                                                    <td>{{$p->penghasilan}}</td>
-                                                    
+                                                    <td>{{ $p->id_berita}}</td>
+                                                    <td>{{ $p->judul}}</td>
+                                                    <td>{{ $p->tanggal}}</td>
+                                                    <td>{{ $p->nama}}</td>
+                                                    <th><a href="{{ url('hapusBerita') }}/{{ $p->id_berita }}">hapus</a></th>
                                                 </tr>
+                                                @endif
                                                 @endforeach
-                                                
                                             </tbody>
                                         </table>
-                                    </div>        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-
-             <div class="basic-form-area mg-b-15">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="sparkline8-list basic-res-b-30 shadow-reset">
-                                <div class="sparkline8-hd">
-                                    <div class="main-sparkline8-hd">
-                                        <h1>Kuisioner Pekerjaan Sebelumnya</h1>   
                                     </div>
-                                    <div class="static-table-list">
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-                                                    <th>Nama Kantor</th>
-                                                    <th>Bidang Usaha</th>
-                                                    <th>Jabatan</th>
-                                                    <th>Jenis Pekerjaan</th>
-                                                    <th>Deskripsi</th>
-                                                    <td>
-                                                    <a href="#"><i class="fa fa-download" style= font-size:24px></i></a>
-                                                    </td>
-
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach($pekerjaanSebelum as $p)
-                                                <tr>
-                                                    <td>{{$p->nama_kantor}}</td>
-                                                    <td>{{$p->bidang_usaha}}</td>
-                                                    <td>{{$p->jabatan}}</td>
-                                                    <td>{{$p->deskripsi}}</td>
-                                                </tr>
-                                                @endforeach
- 
-                                            </tbody>
-                                        </table>
-                                    </div>        
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
+                         </div>
 
-             <div class="basic-form-area mg-b-15">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="sparkline8-list basic-res-b-30 shadow-reset">
-                                <div class="sparkline8-hd">
-                                    <div class="main-sparkline8-hd">
-                                        <h1>Kuesioner Pekerjaan Wiraswasta</h1>   
-                                    </div>
-                                    <div class="static-table-list">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Jenis Usaha</th>
-                                                    <th>Asal Modal</th>
-                                                    <th>Omset</th>
-                                                    <td>
-                                                    <a href="#"><i class="fa fa-download" style= font-size:24px></i></a>
-                                                    </td> 
-                                               </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach($kerjaWiraswasta as $p)
-                                                <tr>
-                                                    <td>{{$p->jenis}}</td>
-                                                    <td>{{$p->asal_modal}}</td>
-                                                    <td>{{$p->omset}}</td>
+                    </div>                    
 
-                                                </tr>
-                                                @endforeach
-                                                
-                                            </tbody>
-                                        </table>
-                                    </div>        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-
+            </div>
             <!-- Basic Form End-->
 
         </div>
@@ -464,52 +445,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-copy-right">
-                        <p>Copyright &#169; 2018 Colorlib All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                        <p>Copyright &#169; 2019 Colorlib All rights reserved. Template by Kelompok Kame.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End-->
-    <!-- Chat Box Start-->
-    <div class="chat-list-wrap">
-        <div class="chat-list-adminpro">
-            <div class="chat-button">
-                <span data-toggle="collapse" data-target="#chat" class="chat-icon-link"><i class="fa fa-comments"></i></span>
-            </div>
-            <div id="chat" class="collapse chat-box-wrap shadow-reset animated zoomInLeft">
-                <div class="chat-main-list">
-                    <div class="chat-heading">
-                        <h2>Messanger</h2>
-                    </div>
-                    <div class="chat-content chat-scrollbar">
-                        <div class="author-chat">
-                            <h3>Monica <span class="chat-date">10:15 am</span></h3>
-                            <p>Hi, what you are doing and where are you gay?</p>
-                        </div>
-                        <div class="client-chat">
-                            <h3>Mamun <span class="chat-date">10:10 am</span></h3>
-                            <p>Now working in graphic design with coding and you?</p>
-                        </div>
-                        <div class="author-chat">
-                            <h3>Monica <span class="chat-date">10:05 am</span></h3>
-                            <p>Practice in programming</p>
-                        </div>
-                        <div class="client-chat">
-                            <h3>Mamun <span class="chat-date">10:02 am</span></h3>
-                            <p>That's good man! carry on...</p>
-                        </div>
-                    </div>
-                    <div class="chat-send">
-                        <input type="text" placeholder="Type..." />
-                        <span><button type="submit">Send</button></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Chat Box End-->
-    <!-- jquery
+        <!-- jquery
 		============================================ -->
     <script src="{{asset('deded/js/vendor/jquery-1.11.3.min.js')}}"></script>
     <!-- bootstrap JS

@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Carbon;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\UploadedFile;
+use Mail;
+use PDF;
 
 
 class EtracerController extends Controller
@@ -42,7 +44,7 @@ class EtracerController extends Controller
                 }
 
             } else {
-                return redirect('admin');
+                return redirect('formElement');
             }
          } else {
             return redirect('loginGagal');
@@ -58,13 +60,13 @@ class EtracerController extends Controller
 
         $nim = $request->session()->get('nim');
 
-    	//mengammbil data dari tabel user
-    	$pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+    	//mengammbil data dari tabel user dan kuisioner pendahuluan
+      $dataPengguna = DB::table('kuis_pendahuluan')->join('user','kuis_pendahuluan.id_user','=','user.id_user')->where('user.id_user','=',$nim)->get();
 
     	//mengirim data user ke view beranda
-    	return view('beranda_login',['pengguna' => $pengguna]);
+    	return view('beranda_login',['dataPengguna' => $dataPengguna]);
 
-        //return $pengguna;
+      //return $dataPengguna;
     }
 
 
@@ -97,8 +99,8 @@ class EtracerController extends Controller
         $komenPositif = $request->input('komenPositif');
         $komenNegatif = $request->input('komenNegatif');
         $gambaran = $request->input('gambaran');
-        $status = $request->input('Status');
-
+        $TahunKeluar = $request->input('TahunKeluar');
+        
         //input wiraswasta
         $pernahWir = $request->input('pernahWir');
         $brplamaWir = $request->input('brplamaWir');
@@ -149,12 +151,10 @@ class EtracerController extends Controller
         $posisi3 = $request->input('posisi3');
         $alasanPindah = $request->input('alasanPindah');
 
-
-
         //menimpandata kuisioner pendahuluan
       
         DB::table('kuis_pendahuluan')->insert(
-            ['nama' => $nama, 'jenis_kel' => $jk, 'angkatan' => $angkatan, 'prodi' => $prodi, 'Ipk' => $ipk, 'tahun_masuk' => $TahunMasuk, 'almt' => $Alamat, 'almt_kota' => $Kota, 'almt_prov' => $Provinsi, 'almt_kodepos' => $kodePos, 'telp' => $nomorHp,'kerjaan_pos' => $komenPositif, 'kerjaan_neg' => $komenNegatif, 'gambaran_ideal' => $gambaran,'Id_user' => $nim]
+            ['nama' => $nama, 'jenis_kel' => $jk, 'angkatan' => $angkatan, 'prodi' => $prodi, 'Ipk' => $ipk, 'tahun_masuk' => $TahunMasuk, 'almt' => $Alamat, 'almt_kota' => $Kota, 'almt_prov' => $Provinsi, 'almt_kodepos' => $kodePos, 'telp' => $nomorHp,'kerjaan_pos' => $komenPositif, 'kerjaan_neg' => $komenNegatif, 'gambaran_ideal' => $gambaran,'Id_user' => $nim,'status' => $status, 'tahun_keluar' => $TahunKeluar]
         );
 
         $id_pendahuluan = DB::table('kuis_pendahuluan')->select('id_kuisioner')->where('Id_user','=',$nim)->value('id_kuisioner');
@@ -171,16 +171,11 @@ class EtracerController extends Controller
             DB::table('kerja')->insert(
                 ['id_kuisioner' => $id_pendahuluan, 'id_user' => $nim, 'kategori' => $kategoriBer, 'sesuai' => $sesuaiBer]
             );
-<<<<<<< HEAD
         } else if ($status == 'Tidak Bekerja') {
-=======
-        } else if ($status == 'Tidak Bekerja atau Melanjutkan Kuliah') {
->>>>>>> master
             DB::table('sekolah')->insert(
                 ['id_kuisioner' => $id_pendahuluan, 'id_user' => $nim, 'pernah_kerja' => $pernahSe, 'berapa_lama' => $brplamaSe, 'alasan_tdkkerja' => $alasanSe]
             );
         }
-<<<<<<< HEAD
 
 
         DB::table('pekerjaan')->insert(
@@ -196,9 +191,20 @@ class EtracerController extends Controller
          DB::table('pekerjaanSebel')->insert(
             ['id_user' => $nim, 'nama_kantor' => $namaKantor3, 'bidang_usaha' => $bidangUsaha3, 'jabatan' => $posisi3, 'deskripsi' => $alasanPindah]
         );
+
+         if($emailKantor != null){
+            $pengguna = DB::table('pekerjaan')->where('id_user','=',$nim);
+
+            Mail::send('pesanPerusahaan',['user' => $pengguna], function ($m) use ($namaKantor, $emailKantor){
+              $m->from('gandung@gmail.com','Survei Alumni Teknik Geofisika');
+              $m->to($emailKantor, $namaKantor)->subject('Survei Alumni Teknik Geofisika');
+            });
+         }
         
         return redirect('KuisionerUtama');
     }
+
+
 
     //masuk halaman kuisioner utama
     public function utama(Request $request){
@@ -358,8 +364,6 @@ class EtracerController extends Controller
        $pertanyaan295 = $request->input('Tanggapan29e');
        $pertanyaan296 = $request->input('Tanggapan29f');
 
-
-
        //input data pertanyaan utama
        $pertanyaanUtama3 = $request->input('Tanggapan3');
        $pertanyaanUtama4 = $request->input('Tanggapan4');
@@ -450,21 +454,8 @@ class EtracerController extends Controller
        return redirect('berandaLogin');
 
     }
-=======
 
-        //menyimpan data pekerjaan utama
 
-        DB::table('pekerjaan')->insert(
-            ['id_user' => $nim, 'nama_kantor' => $namaKantor, 'bidang_usaha' => $bidangUsaha, 'jabatan' => $posisi, 'jenis_pekerjaan' => $jenisPekerjaan, 'web_kantor' => $emailKantor, 'telp_kantor' =>$noKantor, 'alamat_kantor' => $alamatKantor, 'sejak' =>  $sejak,'penghasilan' => $penghasilan]
-        );
->>>>>>> master
-
-        //menyimpan data pekerjaan lain
-        DB::table('pekerjaanLain')->insert(
-            ['id_user' => $nim, 'nama_kantor' => $namaKantor2, 'bidang_usaha' => $bidangUsaha2, 'jabatan' => $posisi2, 'jenis_pekerjaan' => $jenisPekerjaan2, 'web_kantor' => $emailKantor2, 'telp_kantor' =>$noKantor2, 'alamat_kantor' => $alamatKantor2, 'sejak' =>  $sejak2,'penghasilan' => $penghasilan2]
-        );
-
-<<<<<<< HEAD
     //BUAT BERITA
 
 
@@ -480,21 +471,32 @@ class EtracerController extends Controller
 
       //inisiasi
       $gambar = $request->file('file_gambar');
-      $nama_gambar = $request->file('file_gambar')->getClientOriginalName();
       $judul = $request->judul;
       $isi = $request->isi;
       $tanggal = \Carbon\Carbon::now()->format('d-m-y');
 
-      //menyimpan gambar di folder
-      $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 
-      //menyimpan data ke database
-      DB::table('berits')->insert(
-        ['id_user' => $nim,'judul' => $judul, 'isi' => $isi, 'file_gambar' => $nama_gambar, 'tanggal' => $tanggal]
-      );
+      if($gambar != null){
+        //menyimpan gambar di folder
+        $nama_gambar = $gambar->getClientOriginalName();
+        $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
 
-      return redirect('buatBerita');
+        //menyimpan data ke database
+        DB::table('berits')->insert(
+          ['id_user' => $nim,'judul' => $judul, 'isi' => $isi, 'file_gambar' => $nama_gambar, 'tanggal' => $tanggal]
+        );
 
+        return redirect('buatBerita');
+      } else {
+
+        //menyimpan data ke database
+        DB::table('berits')->insert(
+          ['id_user' => $nim,'judul' => $judul, 'isi' => $isi, 'tanggal' => $tanggal]
+        );
+
+        return redirect('buatBerita');
+
+      }
 
     }
 
@@ -518,6 +520,7 @@ class EtracerController extends Controller
       $listBerita = DB::table('berits')->join('user','berits.id_user','=','user.id_user')->get();
       return view ('berita_unlogin',['listBerita' => $listBerita]);
     }
+
     //tampilan halaman berita unlogin
      public function halaman2($id){
      $berita = DB::table('berits')->join('user','berits.id_user','=','user.id_user')->where('id_berita','=',$id)->get();
@@ -526,51 +529,370 @@ class EtracerController extends Controller
       return view('halamanBerita_unlogin',['berita' => $berita]);
     }
 
-
-
-
-
+    // menampilkan data profile
     public function profile(Request $request){
-        return view('profile');
-=======
-        //menyimpan data pekerjaan sebelumnya
-         DB::table('pekerjaanLSebel')->insert(
-            ['id_user' => $nim, 'nama_kantor' => $namaKantor3, 'bidang_usaha' => $bidangUsaha3, 'jabatan' => $posisi3, 'deskripsi' => $alasanPindah]
-        );
-        
-        return redirect('KuisionerUtama');
->>>>>>> master
+      $nim = $request->session()->get('nim');
+
+      $data = DB::table('kuis_pendahuluan')->join('user','kuis_pendahuluan.id_user','=','user.id_user')->where('user.id_user','=',$nim)->get();
+      //return $data;
+      return view('profile', ['data' => $data]);
     }
 
-   public function profile(Request $request){
-        $nama = $request->input('nama');
-        $jk = $request->input('jk');
-        $angkatan = $request->input('angkatan');
-        $prodi = $request->input('prodi');
-        $ipk = $request->input('ipk');
-        $Alamat = $request->input('alamat');
-        $Kota = $request->input('kota');
-        $Provinsi = $request->input('Provinsi');
-        $kodePos = $request->input('kodepos');
-        $nomorHp = $request->input('nomer');
-        $status = $request->input('Status');
+    //update data profile
+    public function dataProfile(Request $request){
+        $nim = $request->session()->get('nim');
 
-        DB::table('kuis_pendahuluan')->insert(
-          [ 'nama' => $nama, 
-            'jenis_kel' => $jk, 
-            'angkatan' => $angkatan, 
-            'prodi' => $prodi, 
-            'Ipk' => $ipk, 
-            'almt' => $Alamat, 
-            'almt_kota' => $Kota, 
-            'almt_prov' => $Provinsi, 
-            'almt_kodepos' => $kodePos, 
-            'telp' => $nomorHp,
-            'status' => $Status,
-            'Id_user' => $nim]  
-        )
+        //inisialisasi data profile
+        $nama = $request->nama;
+        $jk = $request->jk;
+        $angkatan = $request->angkatan;
+        $prodi = $request->prodi;
+        $ipk = $request->ipk;
+        $TahunMasuk = $request->TahunMasuk;
+        $Alamat = $request->alamat;
+        $Kota = $request->kota;
+        $Provinsi = $request->provinsi;
+        $kodePos = $request->kodepos;
+        $nomorHp = $request->nomer;
+        $status = $request->status;
+        $TahunKeluar = $request->TahunKeluar;
 
-        return view('beranda');
+        //inisiasi
+        $gambar = $request->file('file_gambar');
+
+        //update data
+        DB::table('kuis_pendahuluan')->where('id_user','=',$nim)->update(
+            ['nama' => $nama, 'jenis_kel' => $jk, 'angkatan' => $angkatan, 'prodi' => $prodi, 'Ipk' => $ipk, 'tahun_masuk' => $TahunMasuk, 'almt' => $Alamat, 'almt_kota' => $Kota, 'almt_prov' => $Provinsi, 'almt_kodepos' => $kodePos, 'telp' => $nomorHp, 'Id_user' => $nim,'status' => $status, 'tahun_keluar' => $TahunKeluar]
+        );
+
+        if($gambar != null){
+          $nama_gambar = $gambar->getClientOriginalName();
+          //menyimpan gambar di folder
+          $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
+
+          DB::table('user')->where('id_user','=',$nim)->update(
+            ['nama'=>$nama,'file_gambar2'=>$nama_gambar]
+          );
+
+          return redirect('profile');
+        } else {
+          DB::table('user')->where('id_user','=',$nim)->update(
+            ['nama'=>$nama]
+          );
+
+          return redirect('profile');
+
+        }
+
+         
+    }
+
+
+    //memanggil kuisioner perusahaan
+    public function kuisionerPerusahaan(Request $request){
+      //return $usaha;
+      return view('kuisionerPerusahaan');
+    }
+
+    public function simpanPerusahaan(Request $request){
+      //inisialisasi pertanyaan c
+      $pert1 = $request->input('Tanggapan1');
+      $pert2 = $request->input('Tanggapan2');
+      $pert3 = $request->input('Tanggapan3');
+      $pert4 = $request->input('Tanggapan4');
+      $pert5 = $request->input('Tanggapan5');
+      $pert6 = $request->input('Tanggapan6');
+      $pert7 = $request->input('Tanggapan7');
+      $pert8 = $request->input('Tanggapan8');
+      $pert9 = $request->input('Tanggapan9');
+
+      //inisialisasi per
+      $pen1 = $request->input('penilaian1');
+      $pen2 = $request->input('penilaian2');
+      $pen3 = $request->input('penilaian3');
+      $pen4 = $request->input('penilaian4');
+      $pen5 = $request->input('penilaian5');
+      $objek = $request->input('objek');
+
+      //inisialisasi kuisioner perusahaan;
+      $nama = $request->input('nama');
+      $bidang = $request->input('bidang');
+      $posisi = $request->input('posisi');
+
+      //menyimpan penilaian1
+      DB::table('penilaian1')->insert(
+        [ 'pert1' => $pert1, 'pert2' => $pert2, 'pert3' => $pert3, 'pert4' => $pert4, 'pert5' => $pert5, 'pert6' => $pert6, 'pert7' => $pert7, 'pert8' => $pert8, 'pert9' => $pert9]
+      );
+
+      //menimpan penilaian2
+      DB::table('penilaian2')->insert(
+        ['pert1' => $pen1, 'pert2' => $pen2, 'pert3' => $pen3, 'pert4' => $pen4, 'pert5' => $pen5, 'objek' => $objek,'nama' => $nama, 'bidang' => $bidang, 'posisi' => $posisi]
+      );
+          
+      //return $idPen;
+
+      return redirect('kuisionerPerusahaan');
+
+    }
+
+    // ADMIN
+
+    //home
+
+    public function formElement(Request $request){
+      $nim = $request->session()->get('nim');
+
+      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+      $data = DB::table('user')->get();
+      $berita = DB::table('berits')->join('user','user.id_user','=','berits.id_user')->get();
+
+      return view('mimin/formElement')->with('pengguna', $pengguna)->with('data', $data)->with('berita', $berita);
+    }
+
+    public function adminProses(Request $request){
+      //inisiasi variabel
+      $nama = $request->nama;
+      $pesan = $request->pesan;
+      $sandi = $request->sandi;
+
+      //inisiasi
+      $gambar = $request->file('file_gambar');
+      
+
+
+      if($gambar != null){
+
+        $nama_gambar = $gambar->getClientOriginalName();
+
+        //menyimpan gambar di folder
+        $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
+
+        DB::table('user')->insert(
+          ['id_user' => $sandi, 'status' => 'admin', 'nama' => $nama, 'email' => $pesan, 'file_gambar2' => $nama_gambar]
+        );
+
+        return redirect('formElement');
+
+      } else {
+        DB::table('user')->insert(
+          ['id_user' => $sandi, 'status' => 'admin', 'nama' => $nama, 'email' => $pesan]
+        );
+
+        return redirect('formElement');
+
+      }
+    }
+
+    public function alumniProses(Request $request){
+      //inisiasi variabel
+      $nama = $request->nama2;
+      $pesan = $request->pesan2;
+      $sandi = $request->sandi2;
+
+      //inisiasi
+      $gambar = $request->file('file_gambar');
+      
+
+      if($gambar != null){
+        $nama_gambar = $gambar->getClientOriginalName();
+
+        //menyimpan gambar di folder
+        $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
+
+        DB::table('user')->insert(
+          ['id_user' => $sandi, 'status' => 'alumni', 'nama' => $nama, 'email' => $pesan, 'file_gambar2' => $nama_gambar]
+        );
+
+        return redirect('formElement');
+
+      } else {
+        DB::table('user')->insert(
+          ['id_user' => $sandi, 'status' => 'alumni', 'nama' => $nama, 'email' => $pesan]
+        );
+
+        return redirect('formElement');
+
+      }
+    }
+
+    //hapus admin
+    public function hapusAdmin($id){
+
+      DB::table('user')->where('id_user','=',$id)->delete();
+
+      return redirect('formElement');
+    }
+
+    //hapus Alumni
+    public function hapusAlumni($id){
+
+      DB::table('user')->where('id_user','=',$id)->delete();
+
+      return redirect('formElement');
+    }
+
+    //hapus Berita
+    public function hapusBerita($id){
+
+      DB::table('berits')->where('id_berita','=',$id)->delete();
+
+      return redirect('formElement');
+    }
+
+    //buat berita
+    public function studyTable(Request $request){
+      $nim = $request->session()->get('nim');
+
+      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+
+      return view('mimin/studyTable')->with('pengguna', $pengguna);
+    }
+
+    public function simpanBerita(Request $request){
+
+      //memanggil id user
+      $nim = $request-> session()->get('nim');
+
+      //inisiasi
+      $gambar = $request->file('file_gambar');
+      $judul = $request->judul;
+      $isi = $request->isi;
+      $tanggal = \Carbon\Carbon::now()->format('d-m-y');
+
+
+      if($gambar != null){
+        $nama_gambar = $gambar->getClientOriginalName();
+
+        //menyimpan gambar di folder
+        $request->file('file_gambar')->move('uploadGambar',$nama_gambar);
+
+        //menyimpan data ke database
+        DB::table('berits')->insert(
+          ['id_user' => $nim,'judul' => $judul, 'isi' => $isi, 'file_gambar' => $nama_gambar, 'tanggal' => $tanggal]
+        );
+
+        return redirect('studyTable');
+      } else {
+
+        //menyimpan data ke database
+        DB::table('berits')->insert(
+          ['id_user' => $nim,'judul' => $judul, 'isi' => $isi, 'tanggal' => $tanggal]
+        );
+
+        return redirect('studyTable');
+
+      }
+
+    }
+
+    public function formTable(Request $request){
+      $nim = $request->session()->get('nim');
+
+      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+      return view('mimin/cariKuis')->with('pengguna', $pengguna);
+    }
+
+/*
+    public function cari($id){
+      //ini yang atas
+      $nim = $request->session()->get('nim');
+      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+
+
+      //menangkap hasil
+      $dapat1 = DB::table('kuis_pendahuluan')->where('id_user','=',$id)->get();
+      $dapat2 = DB::table('kuisUtama')->where('id_user','=',$id)->get();
+
+
+      return view('mimin/formTable')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2);
+
+    } */
+
+    public function mencari(Request $request){
+      //ini yang atas
+      $nim = $request->session()->get('nim');
+      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+
+      
+      $cari = $request->input('cari');
+      $request->session()->put('alumni',$cari);
+
+
+      //menangkap hasil
+      $dapat1 = DB::table('kuis_pendahuluan')->where('id_user','=',$cari)->get();
+      $dapat2 = DB::table('kuisUtama')->where('id_user','=',$cari)->get();
+
+      //inisialisasi
+      $dapatWir = DB::table('wiraswasta')->where('id_user','=',$cari)->get();
+      $dapatSek = DB::table('sekolah')->where('id_user','=',$cari)->get();
+      $dapatKer = DB::table('kerja')->where('id_user','=',$cari)->get();
+      $dapatKewir = DB::table('kerja_wiraswasta')->where('id_user','=',$cari)->get();
+
+      $pekerjaan1 = DB::table('pekerjaan')->where('id_user','=',$cari)->get();
+      $pekerjaan2 = DB::table('pekerjaanLain')->where('id_user','=',$cari)->get();
+      $pekerjaan3 = DB::table('pekerjaanSebel')->where('id_user','=',$cari)->get();
+
+      $pertanyaan25 = DB::table('pertanyaan25')->where('id_user','=',$cari)->get();
+
+      $kuisUtama = DB::table('kuisUtama')->join('pertanyaan1','pertanyaan1.id_masaStudi','=','kuisUtama.id_masaStudi')->join('pertanyaan2','pertanyaan2.id_aspekPembelajaran','=','kuisUtama.id_aspekPembelajaran')->join('pertanyaan7','pertanyaan7.id_aspekBelajar','=','kuisUtama.id_aspekBelajar')->join('pertanyaan8','pertanyaan8.id_fasilitas','=','kuisUtama.id_fasilitas')->join('pertanyaan11','pertanyaan11.id_penting','=','kuisUtama.id_penting')->join('pertanyaan24','pertanyaan24.id_kontribusi1','=','kuisUtama.id_kontribusi1')->join('pertanyaan25','pertanyaan25.id_kontribusi2','=','kuisUtama.id_kontribusi2')->join('pertanyaan26','pertanyaan26.id_kontribusi3','=','kuisUtama.id_kontribusi3')->join('pertanyaan29','pertanyaan29.id_manfaat','=','pertanyaan29.id_manfaat')->where('kuisUtama.id_user','=',$cari)->get(); 
+
+
+      return view('mimin/formTable')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama);
+      //return $kuisUtama;
+    }
+
+    //download
+public function unduh(Request $request){
+      //ini yang atas
+      //$nim = $request->session()->get('nim');
+      //$nim = '14116036';
+     // $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+      
+      $cari = $request->session()->get('alumni');
+      //menangkap hasil
+      $dapat1 = DB::table('kuis_pendahuluan')->where('id_user','=',$cari)->get();
+      $dapat2 = DB::table('kuisUtama')->where('id_user','=',$cari)->get();
+      //inisialisasi
+      $dapatWir = DB::table('wiraswasta')->where('id_user','=',$cari)->get();
+      $dapatSek = DB::table('sekolah')->where('id_user','=',$cari)->get();
+      $dapatKer = DB::table('kerja')->where('id_user','=',$cari)->get();
+      $dapatKewir = DB::table('kerja_wiraswasta')->where('id_user','=',$cari)->get();
+      $pekerjaan1 = DB::table('pekerjaan')->where('id_user','=',$cari)->get();
+      $pekerjaan2 = DB::table('pekerjaanLain')->where('id_user','=',$cari)->get();
+      $pekerjaan3 = DB::table('pekerjaanSebel')->where('id_user','=',$cari)->get();
+      $pertanyaan25 = DB::table('pertanyaan25')->where('id_user','=',$cari)->get();
+
+      $kuisUtama = DB::table('kuisUtama')->join('pertanyaan1','pertanyaan1.id_masaStudi','=','kuisUtama.id_masaStudi')->join('pertanyaan2','pertanyaan2.id_aspekPembelajaran','=','kuisUtama.id_aspekPembelajaran')->join('pertanyaan7','pertanyaan7.id_aspekBelajar','=','kuisUtama.id_aspekBelajar')->join('pertanyaan8','pertanyaan8.id_fasilitas','=','kuisUtama.id_fasilitas')->join('pertanyaan11','pertanyaan11.id_penting','=','kuisUtama.id_penting')->join('pertanyaan24','pertanyaan24.id_kontribusi1','=','kuisUtama.id_kontribusi1')->join('pertanyaan25','pertanyaan25.id_kontribusi2','=','kuisUtama.id_kontribusi2')->join('pertanyaan26','pertanyaan26.id_kontribusi3','=','kuisUtama.id_kontribusi3')->join('pertanyaan29','pertanyaan29.id_manfaat','=','pertanyaan29.id_manfaat')->where('kuisUtama.id_user','=',$cari)->get();
+
+      //$pdf = PDF::loadView('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
+      
+      //$pdf = PDF::loadView('mimin/downloadKuisioner',['kuisUtama' => $kuisUtama]);
+      //$pdf = PDF::loadView('pesanPerusahaan');
+
+      $pdf = PDF::loadview('mimin/downloadKuisioner',['dapat1'=>$dapat1, 'dapatWir'=>$dapatWir, 'dapatKewir'=>$dapatKewir,'dapatSek' =>$dapatSek, 'pekerjaan1'=>$pekerjaan1,'pekerjaan2'=>$pekerjaan2,'pekerjaan3' =>$pekerjaan3,'kuisUtama'=>$kuisUtama]);
+
+      //$pdf = PDF::loadview('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
+      //return $kuisUtama;
+      
+      return $pdf->stream();
+      //return view('mimin/downloadKuisioner',['dapat1'=>$dapat1, 'dapatWir'=>$dapatWir, 'dapatKewir'=>$dapatKewir,'dapatSek' =>$dapatSek, 'pekerjaan1'=>$pekerjaan1,'pekerjaan2'=>$pekerjaan2,'pekerjaan3' =>$pekerjaan3,'kuisUtama'=>$kuisUtama]);
+    }
+
+    public function BarChart(Request $request){
+      $nim = $request->session()->get('nim');
+      $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
+      $user = DB::table('pertanyaan1')->get();
+      $user2 = DB::table('pertanyaan2')->get();
+      $user7 = DB::table('pertanyaan7')->get();
+      $user8 = DB::table('pertanyaan8')->get();
+      $user11= DB::table('pertanyaan11')->get();
+      $user29 = DB::table('pertanyaan29')->get();
+      $user24 =DB::table('pertanyaan24')->get();
+      $user25 =DB::table('pertanyaan25')->get();
+      $user26 =DB::table('pertanyaan26')->get();
+  
+  
+      return view('mimin/barCharts',['user'=>$user, 'user2'=>$user2, 'user7'=>$user7,'user8'=>$user8,'user29'=>$user29, 'user24'=>$user24, 'user11'=>$user11, 'user25'=>$user25, 'user26'=>$user26,'pengguna'=>$pengguna]);
     }
 
 }

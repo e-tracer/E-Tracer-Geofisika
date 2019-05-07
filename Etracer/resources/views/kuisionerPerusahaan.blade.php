@@ -84,7 +84,7 @@
 
     <div class="container">
     <div class="wrap-contact100">
-      <form class="contact100-form validate-form">
+      <form class="contact100-form validate-form" action="{{ url('/kuisionerPerusahaan/simpanPerusahaan')}}" method="GET">
         <p align="justify">Kuesioner ini dibuat untuk tujuan menilai dan mengidentifikasi kemampuan alumni S1 Program Studi Teknik Geofisika di lingkungan dunia kerja. Diharapkan informasi yang diperoleh dapat menjadi masukan penting untuk mengevaluasi dan mengembangkan kurikulum pendidikan pada masa mendatang.Kami berharap Bapak/Ibu sebagai pengguna tenaga alumni S1 Program Studi Teknik Geofisika Institut Teknologi Sumatera bersedia meluangkan waktu menjawab pertanyaan-pertanyaan berikut ini. Kuesioner yang telah diisi dapat dikirimkan kembali. Terima kasih.
         </p>
       <div>
@@ -92,20 +92,19 @@
         <span class="label-input300"><b><h6>A.Data Responden (User Alumni)</h6></b></span>
         <br>
       </div>
-    
-        <div class="wrap-input100 " data-validate="Please Enter Your Name">
+          <div class="wrap-input100 " data-validate="Please Enter Your Name">
           <span class="label-input300">Nama Lengkap *</span>
-          <input class="input100" type="text" name="name" placeholder="Nama lengkap">
+          <input class="input100" type="text" name="nama" placeholder="Nama lengkap" required>
         </div>
 
         <div class="wrap-input100 " data-validate="Bidang Pekerjaan">
           <span class="label-input300">Bidang Pekerjaan *</span>
-          <input class="input100" type="text" name="Bidang Pekerjaan" placeholder="Pendidikan/pemerintahan/konsultasi/dll...">
+          <input class="input100" type="text" name="bidang" placeholder="Pendidikan/pemerintahan/konsultasi/dll..."  required>
         </div>
 
         <div class="wrap-input100 " data-validate="Posisi Pekerjaan">
           <span class="label-input300">Posisi *</span>
-          <input class="input100" type="text" name="Posisi" placeholder="Staff Divisi/Direktur/Karyawan/Manajer/dll...">
+          <input class="input100" type="text" name="posisi" placeholder="Staff Divisi/Direktur/Karyawan/Manajer/dll..." required>
         </div>
 
         <div>
@@ -116,7 +115,7 @@
 
         <div class="wrap-input100">
             <span class="label-input300">Objek Penilaian</span>
-            <textarea class="input100" name="message" placeholder="Answer Here..." ></textarea>
+            <textarea class="input100" name="objek" placeholder="Answer Here..." required="Harus diisi"></textarea>
           </div>
 
           <div>
@@ -128,15 +127,15 @@
           <br>
           <table border="2" width="800px" align="center">
             <tr>
-              <th width="50" rowspan="2" align="text-center" > No </th>
-              <th width="400" rowspan="2"> Jenis Kemampuan </th>
-              <th width="200" colspan="4" > Tanggapan Pihak Pengguna </th>
+              <th width="50" rowspan="2" align="text-center" > <center>No</center></th>
+              <th width="400" rowspan="2"><center>Jenis Kemampuan</center></th>
+              <th width="200" colspan="4"><center>Tanggapan Pihak Pengguna</center></th>
             </tr>
             <tr align="text-center">
-              <th width="80"> Sangat Baik </th>
-              <th width="50"> Baik </th>
-              <th width="50"> Cukup </th>
-              <th width="50"> Kurang </th>
+              <th width="80"><center>Sangat Baik</center></th>
+              <th width="50"><center>Baik</center></th>
+              <th width="50"><center>Cukup</center></th>
+              <th width="50"><center>Kurang</center></th>
             </tr>
             <tr align="center">
               <td> 1 </td>
@@ -220,36 +219,35 @@
 
         <div class="wrap-input100">
             <span class="label-input300">1. Bagaimana kualitas kinerja Alumni Program Studi Teknik Geofisika Institut Teknologi Sumatera di tempat kerja Anda?</span>
-            <textarea class="input100" name="message" placeholder="Answer Here..." ></textarea>
+            <textarea class="input100" name="penilaian1" placeholder="Answer Here..." required="Harus diisi"></textarea>
           </div>
 
           <div class="wrap-input100">
             <span class="label-input300">2. Kelebihan apa saja yang dimiliki oleh Alumni Program Studi Teknik Geofisika Institut Teknologi Sumatera?</span>
-            <textarea class="input100" name="message" placeholder="Answer Here..." ></textarea>
+            <textarea class="input100" name="penilaian2" placeholder="Answer Here..." required="Harus diisi"></textarea>
           </div>
 
           <div class="wrap-input100">
             <span class="label-input300">3. Kekurangan apa saja yang dimiliki oleh Alumni Program Studi Teknik Geofisika Institut Teknologi Sumatera?</span>
-            <textarea class="input100" name="message" placeholder="Answer Here..." ></textarea>
+            <textarea class="input100" name="penilaian3" placeholder="Answer Here..." required="Harus diisi"></textarea>
           </div>
 
           <div class="wrap-input100">
             <span class="label-input300">4. Apakah kemampuan yang dimiliki Alumni Program Studi Teknik Geofisika Institut Teknologi Sumatera sesuai dengan bidang pekerjaannya dan sesuai dengan kebutuhan di tempat kerja? Jika Ya, bagian apakah yang sesuai dan tidak sesuainya?</span>
-            <textarea class="input100" name="message" placeholder="Answer Here..." ></textarea>
+            <textarea class="input100" name="penilaian4" placeholder="Answer Here..." required="Harus diisi"></textarea>
           </div>
           <div class="wrap-input100">
             <span class="label-input300">5. Menurut pendapat Anda, kira-kira hal apa yang perlu diperbaiki untuk meningkatkan kualitas Alumni Program Studi Teknik Geofisika Institut Teknologi Sumatera?</span>
-            <textarea class="input100" name="message" placeholder="Answer Here..." ></textarea>
+            <textarea class="input100" name="penilaian5" placeholder="Answer Here..." required="Harus diisi"></textarea>
           </div>
 
          <div class="container-contact100-form-btn">
-          <a href="{{ url('KuisionerUtama')}}" class="btn btn-secondary btn-lg contact100-form" >
+          <button class="btn btn-secondary btn-lg contact100-form" >
             <span>
               Submit
               <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
             </span>
-          </a>
-        </div>
+          </button>        </div>
       </form>         
        </div>
     <div class="row pt-5 mt-5 text-center ">

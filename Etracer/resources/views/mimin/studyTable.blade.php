@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Study Table | Admin</title>
+    <title>Buat Berita | Admin</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -51,6 +51,43 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="{{asset('deded/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+    <script>
+    tinymce.init({
+            selector: "textarea",
+            plugins: [
+                    "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "table contextmenu directionality emoticons template textcolor paste fullpage textcolor codesample"
+            ],
+ 
+            toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+            toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | inserttime preview | forecolor backcolor",
+            toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft codesample",
+ 
+            menubar: "false",
+            toolbar_items_size: 'small',
+ 
+            style_formats: [
+                    {title: 'Bold text', inline: 'b'},
+                    {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                    {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                    {title: 'Example 1', inline: 'span', classes: 'example1'},
+                    {title: 'Example 2', inline: 'span', classes: 'example2'},
+                    {title: 'Table styles'},
+                    {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+            ],
+ 
+            templates: [
+                    {title: 'Test template 1', content: 'Test 1'},
+                    {title: 'Test template 2', content: 'Test 2'}
+            ],
+
+            
+            plugins: "preview",
+            toolbar: "preview"
+    });
+    </script>
 </head>
 
 <body class="materialdesign">
@@ -62,24 +99,33 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img src="img/Logo-TG.jpg" alt="" />
+                    @foreach ($pengguna as $p)
+                    <a href="#"><img src="{{ url('uploadGambar')}}/{{$p->file_gambar2}}" alt="foto" />
                     </a>
-                    <h3>Dediepow</h3>
-                    <p>Admin</p>
+                    <h3>{{ $p->nama }}</h3>
+                    <p>{{ $p->status }}</p>
                     <strong>TG-I</strong>
+                    @endforeach
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
                         <li class="nav-item">
                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="{{url('admin')}}" class="dropdown-item">Admin-Home</a>
+                                <a href="{{url('/formElement')}}" class="dropdown-item">Admin Home</a>
                             </div>
                         </li>
-                        </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-edit"></i> <span class="mini-dn">Forms Elements</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-bar-chart-o"></i> <span class="mini-dn">Charts</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown  animated flipInX">
-                                <a href="{{url('adminShowForm')}}" class="dropdown-item">Show Form</a>
+                                <a href="{{url('barCharts')}}" class="dropdown-item">Static</a>
+                                <a href="{{ url('formTable') }}"class="dropdown-item">Kuisioner</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-edit"></i> <span class="mini-dn">Data Tables</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="{{url('studyTable')}}" class="dropdown-item">Buat Berita</a>
                             </div>
                         </li>
                     </ul>
@@ -104,7 +150,7 @@
                             <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12">
                                 <div class="header-top-menu tabl-d-n">
                                     <ul class="nav navbar-nav mai-top-nav">
-                                        <li class="nav-item"><a href="#" class="nav-link">Admin Study-Table</a>
+                                        <li class="nav-item"><a href="#" class="nav-link">Admin Buat Berita</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -112,14 +158,18 @@
                             <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
                                 <div class="header-right-info">
                                     <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                        
-                                        
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
-                                                <span class="admin-name">Dediepow</span>
+                                                @foreach($pengguna as $p)
+                                                <span class="admin-name">{{ $p->nama }}</span>
+                                                @endforeach
                                                 <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
                                             </a>
+                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+                                                <li><a href="{{ url('beranda') }}"><span class="adminpro-icon adminpro-locked author-log-ic"></span>Keluar</a>
+                                                </li>
+                                            </ul>
                                         </li>
 
                                     </ul>
@@ -138,6 +188,28 @@
                             <div class="breadcome-list shadow-reset">
                                 <div class="row">
                                     <div class="col-lg-6">
+                                        <ul class="breadcome-menu">
+                                            <li><a href="#">Admin</a> <span class="bread-slash">/</span>
+                                            </li>
+                                            <li><span class="bread-blod">Buat Berita</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Breadcome End-->
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 des-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list map-mg-t-40-gl shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcome-heading">
                                             <form role="search" class="">
 												<input type="text" placeholder="Search..." class="form-control">
@@ -145,11 +217,11 @@
 											</form>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">User Setting</span>
+                                            <li><span class="bread-blod">Dashboard</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -168,23 +240,33 @@
                             <div class="sparkline8-list shadow-reset">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
-                                        <h1>Data User</h1>
+                                        <h1>Buat Berita</h1>
+                                        <div class="sparkline8-outline-icon">
+                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="sparkline8-graph">
                                     <div class="static-table-list">
-                                        <form action="storeUser" method="post">
-	                                    	{{ csrf_field() }}
-                                         <table class="table">
-                                         <tbody>
-	                                    	<th>ID User <input type="text" name="id_user" required="required"> </th>
-	                                    	<th>Nama <input type="text" name="nama" required="required"> </th>
-	                                    	<th>Email<input type="text" name="email" required="required"> </th>
-	                                    	<th>Status <input type="text" name="status" required="required"> </th>
-                                            <th>Tanggal Lahir <input type="text" name="tgl_lahir" required="required"> </th>
-	                                    	<th><input type="submit" value="Simpan Data"></th>
-                                        </tbody>
-                                        </table>
+                                        <form action="{{ url('studyTable/simpanBerita') }}" method="POST" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                            <div class="form-group">
+                                                <label for="file_gambar">Upload Gambar</label><br>
+                                                <input type="file" id="file_gambar" name="file_gambar">
+                                            </div>
+
+                                           <div class="form-group">
+                                                <input type="text" class="form-control" name="judul" id="judul" aria-describedby="emailHelp" placeholder="Masukkan judul" required="required">
+                                            </div>
+
+                                            <textarea name="isi" id="isi" cols="20" rows="30"></textarea>
+                                            <button class="btn btn-secondary btn-lg contact100-form btn-block" >
+                                                <span>
+                                                    Submit
+                                                    <i class=" m-l-7" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
                                         </form> 
                                     </div>
                                 </div>
@@ -208,45 +290,7 @@
         </div>
     </div>
     <!-- Footer End-->
-    <!-- Chat Box Start-->
-    <div class="chat-list-wrap">
-        <div class="chat-list-adminpro">
-            <div class="chat-button">
-                <span data-toggle="collapse" data-target="#chat" class="chat-icon-link"><i class="fa fa-comments"></i></span>
-            </div>
-            <div id="chat" class="collapse chat-box-wrap shadow-reset animated zoomInLeft">
-                <div class="chat-main-list">
-                    <div class="chat-heading">
-                        <h2>Messanger</h2>
-                    </div>
-                    <div class="chat-content chat-scrollbar">
-                        <div class="author-chat">
-                            <h3>Monica <span class="chat-date">10:15 am</span></h3>
-                            <p>Hi, what you are doing and where are you gay?</p>
-                        </div>
-                        <div class="client-chat">
-                            <h3>Mamun <span class="chat-date">10:10 am</span></h3>
-                            <p>Now working in graphic design with coding and you?</p>
-                        </div>
-                        <div class="author-chat">
-                            <h3>Monica <span class="chat-date">10:05 am</span></h3>
-                            <p>Practice in programming</p>
-                        </div>
-                        <div class="client-chat">
-                            <h3>Mamun <span class="chat-date">10:02 am</span></h3>
-                            <p>That's good man! carry on...</p>
-                        </div>
-                    </div>
-                    <div class="chat-send">
-                        <input type="text" placeholder="Type..." />
-                        <span><button type="submit">Send</button></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Chat Box End-->
-    <!-- jquery
+        <!-- jquery
 		============================================ -->
     <script src="{{asset('deded/js/vendor/jquery-1.11.3.min.js')}}"></script>
     <!-- bootstrap JS

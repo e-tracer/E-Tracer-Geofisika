@@ -10,8 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 //beranda
 Route::get('/beranda','EtracerController@beranda');
 Route::get('/beranda/proses','EtracerController@proses');
@@ -27,11 +25,9 @@ Route::get('/KuisionerPendahuluan/simpanPendahuluan','EtracerController@simpanPe
 Route::get('/KuisionerUtama', 'EtracerController@utama');
 Route::get('/KuisionerUtama/simpanUtama', 'EtracerController@simpanUtama');
 
-
 //buat berita
 Route::get('/buatBerita', 'EtracerController@buatBerita');
 Route::post('/buatBerita/simpanData', 'EtracerController@simpanData');
-
 
 //berita
 Route::get('/berita', 'EtracerController@berita');
@@ -39,39 +35,13 @@ Route::get('/berita', 'EtracerController@berita');
 //halaman berita
 Route::get('/halamanBerita/{id}', 'EtracerController@halaman');
 
-//adminhome
-Route::get ('/admin','AdminContoller@AdminHome');
-
-//Pengaturankuesioner
-Route::get('adminShowForm','AdminController@FormPendahuluan');
-
-Route::get('adminStudyTable','AdminController@StudyTable');
-//Pengaturan User
-Route::get('adminPengaturanUser','AdminController@PengaturanUser');
-//Tambah User
-Route::get('tambahUser','AdminController@TambahUser');
-//Hapus User
-//store User
-Route::post('storeUser','AdminController@Store');
-Route::get('hapusUser/{id}','AdminController@HapusUser');
-//EditUser
-Route::get('editUser/{id}','AdminController@EditUser');
-//update user
-Route::post('editUser/{id}','AdminController@UpdateUser');
-//download pfd kuisioner
-Route::get('downloadKuisPendahuluan','AdminController@DownloadKuisPendahuluan');
-// view PDF file
-
 //profile
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile', 'EtracerController@profile');
+Route::post('/profile/dataProfile', 'EtracerController@dataProfile');
 
 //berita_unlogin
 Route::get('/beritaUnlogin', 'EtracerController@beritaUnlogin');
 Route::get('/halamanBerita2/{id}', 'EtracerController@halaman2');
-
-
 
 //halamanBerita_unlogin
 Route::get('/halamanBeritaUnlogin', function () {
@@ -89,34 +59,40 @@ Route::get('/homeAdmin', function () {
 });
 
 //barCharts
-Route::get('/barCharts', function () {
-    return view('mimin/barCharts');
-});
+Route::get('/barCharts','EtracerController@BarChart');
 
-//formElement
-Route::get('/formElement', function () {
-    return view('mimin/formElement');
-});
+//formElement : home
+Route::get('/formElement', 'EtracerController@formElement');
+Route::get('/mimin/formElement', 'EtracerController@formElement');
+Route::post('/formElement/adminProses', 'EtracerController@adminProses');
+Route::post('/formElement/alumniProses', 'EtracerController@alumniProses');
+Route::get('/hapusAdmin/{id}','EtracerController@hapusAdmin' );
+Route::get('/hapusAlumni/{id}', 'EtracerController@hapusAlumni');
+Route::get('/hapusBerita/{id}', 'EtracerController@hapusBerita');
 
-//formTable
-Route::get('/formTable', function () {
-    return view('mimin/formTable');
-});
 
-//studyTable
-Route::get('/studyTable', function () {
-    return view('mimin/studyTable');
-});
+//formTable : kuisioner
+Route::get('/formTable', 'EtracerController@formTable');
+Route::get('/formTable/mencari', 'EtracerController@mencari');
+Route::get('/formTable/cari/{id}', 'EtracerController@cari');
+Route::get('/downloadForm', 'EtracerController@downloadForm');
+
+//studyTable : buat berita
+Route::get('/studyTable', 'EtracerController@studyTable');
+Route::post('/studyTable/simpanBerita', 'EtracerController@simpanBerita');
+
 
 //kuisionerPerusahaan
-Route::get('/kuisionerPerusahaan', function () {
-    return view('kuisionerPerusahaan');
-});
+Route::get('/kuisionerPerusahaan', 'EtracerController@kuisionerPerusahaan');
+Route::get('/kuisionerPerusahaan/simpanPerusahaan', 'EtracerController@simpanPerusahaan');
 
 //beranda_loginGagal
 Route::get('/loginGagal', function () {
     return view('beranda_loginGagal');
 });
+
+//unduh
+Route::get('/unduh', 'EtracerController@unduh');
 
 
 
