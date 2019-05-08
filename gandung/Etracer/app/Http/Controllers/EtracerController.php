@@ -74,7 +74,6 @@ class EtracerController extends Controller
         $komenNegatif = $request->input('komenNegatif');
         $gambaran = $request->input('gambaran');
         $TahunKeluar = $request->input('TahunKeluar');
-        
         //input wiraswasta
         $pernahWir = $request->input('pernahWir');
         $brplamaWir = $request->input('brplamaWir');
@@ -119,7 +118,6 @@ class EtracerController extends Controller
         $posisi3 = $request->input('posisi3');
         $alasanPindah = $request->input('alasanPindah');
         //menimpandata kuisioner pendahuluan
-      
         DB::table('kuis_pendahuluan')->insert(
             ['nama' => $nama, 'jenis_kel' => $jk, 'angkatan' => $angkatan, 'prodi' => $prodi, 'Ipk' => $ipk, 'tahun_masuk' => $TahunMasuk, 'almt' => $Alamat, 'almt_kota' => $Kota, 'almt_prov' => $Provinsi, 'almt_kodepos' => $kodePos, 'telp' => $nomorHp,'kerjaan_pos' => $komenPositif, 'kerjaan_neg' => $komenNegatif, 'gambaran_ideal' => $gambaran,'Id_user' => $nim,'status' => $status, 'tahun_keluar' => $TahunKeluar]
         );
@@ -159,7 +157,6 @@ class EtracerController extends Controller
               $m->to($emailKantor, $namaKantor)->subject('Survei Alumni Teknik Geofisika');
             });
          }
-        
         return redirect('KuisionerUtama');
     }
     //masuk halaman kuisioner utama
@@ -419,7 +416,6 @@ class EtracerController extends Controller
     //tampilan halaman berita
     public function halaman($id){
       $berita = DB::table('berits')->join('user','berits.id_user','=','user.id_user')->where('id_berita','=',$id)->get();
-        
       //return $isi; 
       return view('halamanBerita',['berita' => $berita]);
     }
@@ -431,7 +427,6 @@ class EtracerController extends Controller
     //tampilan halaman berita unlogin
      public function halaman2($id){
      $berita = DB::table('berits')->join('user','berits.id_user','=','user.id_user')->where('id_berita','=',$id)->get();
-        
       //return $isi; 
       return view('halamanBerita_unlogin',['berita' => $berita]);
     }
@@ -461,7 +456,6 @@ class EtracerController extends Controller
         $TahunKeluar = $request->TahunKeluar;
         //inisiasi
         $gambar = $request->file('file_gambar');
-  
         //update data
         DB::table('kuis_pendahuluan')->where('id_user','=',$nim)->update(
             ['nama' => $nama, 'jenis_kel' => $jk, 'angkatan' => $angkatan, 'prodi' => $prodi, 'Ipk' => $ipk, 'tahun_masuk' => $TahunMasuk, 'almt' => $Alamat, 'almt_kota' => $Kota, 'almt_prov' => $Provinsi, 'almt_kodepos' => $kodePos, 'telp' => $nomorHp, 'Id_user' => $nim,'status' => $status, 'tahun_keluar' => $TahunKeluar]
@@ -516,8 +510,7 @@ class EtracerController extends Controller
       //menimpan penilaian2
       DB::table('penilaian2')->insert(
         ['pert1' => $pen1, 'pert2' => $pen2, 'pert3' => $pen3, 'pert4' => $pen4, 'pert5' => $pen5, 'objek' => $objek,'nama' => $nama, 'bidang' => $bidang, 'posisi' => $posisi]
-      );
-          
+      ); 
       //return $idPen;
       return redirect('kuisionerPerusahaan');
     }
@@ -599,8 +592,7 @@ class EtracerController extends Controller
       //memanggil id user
       $nim = $request-> session()->get('nim');
       //inisiasi
-      $gambar = $request->file('file_gambar');
-      
+      $gambar = $request->file('file_gambar'); 
       $judul = $request->judul;
       $isi = $request->isi;
       $tanggal = \Carbon\Carbon::now()->format('d-m-y');
@@ -640,7 +632,6 @@ class EtracerController extends Controller
       //ini yang atas
       $nim = $request->session()->get('nim');
       $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
-      
       $cari = $request->input('cari');
       $request->session()->put('alumni',$cari);
       //menangkap hasil
@@ -669,12 +660,7 @@ class EtracerController extends Controller
       //return $kuisUtama;
     }
     //download
-public function unduh(Request $request){
-      //ini yang atas
-      //$nim = $request->session()->get('nim');
-      //$nim = '14116036';
-     // $pengguna = DB::table('user')->where('id_user','=',$nim)->get();
-      
+    public function unduh(Request $request){
       $cari = $request->session()->get('alumni');
       //menangkap hasil
       $dapat1 = DB::table('kuis_pendahuluan')->where('id_user','=',$cari)->get();
@@ -699,7 +685,6 @@ public function unduh(Request $request){
       ->join('pertanyaan29','pertanyaan29.id_manfaat','=','pertanyaan29.id_manfaat')
       ->where('kuisUtama.id_user','=',$cari)->get();
       //$pdf = PDF::loadView('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
-      
       //$pdf = PDF::loadView('mimin/downloadKuisioner',['kuisUtama' => $kuisUtama]);
       //$pdf = PDF::loadView('pesanPerusahaan');
       $pdf = PDF::loadview('mimin/downloadKuisioner',['dapat1'=>$dapat1, 'dapatWir'=>$dapatWir, 'dapatKewir'=>$dapatKewir,'dapatSek' =>$dapatSek, 'pekerjaan1'=>$pekerjaan1,'pekerjaan2'=>$pekerjaan2,'pekerjaan3' =>$pekerjaan3,'kuisUtama'=>$kuisUtama]);
@@ -718,8 +703,6 @@ public function unduh(Request $request){
       $user24 =DB::table('pertanyaan24')->get();
       $user25 =DB::table('pertanyaan25')->get();
       $user26 =DB::table('pertanyaan26')->get();
-  
-  
       return view('mimin/barCharts',['user'=>$user, 'user2'=>$user2, 'user7'=>$user7,'user8'=>$user8,'user29'=>$user29, 'user24'=>$user24, 'user11'=>$user11, 'user25'=>$user25, 'user26'=>$user26]);
     }
 }

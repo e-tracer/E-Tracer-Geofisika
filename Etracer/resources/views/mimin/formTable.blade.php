@@ -539,7 +539,7 @@
         @endforeach
 
          @foreach($dapat1 as $d)
-        @if ($d != NULL)
+         @if ($d != NULL)
         <h4>Pekerjaan Ideal</h4>
         <div class="wrap-input100 ">
           <span class="label-input300" style="float: left; font-size: 12pt;">Komentar Positif anda terhadap pekerjaan Anda saat ini    </span>
@@ -575,8 +575,7 @@
                                     <div class="main-sparkline13-hd">
                                             <h1>Kuisioner Utama</h1>
                                              @foreach($kuisUtama as $k)
-
-                                        
+                                             @if ($kuisUtama != NULL)
                                         <div class="sparkline13-outline-icon">
                                             <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                             <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
@@ -2065,9 +2064,10 @@
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">31. Jika menurut anda pekerjaan anda saat ini tidak sesuai dengan pendidikan anda, mengapa anda mengambilnya ?</span>
           <input class="input100" type="text" name="Tanggapan31" placeholder="Answer Here...." value="{{ $k->pertanyaan31 }}" >
         </div>
-        @endforeach
 
                                             </form>
+                                            @endif
+                                             @endforeach
                                         </div>
                                     </div>
                                     </div>

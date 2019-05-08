@@ -97,6 +97,8 @@
     <div class="wrap-contact100">
       <form class=" contact100-form validate-form" action="{{ url('/KuisionerUtama/simpanUtama') }}">
         <h2>Kuesioner Utama</h2> 
+        <p>1 = sangat buruk/salah</p><br>
+        <p>5 = sangat baik/benar</p>
         <div class="wrap-input100 ">
           <span class="label-input300">1. Seberapa besar alasan-alasan di bawah ini menyebabkan ketidaktepatan masa studi anda?</span>
             <br>
@@ -289,18 +291,18 @@
           <br>
           <table border="2" width="700px">
             <tr align="center">
-                <th width="50" rowspan="2"><center>No</center> </th>
-                <th width="300" rowspan="2"><center>Alasan</center></th>
-                <th width="400" colspan="5"><center>Tanggapan Pihak Pengguna</center></th>
-              </tr>
-              <tr>
-                <th><center>1</center></th>
-                <th><center>2</center></th>
-                <th><center>3</center></th>
-                <th><center>4</center></th>
-                <th><center>5</center></th>
-              </tr>            
-            <tr align="center">
+              <th width="50" rowspan="2"><center>No</center> </th>
+              <th width="300" rowspan="2"><center>Alasan</center></th>
+              <th width="400" colspan="5"><center>Tanggapan Pihak Pengguna</center></th>
+            </tr>
+            <tr>
+              <th><center>1</center></th>
+              <th><center>2</center></th>
+              <th><center>3</center></th>
+              <th><center>4</center></th>
+              <th><center>5</center></th>
+            </tr>
+              <tr align="center">
               <td> 1 </td>
               <td align="left"> Kesempatan untuk berinteraksi dengan dosen-dosen di luar jadwal kuliah</td>
               <td><input type="radio" name="Tanggapan7a" value="1"></td>
