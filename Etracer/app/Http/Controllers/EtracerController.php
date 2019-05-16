@@ -874,7 +874,7 @@ public function unduh(Request $request){
       //$pdf = PDF::loadview('mimin/downloadKuisioner')->with('pengguna', $pengguna)->with('dapat1', $dapat1)->with('dapat2', $dapat2)->with('dapatWir', $dapatWir)->with('dapatSek', $dapatSek)->with('dapatKer', $dapatKer)->with('dapatKewir', $dapatKewir)->with('pekerjaan1', $pekerjaan1)->with('pekerjaan2', $pekerjaan2)->with('pekerjaan3', $pekerjaan3)->with('kuisUtama', $kuisUtama)->with('pertanyaan25', $pertanyaan25);
       //return $kuisUtama;
       
-      return $pdf->stream();
+      return $pdf->download('kuisioner.pdf');
       //return view('mimin/downloadKuisioner',['dapat1'=>$dapat1, 'dapatWir'=>$dapatWir, 'dapatKewir'=>$dapatKewir,'dapatSek' =>$dapatSek, 'pekerjaan1'=>$pekerjaan1,'pekerjaan2'=>$pekerjaan2,'pekerjaan3' =>$pekerjaan3,'kuisUtama'=>$kuisUtama]);
     }
 

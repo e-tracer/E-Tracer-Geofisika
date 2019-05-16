@@ -4,17 +4,78 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kuisioner | Admin</title> 
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
- 
+    <title>Kuisioner | Admin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style type="text/css">
+        .container-contact100 {
+          width: 100%;  
+          min-height: 100vh;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding: 15px;
+          background: #e6e6e6;
+        }
+
+        .wrap-contact100 {
+          width: 920px;
+          background: #fff;
+          border-radius: 10px;
+          overflow: hidden;
+          padding: 62px 55px 90px 55px;
+        }
+
+        .contact100-form {
+          width: 100%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
+        .container {
+          max-width: 1200px;
+          font-size: 20px;
+        }
+
+        .wrap-input100 {
+          width: 150%;
+          position: relative;
+          border: 1px solid #e6e6e6;
+          border-radius: 13px;
+          padding: 10px 30px 9px 22px;
+          margin-bottom: 20px;
+        }
+
+
+
+
+    </style>
 
 </head>
 
 <body>
   @foreach($dapat1 as $d)
+
   <h1>Kuisioner Pendahuluan</h1>
                                       
-    <form method="get" class="contact100-form validate-form">
+                                  <div class="sparkline13-graph ">
+                                    <div class="float-left">
+                                      <div class="container" >
+                                        <div class="wrap-contact100">
+
+                                          <form action=""  method="get" class="contact100-form validate-form">
+
          <div class="wrap-input100 validate-input " data-validate="Please Type Your Name">
           <span class="label-input300" style="float: left; font-size: 12pt;">Nama Lengkap </span>
           <input class="input100" type="text" name="nama" placeholder="Enter Your Name"  value="{{ $d->nama }}">
@@ -84,7 +145,9 @@
         </div>
         @endforeach
 
-      <h3>Status</h3>
+      <h3>Status</h3><br><br>
+      <div class="contact100-form">
+        
         @foreach($dapatWir as $k)
         @if ($k != NULL)
       <h5>Wiraswasta</h5>
@@ -301,7 +364,7 @@
         @endforeach
 
          @foreach($dapat1 as $d)
-        @if ($d != NULL)
+         @if ($d != NULL)
         <h4>Pekerjaan Ideal</h4>
         <div class="wrap-input100 ">
           <span class="label-input300" style="float: left; font-size: 12pt;">Komentar Positif anda terhadap pekerjaan Anda saat ini    </span>
@@ -320,8 +383,17 @@
         @endif
         @endforeach
       </form>
+  </div>
+</div>
 <br><br>
  @foreach($kuisUtama as $k)
+ <div class="container">
+    <div class="wrap-contact100">
+      <form class=" contact100-form validate-form" action="{{ url('/KuisionerUtama/simpanUtama') }}">
+        <h2>Kuesioner Utama</h2> 
+        <p>1 = sangat buruk/salah</p><br>
+        <p>5 = sangat baik/benar</p>
+        <div class="wrap-input100 ">
   <h1>Kuisioner Utama</h1>
                                              
           <span style="float: left; font-size: 12pt;">1. Seberapa besar alasan-alasan di bawah ini menyebabkan ketidaktepatan masa studi anda?</span>
@@ -476,27 +548,23 @@
             </tr>    
           </table>  
 
-        <br>
-        
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt;">3. Selama kuliah, kebanyakan Anda tinggal... </span>
           <input class="input100" type="text" name="Tanggapan3" placeholder="Answer Here...." value="{{ $k->pertanyaan3 }}" >
         
-<br>   
+          <br>   
           <span class="label-input300" style="float: left; font-size: 12pt;">4. Siapa yang  terutama membayar uang kuliah anda?..</span>
           <input class="input100" type="text" name="Tanggapan4" placeholder="Answer Here...." value="{{ $k->pertanyaan4 }}" >
         
-<br>
-         
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt;">5. Dalam skala 1 sampai 5, seberapa aktif anda di organisasi?</span>
           <input class="input100" type="text" name="Tanggapan5" placeholder="Answer Here...." value="{{ $k->pertanyaan5 }}" >
         
-<br>
-        
+          <br>       
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">6. Pada saat Anda kuliah di perguruan tinggi, apakah Anda mengambil kursus atau pendidikan tambahan?</span>
           <input class="input100" type="text" name="Tanggapan5" placeholder="Answer Here...." value="{{ $k->pertanyaan6 }}" >
         
-<br>
-       
+          <br>      
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">7. Dalam skala 1 sampai 5, bagaimana penilaian Anda terhadap aspek belajar mengajar di bawah ini?</span>
           <br>
           <table border="2" width="700px">
@@ -666,16 +734,14 @@
               <td><center><input type="radio" name="Tanggapan8i" value="5" {{ ($k->pertanyaan89=="5")? "checked" : "" }}></center></td>
             </tr>
           </table>
-<br>
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">9. Kapan Anda mulai mencari pekerjaan? (mohon pekerjaan sambilan tidak dimasukkan) </span>
           <input class="input100" type="text" name="Tanggapan9" placeholder="Answer Here...." value="{{ $k->pertanyaan9 }}" >
-        
-<br>
+          <br>
         <div class="wrap-input100 " style="float: left; font-size: 12pt; text-align: left;">
           <span class="label-input300">10. Bagaimana Anda mencari pekerjaan setelah lulus? (Jawaban bisa lebih dari satu) </span>
           <input class="input100" type="text" name="Tanggapan10" placeholder="Answer Here...." value="{{ $k->pertanyaan10 }}" >
-        
-<br>
+        <br>
         <div class="wrap-input100 " style="float: left; font-size: 12pt; text-align: left;">
           <span class="label-input300">11. Berdasarkan persepsi Anda, seberapa pentingkah aspek-aspek dibawah ini bagi perusahaan/instansi dalam melakukan penerimaan pegawai?</span>
           <br>
@@ -798,62 +864,40 @@
         <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">12. Berapa perusahaan/instansi/institusi yang sudah Anda lamar (lewat surat atau e-mail) sebelum Anda memperoleh pekerjaan pertama? </span>
           <input class="input100" type="text" name="Tanggapan12" placeholder="Answer Here...." value="{{ $k->pertanyaan12 }}" >
-<br>    
+          <br>    
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">13. Berapa bulan waktu yang dihabiskan(sebelum dan sesudah kelulusan) untuk memperoleh pekerjaan pertama?</span>
           <input class="input100" type="text" name="Tanggapan13" placeholder="Answer Here...." value="{{ $k->pertanyaan13 }}" >
-        
-<br>
-        
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">14. Melalui apa Anda mendapatkan pekerjaan pertama? </span>
           <input class="input100" type="text" name="Tanggapan14" placeholder="Answer Here...." value="{{ $k->pertanyaan14 }}" >
-        
-<br>
-        
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">15. Aspek apa yang menjadi pertimbangan utama anda dalam memilih pekerjaan pertama </span>
           <input class="input100" type="text" name="Tanggapan15" placeholder="Answer Here...." value="{{ $k->pertanyaan15 }}" >
-        
-<br>
-        
+          <br>        
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">16. Jenis kursus apa yang Anda ambil SETELAH Anda lulus dari perguruan tinggi ( jawaban bisa lebih dari satu)</span>
-          <input class="input100" type="text" name="Tanggapan16" placeholder="Answer Here...." value="{{ $k->pertanyaan16 }}" >
-        
-<br>
-        
+          <input class="input100" type="text" name="Tanggapan16" placeholder="Answer Here...." value="{{ $k->pertanyaan16 }}" > 
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">17. Apakah Anda merasa perlu untuk meningkatkan kompetensi Andan dengan mengambil kursus lagi? </span>
-          <input class="input100" type="text" name="Tanggapan17" placeholder="Answer Here...." value="{{ $k->pertanyaan17 }}" >
-        
-<br>
-         
+          <input class="input100" type="text" name="Tanggapan17" placeholder="Answer Here...." value="{{ $k->pertanyaan17 }}" > 
+          <br>       
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">18. Bagaimana anda menggambarkan situasi anda saat ini? </span>
           <input class="input100" type="text" name="Tanggapan18" placeholder="Answer Here...." value="{{ $k->pertanyaan18 }}" >
-        
-<br>
-        
+          <br>      
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">19. Berapa perusahaan/instansi/institusi yang telah anda masuki untuk bekerja(termasuk perusahaan sendiri) sejak anda lulus?</span>
           <input class="input100" type="text" name="Tanggapan19" placeholder="Answer Here...." value="{{ $k->pertanyaan19 }}">
-        
-<br>
-        
+          <br>    
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">20. Apa jenis perusahaan/instansi/institusi tempat Anda bekerja sekarang?</span>
           <input class="input100" type="text" name="Tanggapan20" placeholder="Answer Here...." value="{{ $k->pertanyaan20 }}">
-        
-<br>
-        
+          <br>       
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">21. Jelaskan tugas-tugas utama dalam pekerjaan anda sekarang?</span>
-          <input class="input100" type="text" name="Tanggapan21" placeholder="Answer Here...." value="{{ $k->pertanyaan21 }}" >
-        
-
-        
+          <input class="input100" type="text" name="Tanggapan21" placeholder="Answer Here...." value="{{ $k->pertanyaan21 }}" >  
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">22. Berapa jam rata-rata perminggu Anda bekerja?</span>
           <input class="input100" type="text" name="Tanggapan22" placeholder="Answer Here...." value="{{ $k->pertanyaan22 }}" >
-        
-
-        
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">23. Jika Anda menjalanan perusahaan sendiri, apa jenis/usaha yang sedang Anda jalani saat ini? (Jika tidak memiliki perusahaan sendiri maka tidak perlu diisi)
           <input class="input100" type="text" name="Tanggapan23" placeholder="Answer Here...."  value="{{ $k->pertanyaan23 }}" >
-        
-<br>
-        
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">24. Pada saat lulus, bagaimana kontribusi perguruan tinggi dalam hal kompetensi di bawah ini? Dalam skala 1 sampai 5, pada tingkat mana kompetensi di bawah ini Anda kuasai?</span>
           <br>
           <table border="2" width="700px">
@@ -1409,10 +1453,7 @@
               <td><input type="radio" name="Tanggapan25aa" value="5" {{ $k->pertanyaan2527 == '5' ? 'checked' : '' }}></td>
             </tr>
           </table> 
-        
-
-<br>
-                
+          <br>      
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">26 .Seberapa besar peran kompetensi yang diperoleh di perguruantinggi berikut ini dalam melaksanakan pekerjaan anda</span>
           <br>
           <table border="2" width="700px">
@@ -1687,22 +1728,13 @@
               <td><input type="radio" name="Tanggapan24aa" value="5" {{ ($k->pertanyaan2627=="5")? "checked" : "" }}></td>
             </tr>
           </table>
-        
-
-
-<br>
-         
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">27. Pada saat anda lulus dari perguruan tinggi, bagaimana tingkat kemampuan bahasa asing anda ?</span>
           <input class="input100" type="text" name="Tanggapan27" placeholder="Answer Here...." value="{{ $k->pertanyaan27 }}" >
-        
-<br>
-         
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">28. Berapa besar kontribusi perguruan tinggi dalam penguasaan bahasa asing ?</span>
           <input class="input100" type="text" name="Tanggapan28" placeholder="Answer Here...." value="{{ $k->pertanyaan28 }}" >
-        
-<br>
-
-        
+          <br>      
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">29. Sejauh mana program studi anda bermanfaat untuk hal-hal di bawah ini?</span>
           <br>
           <table border="2" width="700px">
@@ -1773,26 +1805,21 @@
               <td><center><input type="radio" name="Tanggapan29f" value="5" {{ ($k->pertanyaan296=="5")? "checked" : "" }}></center></td>
             </tr>
           </table>
-        
-<br>
-        
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">30. Dalam skala satu sampai lima, beberapa erat kaitan antara bidang studi dengan pekerjaan anda ?</span>
           <input class="input100" type="text" name="Tanggapan30" placeholder="Answer Here...." value="{{ $k->pertanyaan30 }}" >
-        
-
-<br>
-        
+          <br>
           <span class="label-input300" style="float: left; font-size: 12pt; text-align: left;">31. Jika menurut anda pekerjaan anda saat ini tidak sesuai dengan pendidikan anda, mengapa anda mengambilnya ?</span>
           <input class="input100" type="text" name="Tanggapan31" placeholder="Answer Here...." value="{{ $k->pertanyaan31 }}" >
         
         @endforeach
 
    </form>
+ </div>
+</div>
+ 
                                     
-    
-
-
-
+<script src="{{asset('deded/js/main.js')}}"></script>
 </body>
 
 </html>

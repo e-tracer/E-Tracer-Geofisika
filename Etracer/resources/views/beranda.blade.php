@@ -140,68 +140,7 @@
       </div>
     </div>  
   </div>
-    <div class="site-section">
-      <div class="container">
-
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center border-primary">
-            <h2 class="font-weight-light text-primary">QUOTES</h2>
-          </div>
-        </div>
-
-        <div class="slide-one-item home-slider owl-carousel">
-          <div>
-            <div class="testimonial">
-              <figure class="mb-4">
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-3">
-                <p>John Smith</p>
-              </figure>
-              <blockquote>
-                <p>&ldquo;Cinta sejati, dari siapapun itu baik keluarga, kekasih, teman, atau orang-orang penting lainnya, seharusnya tidak membuat Anda menjadi terhambat untuk mengejar takdir Anda, mengejar mimpi-mimpi Anda.rdquo;</p>
-              </blockquote>
-            </div>
-          </div>
-          <div>
-            <div class="testimonial">
-              <figure class="mb-4">
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-3">
-                <p>Christine Aguilar</p>
-              </figure>
-              <blockquote>
-                <p>&ldquo;Rasa takut dalam kenyataannya lebih banyak menghambat kita dalam hidup. Rasa takut akan kegagalan, penolakan, hingga terjatuh dan terjatuh lagi hanya akan menjadi bentuk kegagalan yang bahkan tidak pernah kita coba untuk memulai perjuangan itu sendiri.&rdquo;</p>
-              </blockquote>
-            </div>
-          </div>
-
-          <div>
-            <div class="testimonial">
-              <figure class="mb-4">
-                <img src="images/person_4.jpg" alt="Image" class="img-fluid mb-3">
-                <p>Robert Spears</p>
-              </figure>
-              <blockquote>
-                <p>&ldquo;Tak ada hal semacam “terlalu tua” atau “terlalu muda” untuk mengejar impian. Tak ada pula hal yang benar atau hal yang salah, semuanya memiliki porsi masing-masing dalam kehidupan, dan yang terpenting, dalam perjuangan.&rdquo;</p>
-              </blockquote>
-            </div>
-          </div>
-
-          <div>
-            <div class="testimonial">
-              <figure class="mb-4">
-                <img src="images/person_5.jpg" alt="Image" class="img-fluid mb-3">
-                <p>Bruce Rogers</p>
-              </figure>
-              <blockquote>
-                <p>&ldquo;Ketakutan akan penderitaan lebih buruk daripada penderitaan itu sendiri… tidak ada hati yang menderita ketika berada dalam pencarian akan mimpi-mimpinya.&rdquo;</p>
-              </blockquote>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>          
-        </div>
-      </div>
+    
     <div class="row pt-5 mt-5 text-center ">
       <div class="col-md-12">
         <p>
